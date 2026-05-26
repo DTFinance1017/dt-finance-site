@@ -18,16 +18,10 @@ export default defineConfig({
     chunkSizeWarningLimit: 700,
     rollupOptions: {
       output: {
-        // Separa recharts/d3 (dashboard) do bundle do landing page
+        // Separa recharts/d3 (só usado no dashboard) do bundle principal
         manualChunks: (id) => {
           if (id.includes("node_modules/recharts") || id.includes("node_modules/d3-")) {
             return "charts";
-          }
-          if (id.includes("node_modules/react") || id.includes("node_modules/react-dom")) {
-            return "react-vendor";
-          }
-          if (id.includes("node_modules/")) {
-            return "vendor";
           }
         },
       },
