@@ -15,7 +15,7 @@ export function CasoIlustrativo() {
           >
             "Faturávamos R$ 6M por ano.
             <br />
-            <span className="gradient-text">Não sobrava nada."</span>
+            Não sobrava nada."
           </h2>
           <p className="mt-4 text-white/50 max-w-xl mx-auto text-sm leading-relaxed">
             Prestadora de serviços do setor de construção civil. 8 anos de mercado, equipe de 17 pessoas — e margem real desconhecida.
@@ -28,11 +28,11 @@ export function CasoIlustrativo() {
           <FadeIn>
             <div
               className="rounded-2xl border p-6 h-full"
-              style={{ borderColor: "rgba(239,68,68,0.15)", background: "#131318" }}
+              style={{ borderColor: "rgba(255,255,255,0.07)", background: "#131318" }}
             >
               <div className="flex items-center gap-2 mb-5">
-                <AlertTriangle size={15} className="text-red-400" />
-                <span className="text-xs font-semibold text-red-400 uppercase tracking-wider">O Problema</span>
+                <AlertTriangle size={15} className="text-white/35" />
+                <span className="text-xs font-semibold text-white/40 uppercase tracking-wider">O Problema</span>
               </div>
 
               <p
@@ -52,8 +52,8 @@ export function CasoIlustrativo() {
                   "Sócio cogitava empréstimo para cobrir o caixa",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2.5">
-                    <div className="w-1.5 h-1.5 rounded-full bg-red-400/80 mt-2 flex-shrink-0" />
-                    <p className="text-xs text-white/55 leading-relaxed">{item}</p>
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/20 mt-2 flex-shrink-0" />
+                    <p className="text-xs text-white/50 leading-relaxed">{item}</p>
                   </div>
                 ))}
               </div>
@@ -64,11 +64,11 @@ export function CasoIlustrativo() {
           <FadeIn delay={100}>
             <div
               className="rounded-2xl border p-6 h-full"
-              style={{ borderColor: "rgba(59,130,246,0.12)", background: "#131318" }}
+              style={{ borderColor: "rgba(255,255,255,0.09)", background: "#131318" }}
             >
               <div className="flex items-center gap-2 mb-5">
-                <ArrowRight size={15} className="text-blue-400" />
-                <span className="text-xs font-semibold text-blue-400 uppercase tracking-wider">O Que Estruturamos</span>
+                <ArrowRight size={15} className="text-white/45" />
+                <span className="text-xs font-semibold text-white/50 uppercase tracking-wider">O Que Estruturamos</span>
               </div>
 
               <p
@@ -89,8 +89,8 @@ export function CasoIlustrativo() {
                   "Dashboard executivo mensal com KPIs de margem e giro",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2.5">
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue-400/80 mt-2 flex-shrink-0" />
-                    <p className="text-xs text-white/65 leading-relaxed">{item}</p>
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/25 mt-2 flex-shrink-0" />
+                    <p className="text-xs text-white/60 leading-relaxed">{item}</p>
                   </div>
                 ))}
               </div>
@@ -101,11 +101,11 @@ export function CasoIlustrativo() {
           <FadeIn delay={200}>
             <div
               className="rounded-2xl border p-6 h-full"
-              style={{ borderColor: "rgba(16,185,129,0.12)", background: "#131318" }}
+              style={{ borderColor: "rgba(255,255,255,0.11)", background: "#131318" }}
             >
               <div className="flex items-center gap-2 mb-5">
-                <TrendingUp size={15} className="text-emerald-400" />
-                <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Resultado em 120 dias</span>
+                <TrendingUp size={15} className="text-white/55" />
+                <span className="text-xs font-semibold text-white/60 uppercase tracking-wider">Resultado em 120 dias</span>
               </div>
 
               <p
@@ -146,23 +146,23 @@ export function CasoIlustrativo() {
                     key={i}
                     className="p-3 rounded-xl"
                     style={{
-                      background: item.highlight ? "rgba(16,185,129,0.12)" : "rgba(16,185,129,0.06)",
-                      border: `1px solid rgba(16,185,129,${item.highlight ? "0.22" : "0.10"})`,
+                      background: item.highlight ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.04)",
+                      border: `1px solid rgba(255,255,255,${item.highlight ? "0.10" : "0.06"})`,
                     }}
                   >
-                    <div className="text-[10px] text-emerald-400/60 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="text-[10px] text-white/35 uppercase tracking-wide mb-1">{item.label}</div>
                     <div
                       style={{ fontFamily: "'Playfair Display', serif" }}
-                      className={`text-base font-bold ${item.highlight ? "text-emerald-300" : "text-emerald-400"}`}
+                      className="text-base font-bold text-white/85"
                     >
                       {item.value}
                     </div>
-                    <div className="text-[10px] text-white/40 mt-0.5">{item.detail}</div>
+                    <div className="text-[10px] text-white/35 mt-0.5">{item.detail}</div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-4 flex items-center gap-1.5 text-[10px] text-white/30">
+              <div className="mt-4 flex items-center gap-1.5 text-[10px] text-white/25">
                 <Eye size={10} />
                 <span>Dados reais. Nome da empresa preservado por confidencialidade.</span>
               </div>
@@ -174,15 +174,15 @@ export function CasoIlustrativo() {
         <FadeIn delay={100}>
           <div
             className="mt-8 rounded-2xl border p-6 sm:p-8 text-center"
-            style={{ borderColor: "rgba(240,192,64,0.15)", background: "rgba(240,192,64,0.04)" }}
+            style={{ borderColor: "rgba(255,255,255,0.07)", background: "rgba(255,255,255,0.02)" }}
           >
             <p
               style={{ fontFamily: "'Playfair Display', serif" }}
-              className="text-lg sm:text-xl text-white/80 italic max-w-3xl mx-auto leading-relaxed"
+              className="text-lg sm:text-xl text-white/75 italic max-w-3xl mx-auto leading-relaxed"
             >
               "Achávamos que precisávamos vender mais para resolver o caixa. Quando a DT Finance nos mostrou a margem real de cada serviço, descobrimos que o dinheiro já estava lá — só estava indo para o lugar errado."
             </p>
-            <p className="mt-4 text-xs text-white/35">— Sócio da empresa. Setor de construção civil. SP.</p>
+            <p className="mt-4 text-xs text-white/30">— Sócio da empresa. Setor de construção civil. SP.</p>
           </div>
         </FadeIn>
       </div>

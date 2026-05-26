@@ -21,7 +21,7 @@ const dorOptions = [
 ];
 
 const inputClass =
-  "w-full bg-white/5 border border-white/12 rounded-[10px] px-4 py-3 text-sm text-white placeholder-white/22 focus:outline-none focus:border-[#f0c040]/40 focus:bg-white/8 transition-colors";
+  "w-full bg-white/5 border border-white/12 rounded-[10px] px-4 py-3 text-sm text-white placeholder-white/22 focus:outline-none focus:border-[#B5891A]/40 focus:bg-white/8 transition-colors";
 
 const labelClass =
   "block text-[11px] text-white/45 mb-1.5 font-medium uppercase tracking-[0.1em]";
@@ -43,7 +43,7 @@ function ProgressDots({ step }: { step: 1 | 2 }) {
           style={{
             width: s === step ? 24 : 8,
             height: 8,
-            background: s === step ? "#f0c040" : "rgba(255,255,255,0.15)",
+            background: s === step ? "#B5891A" : "rgba(255,255,255,0.15)",
           }}
         />
       ))}
@@ -127,7 +127,7 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
         className="relative w-full flex flex-col"
         style={{
           maxWidth: 460,
-          background: "#1C2E2D",
+          background: "#131318",
           borderRadius: 20,
           border: "1px solid rgba(255,255,255,0.10)",
           boxShadow: "0 32px 80px rgba(0,0,0,0.5)",
@@ -159,9 +159,9 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
           <div className="flex flex-col items-center justify-center py-16 px-10 text-center">
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
-              style={{ background: "rgba(240,192,64,0.12)", border: "1px solid rgba(240,192,64,0.3)" }}
+              style={{ background: "rgba(181,137,26,0.12)", border: "1px solid rgba(181,137,26,0.3)" }}
             >
-              <CheckCircle2 size={28} style={{ color: "#f0c040" }} />
+              <CheckCircle2 size={28} style={{ color: "#B5891A" }} />
             </div>
             <h3
               style={{ fontFamily: "'Playfair Display', serif" }}
@@ -189,7 +189,7 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
         {!enviado && isChecklist && (
           <form onSubmit={handleEnviar} className="flex flex-col overflow-hidden">
             <div className="px-8 pt-8 pb-5 flex-shrink-0" style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-medium mb-4" style={{ borderColor: "rgba(240,192,64,0.25)", background: "rgba(240,192,64,0.08)", color: "#f0c040" }}>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-medium mb-4" style={{ borderColor: "rgba(181,137,26,0.25)", background: "rgba(181,137,26,0.08)", color: "#B5891A" }}>
                 <FileText size={11} /> RECEBER LISTA DE DOCUMENTOS
               </div>
               <h2 style={{ fontFamily: "'Playfair Display', serif" }} className="text-2xl font-bold text-white mb-1">
@@ -254,9 +254,9 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
                       onClick={() => setFaturamento(opt.value)}
                       className="w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-150"
                       style={{
-                        border: selected ? "1px solid #f0c040" : "1px solid rgba(255,255,255,0.12)",
-                        background: selected ? "rgba(240,192,64,0.10)" : "rgba(255,255,255,0.04)",
-                        color: selected ? "#f0c040" : "rgba(255,255,255,0.7)",
+                        border: selected ? "1px solid #B5891A" : "1px solid rgba(255,255,255,0.12)",
+                        background: selected ? "rgba(181,137,26,0.10)" : "rgba(255,255,255,0.04)",
+                        color: selected ? "#B5891A" : "rgba(255,255,255,0.7)",
                       }}
                     >
                       {opt.label}
@@ -279,9 +279,9 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
                       onClick={() => setDor(opt.value)}
                       className="w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-150"
                       style={{
-                        border: selected ? "1px solid #f0c040" : "1px solid rgba(255,255,255,0.12)",
-                        background: selected ? "rgba(240,192,64,0.10)" : "rgba(255,255,255,0.04)",
-                        color: selected ? "#f0c040" : "rgba(255,255,255,0.7)",
+                        border: selected ? "1px solid #B5891A" : "1px solid rgba(255,255,255,0.12)",
+                        background: selected ? "rgba(181,137,26,0.10)" : "rgba(255,255,255,0.04)",
+                        color: selected ? "#B5891A" : "rgba(255,255,255,0.7)",
                       }}
                     >
                       {opt.label}
@@ -297,7 +297,7 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
               onClick={() => setStep(2)}
               className="w-full py-[14px] rounded-xl text-sm font-bold tracking-wide transition-all duration-200"
               style={{
-                background: step1Valid ? "#f0c040" : "rgba(240,192,64,0.25)",
+                background: step1Valid ? "#B5891A" : "rgba(181,137,26,0.25)",
                 color: step1Valid ? "#1a1a1a" : "rgba(255,255,255,0.3)",
                 cursor: step1Valid ? "pointer" : "not-allowed",
               }}
@@ -322,7 +322,7 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
               >
                 <ArrowLeft size={14} /> Voltar
               </button>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-medium mb-4" style={{ borderColor: "rgba(240,192,64,0.25)", background: "rgba(240,192,64,0.08)", color: "#f0c040" }}>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-medium mb-4" style={{ borderColor: "rgba(181,137,26,0.25)", background: "rgba(181,137,26,0.08)", color: "#B5891A" }}>
                 DIAGNÓSTICO GRATUITO
               </div>
               <h2 style={{ fontFamily: "'Playfair Display', serif" }} className="text-2xl font-bold text-white mb-1">
@@ -358,7 +358,7 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
                 type="submit"
                 disabled={enviando}
                 className="w-full py-[14px] rounded-xl text-sm font-bold tracking-wide flex items-center justify-center gap-2 disabled:opacity-50 transition-colors"
-                style={{ background: "#f0c040", color: "#1a1a1a", height: 52 }}
+                style={{ background: "#B5891A", color: "#1a1a1a", height: 52 }}
               >
                 <Mail size={15} />
                 {enviando ? "ENVIANDO..." : "ENVIAR MENSAGEM"}

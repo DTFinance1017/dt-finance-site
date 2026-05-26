@@ -32,7 +32,7 @@ export function AntesDepois() {
           >
             O antes e o depois
             <br />
-            <span className="gradient-text">de ter clareza financeira</span>
+            de ter clareza financeira
           </h2>
         </FadeIn>
 
@@ -41,23 +41,23 @@ export function AntesDepois() {
           <FadeIn>
             <div
               className="rounded-2xl border p-7 h-full"
-              style={{ borderColor: "rgba(239,68,68,0.15)", background: "#131318" }}
+              style={{ borderColor: "rgba(255,255,255,0.07)", background: "#131318" }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "rgba(239,68,68,0.15)" }}>
-                  <X size={16} className="text-red-400" />
+                <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "rgba(255,255,255,0.06)" }}>
+                  <X size={16} className="text-white/30" />
                 </div>
-                <span style={{ fontFamily: "'Playfair Display', serif" }} className="text-lg font-bold text-red-400">
+                <span style={{ fontFamily: "'Playfair Display', serif" }} className="text-lg font-bold text-white/50">
                   ANTES — Sem estrutura
                 </span>
               </div>
               <div className="space-y-3.5">
                 {antes.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(239,68,68,0.12)" }}>
-                      <X size={11} className="text-red-400" />
+                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(255,255,255,0.05)" }}>
+                      <X size={11} className="text-white/25" />
                     </div>
-                    <p className="text-sm text-white/55 leading-relaxed">{item}</p>
+                    <p className="text-sm text-white/45 leading-relaxed">{item}</p>
                   </div>
                 ))}
               </div>
@@ -68,21 +68,21 @@ export function AntesDepois() {
           <FadeIn delay={120}>
             <div
               className="rounded-2xl border p-7 h-full"
-              style={{ borderColor: "rgba(16,185,129,0.15)", background: "#131318" }}
+              style={{ borderColor: "rgba(255,255,255,0.11)", background: "#131318" }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "rgba(16,185,129,0.15)" }}>
-                  <Check size={16} className="text-emerald-400" />
+                <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "rgba(255,255,255,0.08)" }}>
+                  <Check size={16} className="text-white/60" />
                 </div>
-                <span style={{ fontFamily: "'Playfair Display', serif" }} className="text-lg font-bold text-emerald-400">
+                <span style={{ fontFamily: "'Playfair Display', serif" }} className="text-lg font-bold text-white/85">
                   DEPOIS — Com DT Finance
                 </span>
               </div>
               <div className="space-y-3.5">
                 {depois.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(16,185,129,0.12)" }}>
-                      <Check size={11} className="text-emerald-400" />
+                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(255,255,255,0.07)" }}>
+                      <Check size={11} className="text-white/45" />
                     </div>
                     <p className="text-sm text-white/75 leading-relaxed">{item}</p>
                   </div>
@@ -97,12 +97,12 @@ export function AntesDepois() {
           <div className="mt-8 text-center">
             <div
               className="inline-flex items-center gap-4 px-8 py-4 rounded-2xl border"
-              style={{ borderColor: "rgba(240,192,64,0.25)", background: "rgba(240,192,64,0.05)" }}
+              style={{ borderColor: "rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.03)" }}
             >
               <span className="text-sm text-white/50">Da desorganização</span>
-              <span className="text-[#f0c040] text-lg">→</span>
+              <span className="text-white/30 text-lg">→</span>
               <span className="text-sm font-semibold text-white">à visão estratégica</span>
-              <span className="text-[#f0c040] text-lg">→</span>
+              <span className="text-white/30 text-lg">→</span>
               <span className="text-sm text-white/50">em semanas</span>
             </div>
           </div>
