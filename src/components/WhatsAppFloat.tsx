@@ -2,7 +2,7 @@
 
 // NOTE: Substituir 5511999999999 pelo número real de WhatsApp da DT Finance
 const WA_URL =
-  "https://wa.me/5511999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20DT%20Finance%20e%20quero%20agendar%20meu%20Diagn%C3%B3stico%20Gratuito.";
+  "https://wa.me/5511969771585?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20DT%20Finance%20e%20quero%20agendar%20meu%20Diagn%C3%B3stico%20Gratuito.";
 
 export function WhatsAppFloat() {
   const [visible, setVisible] = useState(false);
