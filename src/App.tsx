@@ -1,5 +1,4 @@
 import { Switch, Route, Router as WouterRouter, Redirect } from "wouter";
-import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import Home from "@/pages/Home";
 import Platform from "@/pages/Platform";
 import Dashboard from "@/pages/Dashboard";
@@ -57,7 +56,6 @@ function App() {
     <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
       <ModalProvider>
         <Router />
-        <WhatsAppFloat />
       </ModalProvider>
     </WouterRouter>
   );
