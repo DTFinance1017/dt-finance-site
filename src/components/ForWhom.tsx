@@ -1,4 +1,4 @@
-import { FadeIn } from "./FadeIn";
+﻿import { FadeIn } from "./FadeIn";
 import { Building2, TrendingUp, Users, Rocket } from "lucide-react";
 
 const profiles = [
@@ -34,18 +34,18 @@ const profiles = [
 
 export function ForWhom() {
   return (
-    <section id="para-quem" className="py-16 md:py-24 lg:py-32 bg-[#0d0d12] relative">
+    <section id="para-quem" className="py-16 md:py-24 lg:py-32 bg-white relative">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
         <FadeIn className="text-center mb-14">
-          <div className="text-xs font-semibold text-white/25 uppercase tracking-widest mb-4">
+          <div className="text-xs font-semibold text-[#1B4158]/32 uppercase tracking-widest mb-4">
             PARA QUEM É
           </div>
-          <h2 style={{ fontFamily: "'Playfair Display', serif" }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+          <h2 style={{ fontFamily: "'Playfair Display', serif" }} className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1B4158]">
             Se a empresa cresce mas o
             <br />
             <span className="gradient-text">controle não acompanha</span>
           </h2>
-          <p className="mt-4 text-white/50 max-w-xl mx-auto text-sm sm:text-base">
+          <p className="mt-4 text-[#1B4158]/60 max-w-xl mx-auto text-sm sm:text-base">
             Estágios diferentes, problema em comum: falta de clareza financeira para decidir com segurança e escalar com consistência.
           </p>
         </FadeIn>
@@ -54,7 +54,7 @@ export function ForWhom() {
           {profiles.map((p, i) => (
             <FadeIn key={i} delay={i * 80}>
               <div
-                className="relative flex gap-5 p-6 rounded-2xl border border-white/6 bg-[#131318] cursor-default"
+                className="relative flex gap-5 p-6 rounded-2xl border border-[#1B4158]/8 bg-[#f5f7f9] cursor-default"
               >
                 {p.tag && (
                   <div
@@ -64,12 +64,12 @@ export function ForWhom() {
                     {p.tag}
                   </div>
                 )}
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-white/4 text-white/40">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#1B4158]/4 text-[#1B4158]/50">
                   {p.icon}
                 </div>
                 <div>
-                  <h3 style={{ fontFamily: "'Playfair Display', serif" }} className="text-base font-semibold text-white mb-2">{p.title}</h3>
-                  <p className="text-sm text-white/50 leading-relaxed">{p.description}</p>
+                  <h3 style={{ fontFamily: "'Playfair Display', serif" }} className="text-base font-semibold text-[#1B4158] mb-2">{p.title}</h3>
+                  <p className="text-sm text-[#1B4158]/60 leading-relaxed">{p.description}</p>
                 </div>
               </div>
             </FadeIn>

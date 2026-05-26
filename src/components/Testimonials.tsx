@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+﻿import { useState, useEffect, useRef } from "react";
 import { FadeIn } from "./FadeIn";
 
 // NOTE: Esses depoimentos são modelos estruturais — substituir pelos dados reais dos clientes antes de publicar
@@ -70,17 +70,17 @@ export function Testimonials() {
   return (
     <section
       className="py-20 md:py-28 relative overflow-hidden"
-      style={{ background: "#0d0d12" }}
+      style={{ background: "#ffffff" }}
     >
 
       <div className="relative max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
         <FadeIn className="text-center mb-12">
-          <div className="text-xs font-semibold text-white/25 uppercase tracking-widest mb-5">
+          <div className="text-xs font-semibold text-[#1B4158]/32 uppercase tracking-widest mb-5">
             RESULTADOS REAIS
           </div>
           <h2
             style={{ fontFamily: "'Playfair Display', serif" }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1B4158] mb-4"
           >
             O que dizem os nossos clientes
           </h2>
@@ -92,8 +92,8 @@ export function Testimonials() {
           <div
             className="relative rounded-[20px] p-8 sm:p-10"
             style={{
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.10)",
+              background: "rgba(27,65,88,0.06)",
+              border: "1px solid rgba(27,65,88,0.12)",
               backdropFilter: "blur(12px)",
               transition: "opacity 0.28s ease, transform 0.28s ease",
               opacity: fading ? 0 : 1,
@@ -126,7 +126,7 @@ export function Testimonials() {
 
             <div className="flex items-center gap-4">
               <div
-                className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm tracking-wide"
+                className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-[#1B4158] font-bold text-sm tracking-wide"
                 style={{
                   background: "#1e1e28",
                 }}
@@ -134,9 +134,9 @@ export function Testimonials() {
                 {t.initials}
               </div>
               <div>
-                <div className="text-white font-semibold text-sm">{t.name}</div>
+                <div className="text-[#1B4158] font-semibold text-sm">{t.name}</div>
                 <div className="text-[#f0c040] text-xs font-medium">{t.role}</div>
-                <div className="text-white/40 text-xs">
+                <div className="text-[#1B4158]/50 text-xs">
                   {t.company} · {t.extra}
                 </div>
               </div>
@@ -154,7 +154,7 @@ export function Testimonials() {
               style={{
                 width: i === active ? 28 : 8,
                 background:
-                  i === active ? "#f0c040" : "rgba(255,255,255,0.2)",
+                  i === active ? "#f0c040" : "rgba(27,65,88,0.25)",
               }}
             />
           ))}

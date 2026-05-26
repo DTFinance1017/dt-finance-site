@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useLocation } from "wouter";
 import { useModal } from "@/context/ModalContext";
@@ -37,7 +37,7 @@ export function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled || !isHome
-            ? "bg-[#0d0d12]/95 backdrop-blur-md border-b border-white/6"
+            ? "bg-white/95 backdrop-blur-md border-b border-[#1B4158]/8"
             : "bg-transparent"
         }`}
       >
@@ -53,7 +53,7 @@ export function Navbar() {
                 alt="DT Finance"
                 className="h-9 w-auto object-contain"
               />
-              <span style={{ fontFamily: "'Playfair Display', serif" }} className="text-white/80 font-semibold text-lg tracking-tight hidden sm:block">
+              <span style={{ fontFamily: "'Playfair Display', serif" }} className="text-[#1B4158] font-semibold text-lg tracking-tight hidden sm:block">
                 DT Finance
               </span>
             </div>
@@ -67,8 +67,8 @@ export function Navbar() {
                     onClick={() => navTo(link.path)}
                     className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
                       active
-                        ? "text-[#B5891A] bg-white/4"
-                        : "text-white/45 hover:text-white/75 hover:bg-white/4"
+                        ? "text-[#B5891A] bg-[#1B4158]/4"
+                        : "text-[#1B4158]/55 hover:text-[#1B4158]/90 hover:bg-[#1B4158]/4"
                     }`}
                   >
                     {link.label}
@@ -78,10 +78,10 @@ export function Navbar() {
             </div>
 
             <div className="hidden md:flex items-center gap-3">
-              <div className="w-px h-4 bg-white/8" />
+              <div className="w-px h-4 bg-[#1B4158]/8" />
               <button
                 onClick={() => navigate("/login")}
-                className="px-4 py-2 text-sm font-medium text-white/35 hover:text-white/60 transition-colors duration-200"
+                className="px-4 py-2 text-sm font-medium text-[#1B4158]/45 hover:text-[#1B4158]/72 transition-colors duration-200"
               >
                 Área do Cliente
               </button>
@@ -93,25 +93,25 @@ export function Navbar() {
               </button>
             </div>
 
-            <button className="md:hidden text-white/50 hover:text-white/80 p-2 rounded-lg transition-colors" onClick={() => setMobileOpen(!mobileOpen)}>
+            <button className="md:hidden text-[#1B4158]/60 hover:text-[#1B4158] p-2 rounded-lg transition-colors" onClick={() => setMobileOpen(!mobileOpen)}>
               {mobileOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
 
         {mobileOpen && (
-          <div className="md:hidden bg-[#0d0d12]/97 backdrop-blur-md border-t border-white/6">
+          <div className="md:hidden bg-white/97 backdrop-blur-md border-t border-[#1B4158]/8">
             <div className="max-w-[1440px] mx-auto px-6 py-4 space-y-1">
               {links.map((link) => {
                 const active = location === link.path;
                 return (
-                  <button key={link.label} onClick={() => navTo(link.path)} className={`block w-full text-left py-2.5 px-3 text-sm font-medium transition-colors rounded-lg hover:bg-white/4 ${active ? "text-[#B5891A]" : "text-white/50 hover:text-white/75"}`}>
+                  <button key={link.label} onClick={() => navTo(link.path)} className={`block w-full text-left py-2.5 px-3 text-sm font-medium transition-colors rounded-lg hover:bg-[#1B4158]/4 ${active ? "text-[#B5891A]" : "text-[#1B4158]/60 hover:text-[#1B4158]/90"}`}>
                     {link.label}
                   </button>
                 );
               })}
-              <div className="pt-2 border-t border-white/6 mt-2 space-y-2">
-                <button onClick={() => { setMobileOpen(false); navigate("/login"); }} className="block w-full text-left text-white/40 hover:text-white/65 py-2.5 px-3 text-sm font-medium transition-colors rounded-lg hover:bg-white/4">
+              <div className="pt-2 border-t border-[#1B4158]/8 mt-2 space-y-2">
+                <button onClick={() => { setMobileOpen(false); navigate("/login"); }} className="block w-full text-left text-[#1B4158]/50 hover:text-[#1B4158]/78 py-2.5 px-3 text-sm font-medium transition-colors rounded-lg hover:bg-[#1B4158]/4">
                   Área do Cliente
                 </button>
                 <button onClick={() => { setMobileOpen(false); openModal(); }} className="btn-gold w-full px-5 py-3 rounded-lg text-sm font-semibold">

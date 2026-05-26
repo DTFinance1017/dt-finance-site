@@ -1,4 +1,4 @@
-import { Mail, ArrowRight } from "lucide-react";
+﻿import { Mail, ArrowRight } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 import { useModal } from "@/context/ModalContext";
 
@@ -82,35 +82,35 @@ export function ChecklistDownload() {
   const { openModal } = useModal();
 
   return (
-    <section id="checklist" className="py-20 bg-[#0d0d12] relative overflow-hidden">
+    <section id="checklist" className="py-20 bg-white relative overflow-hidden">
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative">
         <FadeIn>
           <div
             className="rounded-3xl overflow-hidden border"
             style={{
-              borderColor: "rgba(255,255,255,0.06)",
-              background: "#131318",
+              borderColor: "rgba(27,65,88,0.08)",
+              background: "#f5f7f9",
             }}
           >
             <div className="flex flex-col lg:flex-row items-center justify-between gap-10 p-10 sm:p-14 lg:p-16">
 
               {/* Texto */}
               <div className="flex-1 max-w-lg">
-                <div className="text-xs font-semibold text-white/25 uppercase tracking-widest mb-7">
+                <div className="text-xs font-semibold text-[#1B4158]/32 uppercase tracking-widest mb-7">
                   Lista de Documentos
                 </div>
 
                 <h2
                   style={{ fontFamily: "'Playfair Display', serif" }}
-                  className="text-3xl sm:text-4xl font-bold text-white mb-4 leading-tight"
+                  className="text-3xl sm:text-4xl font-bold text-[#1B4158] mb-4 leading-tight"
                 >
                   O que precisamos
                   <br />
                   <span className="gradient-text">de você</span>
                 </h2>
 
-                <p className="text-white/45 text-sm leading-relaxed">
+                <p className="text-[#1B4158]/55 text-sm leading-relaxed">
                   Lista completa dos documentos para montarmos o DRE e o Fluxo de Caixa da sua empresa. Receba direto no seu e-mail — totalmente gratuito.
                 </p>
               </div>
@@ -125,7 +125,7 @@ export function ChecklistDownload() {
                   Receber a lista no meu e-mail
                   <ArrowRight size={14} />
                 </button>
-                <p className="text-xs text-white/20">Enviamos o PDF gratuitamente para você</p>
+                <p className="text-xs text-[#1B4158]/27">Enviamos o PDF gratuitamente para você</p>
               </div>
 
             </div>

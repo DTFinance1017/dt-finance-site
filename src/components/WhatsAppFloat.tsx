@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 
 // NOTE: Substituir 5511999999999 pelo número real de WhatsApp da DT Finance
 const WA_URL =
@@ -28,7 +28,7 @@ export function WhatsAppFloat() {
       <div
         className="absolute right-[72px] top-1/2 -translate-y-1/2 whitespace-nowrap text-sm px-4 py-2.5 rounded-xl font-medium transition-all duration-200"
         style={{
-          background: "#0d0d12",
+          background: "#ffffff",
           border: "1px solid rgba(240,192,64,0.3)",
           color: "rgba(255,255,255,0.9)",
           boxShadow: "0 4px 20px rgba(0,0,0,0.4)",
@@ -41,7 +41,7 @@ export function WhatsAppFloat() {
         <div
           className="absolute right-[-6px] top-1/2 -translate-y-1/2 w-3 h-3 rotate-45"
           style={{
-            background: "#0d0d12",
+            background: "#ffffff",
             borderRight: "1px solid rgba(240,192,64,0.3)",
             borderTop: "1px solid rgba(240,192,64,0.3)",
           }}

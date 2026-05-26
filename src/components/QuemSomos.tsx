@@ -1,4 +1,4 @@
-import { Award, Briefcase, Scale, TrendingUp } from "lucide-react";
+﻿import { Award, Briefcase, Scale, TrendingUp } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
 const socios = [
@@ -38,7 +38,7 @@ const socios = [
 
 export function QuemSomos() {
   return (
-    <section id="quem-somos" className="py-16 md:py-24 lg:py-32 bg-[#0d0d12] relative overflow-hidden">
+    <section id="quem-somos" className="py-16 md:py-24 lg:py-32 bg-white relative overflow-hidden">
 
       <div className="relative max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
 
@@ -66,12 +66,12 @@ export function QuemSomos() {
               />
               {/* Overlay text */}
               <div className="absolute bottom-0 left-0 p-7">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 mb-3">
-                  <span className="text-xs font-medium text-white/35 uppercase tracking-widest">Nossa Equipe</span>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1B4158]/12 mb-3">
+                  <span className="text-xs font-medium text-[#1B4158]/45 uppercase tracking-widest">Nossa Equipe</span>
                 </div>
                 <p
                   style={{ fontFamily: "'Playfair Display', serif" }}
-                  className="text-white text-xl lg:text-2xl font-bold leading-snug"
+                  className="text-[#1B4158] text-xl lg:text-2xl font-bold leading-snug"
                 >
                   Mais de 15 anos de experiência<br />
                   <span className="gradient-text">ao lado das suas decisões</span>
@@ -84,12 +84,12 @@ export function QuemSomos() {
           <FadeIn delay={100} className="md:w-7/12 flex flex-col justify-center">
             <h2
               style={{ fontFamily: "'Playfair Display', serif" }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1B4158] mb-5"
             >
               Quem está por trás da{" "}
               <span className="gradient-text">DT Finance</span>
             </h2>
-            <p className="text-white/55 text-base lg:text-lg leading-relaxed mb-8 max-w-lg">
+            <p className="text-[#1B4158]/65 text-base lg:text-lg leading-relaxed mb-8 max-w-lg">
               Uma sociedade construída sobre mais de 15 anos de experiência real no mercado financeiro e jurídico — unindo dados, estratégia e segurança para o seu negócio.
             </p>
 
@@ -103,7 +103,7 @@ export function QuemSomos() {
               ].map((label, i) => (
                 <span
                   key={i}
-                  className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-white/8 bg-white/4 text-white/40"
+                  className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-[#1B4158]/10 bg-[#1B4158]/4 text-[#1B4158]/50"
                 >
                   {label}
                 </span>
@@ -116,7 +116,7 @@ export function QuemSomos() {
             >
               <p
                 style={{ fontFamily: "'Playfair Display', serif" }}
-                className="text-white/80 text-base leading-relaxed italic"
+                className="text-[#1B4158] text-base leading-relaxed italic"
               >
                 "Unimos direito, tecnologia e finanças para entregar algo que o mercado ainda não tinha: um CFO completo, acessível e orientado a dados."
               </p>
@@ -132,39 +132,39 @@ export function QuemSomos() {
           {socios.map((socio, i) => (
             <FadeIn key={i} delay={i * 100}>
               <div
-                className="relative rounded-2xl border border-white/6 bg-[#131318] p-7 lg:p-8 flex flex-col gap-5"
+                className="relative rounded-2xl border border-[#1B4158]/8 bg-[#f5f7f9] p-7 lg:p-8 flex flex-col gap-5"
               >
 
                 <div className="flex items-start gap-5">
                   <div
-                    className="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center text-white/60 font-bold text-sm tracking-wide bg-white/6"
+                    className="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center text-[#1B4158]/72 font-bold text-sm tracking-wide bg-white/6"
                   >
                     {socio.avatar}
                   </div>
                   <div>
-                    <h3 style={{ fontFamily: "'Playfair Display', serif" }} className="text-white font-semibold text-lg leading-snug mb-1.5">
+                    <h3 style={{ fontFamily: "'Playfair Display', serif" }} className="text-[#1B4158] font-semibold text-lg leading-snug mb-1.5">
                       {socio.titulo}
                     </h3>
                     <span
-                      className="text-xs font-medium px-2.5 py-1 rounded-full border border-white/8 bg-white/4 text-white/40"
+                      className="text-xs font-medium px-2.5 py-1 rounded-full border border-[#1B4158]/10 bg-[#1B4158]/4 text-[#1B4158]/50"
                     >
                       {socio.certificacao}
                     </span>
-                    <div className="mt-2 text-xs font-medium text-white/30">
+                    <div className="mt-2 text-xs font-medium text-[#1B4158]/38">
                       {socio.especialidade}
                     </div>
                   </div>
                 </div>
 
-                <p className="text-white/50 text-sm leading-relaxed">{socio.descricao}</p>
+                <p className="text-[#1B4158]/60 text-sm leading-relaxed">{socio.descricao}</p>
 
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {socio.tags.map((tag, j) => (
                     <span
                       key={j}
-                      className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-white/8 bg-white/4 text-white/40"
+                      className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-[#1B4158]/10 bg-[#1B4158]/4 text-[#1B4158]/50"
                     >
-                      <span className="text-white/30">{tag.icon}</span>
+                      <span className="text-[#1B4158]/38">{tag.icon}</span>
                       {tag.label}
                     </span>
                   ))}

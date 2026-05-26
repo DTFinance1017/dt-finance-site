@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/Navbar";
+﻿import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FadeIn } from "@/components/FadeIn";
 import { useLocation } from "wouter";
@@ -118,12 +118,12 @@ export default function Platform() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#3b82f6]/30 bg-[#3b82f6]/10 text-[#60a5fa] text-xs font-medium mb-6">
               A PLATAFORMA DT FINANCE
             </div>
-            <h1 style={{ fontFamily: "'Playfair Display', serif" }} className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 style={{ fontFamily: "'Playfair Display', serif" }} className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#1B4158] mb-6 leading-tight">
               O portal onde dados
               <br />
               <span className="gradient-text">viram decisões</span>
             </h1>
-            <p className="text-lg text-white/55 mb-10 leading-relaxed">
+            <p className="text-lg text-[#1B4158]/65 mb-10 leading-relaxed">
               Uma plataforma completa onde o cliente envia documentos financeiros, o agente interno organiza e estrutura os dados, e a DT Finance entrega análise estratégica de alto nível.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -142,15 +142,15 @@ export default function Platform() {
       <section className="py-16 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl" style={{ background: "#07101f" }}>
+            <div className="rounded-2xl overflow-hidden border border-[#1B4158]/12 shadow-2xl" style={{ background: "#07101f" }}>
               {/* App bar */}
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-white/8" style={{ background: "#050d1a" }}>
+              <div className="flex items-center gap-2 px-4 py-3 border-b border-[#1B4158]/10" style={{ background: "#050d1a" }}>
                 <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
                 <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
                 <span className="w-3 h-3 rounded-full bg-[#28c840]" />
                 <div className="ml-4 flex-1 flex items-center gap-3">
                   <div className="h-5 w-48 rounded bg-white/6 flex items-center px-2">
-                    <span className="text-[10px] text-white/30">app.dtfinance.com.br/dashboard</span>
+                    <span className="text-[10px] text-[#1B4158]/38">app.dtfinance.com.br/dashboard</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
@@ -162,9 +162,9 @@ export default function Platform() {
 
               <div className="flex h-[460px]">
                 {/* Sidebar */}
-                <div className="w-52 border-r border-white/8 p-4 flex flex-col gap-1 flex-shrink-0" style={{ background: "#050d1a" }}>
+                <div className="w-52 border-r border-[#1B4158]/10 p-4 flex flex-col gap-1 flex-shrink-0" style={{ background: "#050d1a" }}>
                   {["Visão Geral", "Upload de Docs", "Processamento", "KPIs", "Dashboards", "Relatórios", "Alertas", "Configurações"].map((item, i) => (
-                    <div key={item} className={`flex items-center gap-2.5 px-3 py-2 rounded-lg cursor-pointer text-xs transition-all ${i === 0 ? "bg-[#1e40af]/30 text-[#60a5fa]" : "text-white/40 hover:text-white/70 hover:bg-white/4"}`}>
+                    <div key={item} className={`flex items-center gap-2.5 px-3 py-2 rounded-lg cursor-pointer text-xs transition-all ${i === 0 ? "bg-[#1e40af]/30 text-[#60a5fa]" : "text-[#1B4158]/50 hover:text-white/70 hover:bg-[#1B4158]/4"}`}>
                       <div className={`w-1.5 h-1.5 rounded-full ${i === 0 ? "bg-[#3b82f6]" : "bg-white/20"}`} />
                       {item}
                     </div>
@@ -175,12 +175,12 @@ export default function Platform() {
                 <div className="flex-1 p-5 overflow-hidden">
                   <div className="flex items-center justify-between mb-5">
                     <div>
-                      <h3 className="text-sm font-semibold text-white">Visão Geral — Março 2025</h3>
-                      <p className="text-xs text-white/35 mt-0.5">Empresa ABC Ltda · CNPJ 00.000.000/0001-00</p>
+                      <h3 className="text-sm font-semibold text-[#1B4158]">Visão Geral — Março 2025</h3>
+                      <p className="text-xs text-[#1B4158]/45 mt-0.5">Empresa ABC Ltda · CNPJ 00.000.000/0001-00</p>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse-dot" />
-                      <span className="text-xs text-white/35">Atualizado há 2h</span>
+                      <span className="text-xs text-[#1B4158]/45">Atualizado há 2h</span>
                     </div>
                   </div>
 
@@ -192,21 +192,21 @@ export default function Platform() {
                       { l: "Caixa", v: "R$ 1,12M", c: "-5,2%", pos: false },
                       { l: "Inadimplência", v: "3,2%", c: "-0,8pp", pos: true },
                     ].map((k, i) => (
-                      <div key={i} className="rounded-xl p-3 border border-white/6" style={{ background: "#343438" }}>
-                        <div className="text-[9px] text-white/40 mb-1.5">{k.l}</div>
-                        <div style={{ fontFamily: "'Playfair Display', serif" }} className="text-base font-bold text-white">{k.v}</div>
+                      <div key={i} className="rounded-xl p-3 border border-[#1B4158]/8" style={{ background: "#343438" }}>
+                        <div className="text-[9px] text-[#1B4158]/50 mb-1.5">{k.l}</div>
+                        <div style={{ fontFamily: "'Playfair Display', serif" }} className="text-base font-bold text-[#1B4158]">{k.v}</div>
                         <div className={`text-[9px] mt-1 ${k.pos ? "text-[#10b981]" : "text-[#d97706]"}`}>{k.c}</div>
                       </div>
                     ))}
                   </div>
 
                   {/* Status list */}
-                  <div className="rounded-xl border border-white/6 p-4" style={{ background: "#343438" }}>
+                  <div className="rounded-xl border border-[#1B4158]/8 p-4" style={{ background: "#343438" }}>
                     <div className="text-xs font-medium text-white/70 mb-3">Status de Processamento — Mar/25</div>
                     <div className="space-y-2">
                       {statusItems.map((s, i) => (
                         <div key={i} className="flex items-center justify-between">
-                          <span className="text-xs text-white/50">{s.label}</span>
+                          <span className="text-xs text-[#1B4158]/60">{s.label}</span>
                           <span className="text-[10px] px-2 py-0.5 rounded-full font-medium" style={{ background: `${s.color}18`, color: s.color }}>{s.status}</span>
                         </div>
                       ))}
@@ -223,7 +223,7 @@ export default function Platform() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-14">
-            <h2 style={{ fontFamily: "'Playfair Display', serif" }} className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            <h2 style={{ fontFamily: "'Playfair Display', serif" }} className="text-3xl sm:text-4xl font-bold text-[#1B4158] mb-4">
               Tudo que sua empresa precisa
               <br />
               <span className="gradient-text">em um só lugar</span>
@@ -237,13 +237,13 @@ export default function Platform() {
                   className="p-6 rounded-2xl border border-white/7 bg-[#343438] h-full group"
                   style={{ transition: "all 0.3s ease" }}
                   onMouseEnter={(e) => { e.currentTarget.style.borderColor = `${f.color}35`; e.currentTarget.style.transform = "translateY(-3px)"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)"; e.currentTarget.style.transform = "translateY(0)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(27,65,88,0.09)"; e.currentTarget.style.transform = "translateY(0)"; }}
                 >
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ background: `${f.color}15` }}>
                     {f.icon}
                   </div>
-                  <h3 style={{ fontFamily: "'Playfair Display', serif" }} className="text-base font-semibold text-white mb-2">{f.title}</h3>
-                  <p className="text-sm text-white/50 leading-relaxed">{f.description}</p>
+                  <h3 style={{ fontFamily: "'Playfair Display', serif" }} className="text-base font-semibold text-[#1B4158] mb-2">{f.title}</h3>
+                  <p className="text-sm text-[#1B4158]/60 leading-relaxed">{f.description}</p>
                 </div>
               </FadeIn>
             ))}
@@ -258,12 +258,12 @@ export default function Platform() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#0d9488]/30 bg-[#0d9488]/10 text-[#0d9488] text-xs font-medium mb-4">
               O AGENTE INTERNO
             </div>
-            <h2 style={{ fontFamily: "'Playfair Display', serif" }} className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            <h2 style={{ fontFamily: "'Playfair Display', serif" }} className="text-3xl sm:text-4xl font-bold text-[#1B4158] mb-4">
               Tecnologia que trabalha
               <br />
               <span className="gradient-text">enquanto você decide</span>
             </h2>
-            <p className="text-white/50 max-w-xl mx-auto">
+            <p className="text-[#1B4158]/60 max-w-xl mx-auto">
               Nosso agente interno executa o trabalho pesado de leitura, classificação e estruturação dos dados. A DT Finance entra com a inteligência analítica e estratégica.
             </p>
           </FadeIn>
@@ -279,8 +279,8 @@ export default function Platform() {
                   <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5" style={{ background: `${item.color}15` }}>
                     {item.icon}
                   </div>
-                  <h3 style={{ fontFamily: "'Playfair Display', serif" }} className="text-lg font-semibold text-white mb-3">{item.title}</h3>
-                  <p className="text-sm text-white/50 leading-relaxed">{item.desc}</p>
+                  <h3 style={{ fontFamily: "'Playfair Display', serif" }} className="text-lg font-semibold text-[#1B4158] mb-3">{item.title}</h3>
+                  <p className="text-sm text-[#1B4158]/60 leading-relaxed">{item.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -292,12 +292,12 @@ export default function Platform() {
       <section className="py-20 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-14">
-            <h2 style={{ fontFamily: "'Playfair Display', serif" }} className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            <h2 style={{ fontFamily: "'Playfair Display', serif" }} className="text-3xl sm:text-4xl font-bold text-[#1B4158] mb-4">
               Planos que crescem
               <br />
               <span className="gradient-text">com a sua empresa</span>
             </h2>
-            <p className="text-white/50 max-w-lg mx-auto">Cada empresa tem uma necessidade diferente. Nossos planos são desenhados para atender desde PMEs até grupos empresariais complexos.</p>
+            <p className="text-[#1B4158]/60 max-w-lg mx-auto">Cada empresa tem uma necessidade diferente. Nossos planos são desenhados para atender desde PMEs até grupos empresariais complexos.</p>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -313,13 +313,13 @@ export default function Platform() {
                     </div>
                   )}
                   <div className="mb-5">
-                    <h3 style={{ fontFamily: "'Playfair Display', serif" }} className="text-xl font-bold text-white mb-1">{plan.name}</h3>
-                    <p className="text-sm text-white/45 mb-3">{plan.description}</p>
+                    <h3 style={{ fontFamily: "'Playfair Display', serif" }} className="text-xl font-bold text-[#1B4158] mb-1">{plan.name}</h3>
+                    <p className="text-sm text-[#1B4158]/55 mb-3">{plan.description}</p>
                     <div className="text-sm font-medium" style={{ color: plan.color }}>{plan.price}</div>
                   </div>
                   <ul className="space-y-2.5 flex-1 mb-8">
                     {plan.features.map((f, j) => (
-                      <li key={j} className="flex items-start gap-2.5 text-sm text-white/65">
+                      <li key={j} className="flex items-start gap-2.5 text-sm text-[#1B4158]/78">
                         <Check size={14} className="mt-0.5 flex-shrink-0" style={{ color: plan.color }} />
                         {f}
                       </li>
@@ -327,7 +327,7 @@ export default function Platform() {
                   </ul>
                   <button
                     onClick={() => { navigateTo("/"); setTimeout(() => document.querySelector("#cta")?.scrollIntoView({ behavior: "smooth" }), 400); }}
-                    className={`w-full py-3 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 ${plan.highlighted ? "btn-gold" : "border border-white/15 text-white/70 hover:bg-white/5"}`}
+                    className={`w-full py-3 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 ${plan.highlighted ? "btn-gold" : "border border-white/15 text-white/70 hover:bg-[#1B4158]/5"}`}
                   >
                     Solicitar Proposta <ArrowRight size={14} />
                   </button>
@@ -342,10 +342,10 @@ export default function Platform() {
       <section className="py-20 border-t border-white/5">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <FadeIn>
-            <h2 style={{ fontFamily: "'Playfair Display', serif" }} className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            <h2 style={{ fontFamily: "'Playfair Display', serif" }} className="text-3xl sm:text-4xl font-bold text-[#1B4158] mb-4">
               Pronto para ver a plataforma <span className="gradient-text">funcionando?</span>
             </h2>
-            <p className="text-white/50 mb-8">Acesse a demo visual e explore todas as funcionalidades sem precisar de login.</p>
+            <p className="text-[#1B4158]/60 mb-8">Acesse a demo visual e explore todas as funcionalidades sem precisar de login.</p>
             <button onClick={() => navigateTo("/dashboard")} className="btn-gold px-10 py-4 rounded-xl text-base font-semibold">
               Acessar Demo da Plataforma →
             </button>

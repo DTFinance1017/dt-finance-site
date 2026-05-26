@@ -1,4 +1,4 @@
-import { useModal } from "@/context/ModalContext";
+﻿import { useModal } from "@/context/ModalContext";
 import { useLocation } from "wouter";
 
 export function Footer() {
@@ -12,7 +12,7 @@ export function Footer() {
 
   return (
     <>
-      <footer className="border-t border-white/6 bg-[#0a0a0f] pt-16 pb-8">
+      <footer className="border-t border-[#1B4158]/8 bg-[#0a0a0f] pt-16 pb-8">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-14">
@@ -27,21 +27,21 @@ export function Footer() {
                   DT Finance
                 </span>
               </div>
-              <p className="text-sm text-white/30 max-w-xs leading-relaxed mb-6">
+              <p className="text-sm text-[#1B4158]/38 max-w-xs leading-relaxed mb-6">
                 CFO as a Service para PMEs. Estruturamos a gestão financeira da sua empresa com método, dados e presença executiva contínua.
               </p>
 
               <div className="flex flex-wrap items-center gap-4">
                 <img src="/selo-cfp.png" alt="CFP® — Certified Financial Planner" className="h-12 w-auto object-contain opacity-60" />
                 <img src="/selo-oab.png" alt="OAB — Direito Empresarial" className="h-12 w-auto object-contain opacity-60" />
-                <span className="text-xs px-2.5 py-1 rounded-lg border border-white/8 text-white/25">
+                <span className="text-xs px-2.5 py-1 rounded-lg border border-[#1B4158]/10 text-[#1B4158]/32">
                   São Paulo, SP
                 </span>
               </div>
             </div>
 
             <div className="lg:col-span-2">
-              <div className="text-xs font-semibold text-white/20 uppercase tracking-widest mb-5">
+              <div className="text-xs font-semibold text-[#1B4158]/27 uppercase tracking-widest mb-5">
                 Soluções
               </div>
               <ul className="space-y-3">
@@ -56,7 +56,7 @@ export function Footer() {
                   <li key={item}>
                     <button
                       onClick={() => goTo("/solucoes")}
-                      className="text-sm text-white/28 hover:text-white/55 transition-colors duration-200 text-left"
+                      className="text-sm text-white/28 hover:text-[#1B4158]/65 transition-colors duration-200 text-left"
                     >
                       {item}
                     </button>
@@ -66,7 +66,7 @@ export function Footer() {
             </div>
 
             <div className="lg:col-span-3">
-              <div className="text-xs font-semibold text-white/20 uppercase tracking-widest mb-5">
+              <div className="text-xs font-semibold text-[#1B4158]/27 uppercase tracking-widest mb-5">
                 Empresa
               </div>
               <ul className="space-y-3 mb-8">
@@ -79,7 +79,7 @@ export function Footer() {
                   <li key={item.label}>
                     <button
                       onClick={() => goTo(item.path)}
-                      className="text-sm text-white/28 hover:text-white/55 transition-colors duration-200 text-left"
+                      className="text-sm text-white/28 hover:text-[#1B4158]/65 transition-colors duration-200 text-left"
                     >
                       {item.label}
                     </button>
@@ -88,10 +88,10 @@ export function Footer() {
               </ul>
 
               <div className="space-y-2 mb-7">
-                <div className="text-xs font-semibold text-white/20 uppercase tracking-widest mb-3">
+                <div className="text-xs font-semibold text-[#1B4158]/27 uppercase tracking-widest mb-3">
                   Contato
                 </div>
-                <a href="mailto:contato@dtfinance.com.br" className="block text-sm text-white/28 hover:text-white/55 transition-colors">
+                <a href="mailto:contato@dtfinance.com.br" className="block text-sm text-white/28 hover:text-[#1B4158]/65 transition-colors">
                   contato@dtfinance.com.br
                 </a>
               </div>

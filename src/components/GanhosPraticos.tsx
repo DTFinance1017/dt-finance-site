@@ -1,4 +1,4 @@
-import { FadeIn } from "./FadeIn";
+﻿import { FadeIn } from "./FadeIn";
 import { DollarSign, Calendar, Search, ShieldCheck, BarChart3 } from "lucide-react";
 
 const featured = {
@@ -39,23 +39,23 @@ const ganhos = [
 
 export function GanhosPraticos() {
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-[#0d0d12] relative overflow-hidden">
+    <section className="py-16 md:py-24 lg:py-32 bg-white relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative">
 
         {/* Section header */}
         <FadeIn className="max-w-2xl mb-12 lg:mb-14">
-          <div className="text-xs font-semibold text-white/25 uppercase tracking-widest mb-4">
+          <div className="text-xs font-semibold text-[#1B4158]/32 uppercase tracking-widest mb-4">
             O QUE VOCÊ GANHA NA PRÁTICA
           </div>
           <h2
             style={{ fontFamily: "'Playfair Display', serif" }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1B4158]"
           >
             Resultado concreto,
             <br />
             <span className="gradient-text">não promessa vaga</span>
           </h2>
-          <p className="mt-4 text-white/50 text-base lg:text-lg max-w-lg">
+          <p className="mt-4 text-[#1B4158]/60 text-base lg:text-lg max-w-lg">
             Tudo o que entregamos tem nome, data e impacto mensurável na operação da sua empresa.
           </p>
         </FadeIn>
@@ -68,24 +68,24 @@ export function GanhosPraticos() {
             <div
               className="h-full p-7 lg:p-9 rounded-2xl border flex flex-col"
               style={{
-                borderColor: "rgba(255,255,255,0.06)",
-                background: "#131318",
+                borderColor: "rgba(27,65,88,0.08)",
+                background: "#f5f7f9",
               }}
             >
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 flex-shrink-0 bg-white/4 text-white/40"
+                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 flex-shrink-0 bg-[#1B4158]/4 text-[#1B4158]/50"
               >
                 {featured.icon}
               </div>
 
               <h3
                 style={{ fontFamily: "'Playfair Display', serif" }}
-                className="text-xl lg:text-2xl font-bold text-white mb-4"
+                className="text-xl lg:text-2xl font-bold text-[#1B4158] mb-4"
               >
                 {featured.title}
               </h3>
 
-              <p className="text-white/55 leading-relaxed mb-8 flex-1">
+              <p className="text-[#1B4158]/65 leading-relaxed mb-8 flex-1">
                 {featured.description}
               </p>
 
@@ -99,22 +99,22 @@ export function GanhosPraticos() {
                 <div
                   className="p-6 rounded-2xl border h-full cursor-default"
                   style={{
-                    borderColor: "rgba(255,255,255,0.06)",
-                    background: "#131318",
+                    borderColor: "rgba(27,65,88,0.08)",
+                    background: "#f5f7f9",
                   }}
                 >
                   <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-5 bg-white/4 text-white/40"
+                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-5 bg-[#1B4158]/4 text-[#1B4158]/50"
                   >
                     {g.icon}
                   </div>
                   <h3
                     style={{ fontFamily: "'Playfair Display', serif" }}
-                    className="text-base font-semibold text-white mb-2.5"
+                    className="text-base font-semibold text-[#1B4158] mb-2.5"
                   >
                     {g.title}
                   </h3>
-                  <p className="text-sm text-white/50 leading-relaxed">{g.description}</p>
+                  <p className="text-sm text-[#1B4158]/60 leading-relaxed">{g.description}</p>
                 </div>
               </FadeIn>
             ))}

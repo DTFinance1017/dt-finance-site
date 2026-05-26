@@ -1,4 +1,4 @@
-import { FadeIn } from "./FadeIn";
+﻿import { FadeIn } from "./FadeIn";
 import { AlertTriangle, HelpCircle, Shuffle, FileSpreadsheet, Gauge, TrendingDown } from "lucide-react";
 
 const dores = [
@@ -36,15 +36,15 @@ const dores = [
 
 export function DorSection() {
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-[#0d0d12] relative">
+    <section className="py-16 md:py-24 lg:py-32 bg-white relative">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative">
 
         <div className="flex flex-col md:flex-row md:items-end md:gap-16 mb-12 md:mb-14">
           <FadeIn className="md:w-1/2 mb-8 md:mb-0">
-            <p className="text-xs font-semibold text-white/25 uppercase tracking-widest mb-5">Você se identifica?</p>
+            <p className="text-xs font-semibold text-[#1B4158]/32 uppercase tracking-widest mb-5">Você se identifica?</p>
             <h2
               style={{ fontFamily: "'Playfair Display', serif" }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1B4158] leading-tight"
             >
               A maioria das PMEs opera
               <br />
@@ -53,16 +53,16 @@ export function DorSection() {
           </FadeIn>
 
           <FadeIn delay={80} className="md:w-1/2">
-            <p className="text-white/40 text-base lg:text-lg leading-relaxed mb-4">
+            <p className="text-[#1B4158]/50 text-base lg:text-lg leading-relaxed mb-4">
               Não por falta de esforço — por falta de estrutura. E isso tem consequências reais no crescimento e na rentabilidade do negócio.
             </p>
-            <div className="p-5 rounded-xl border border-white/6 bg-[#131318]">
-              <p style={{ fontFamily: "'Playfair Display', serif" }} className="text-base text-white/75 font-semibold mb-1">
+            <div className="p-5 rounded-xl border border-[#1B4158]/8 bg-[#f5f7f9]">
+              <p style={{ fontFamily: "'Playfair Display', serif" }} className="text-base text-[#1B4158]/90 font-semibold mb-1">
                 O resultado?
               </p>
-              <p className="text-white/40 text-sm leading-relaxed">
+              <p className="text-[#1B4158]/50 text-sm leading-relaxed">
                 Margem sendo consumida sem que ninguém perceba. Risco de caixa que aparece de surpresa. Decisões que custam o que poderiam render.{" "}
-                <span className="text-white/65 font-medium">Isso tem solução.</span>
+                <span className="text-[#1B4158]/78 font-medium">Isso tem solução.</span>
               </p>
             </div>
           </FadeIn>
@@ -71,12 +71,12 @@ export function DorSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {dores.map((d, i) => (
             <FadeIn key={i} delay={i * 60}>
-              <div className="p-5 lg:p-6 rounded-xl border border-white/6 bg-[#131318] h-full">
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-4 bg-white/4 text-white/30">
+              <div className="p-5 lg:p-6 rounded-xl border border-[#1B4158]/8 bg-[#f5f7f9] h-full">
+                <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-4 bg-[#1B4158]/4 text-[#1B4158]/38">
                   {d.icon}
                 </div>
-                <h3 className="text-sm font-semibold text-white/80 mb-2 leading-snug">{d.title}</h3>
-                <p className="text-sm text-white/35 leading-relaxed">{d.description}</p>
+                <h3 className="text-sm font-semibold text-[#1B4158] mb-2 leading-snug">{d.title}</h3>
+                <p className="text-sm text-[#1B4158]/45 leading-relaxed">{d.description}</p>
               </div>
             </FadeIn>
           ))}
