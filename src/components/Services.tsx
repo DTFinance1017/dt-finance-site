@@ -80,7 +80,7 @@ export function Services() {
                   <div className="space-y-1.5">
                     {service.entregaveis.map((e, j) => (
                       <div key={j} className="flex items-center gap-2">
-                        <div className="w-1 h-1 rounded-full flex-shrink-0 bg-[#c8a84a]/50" />
+                        <div className="w-1 h-1 rounded-full flex-shrink-0 bg-[#B5891A]/60" />
                         <span className="text-xs text-white/35">{e}</span>
                       </div>
                     ))}

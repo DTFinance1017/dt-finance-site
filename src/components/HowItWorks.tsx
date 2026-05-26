@@ -71,7 +71,7 @@ export function HowItWorks() {
               <div key={i} className="flex items-center gap-2">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 border border-white/8 bg-white/3">
                   <span
-                    style={{ fontFamily: "'Playfair Display', serif", color: "#c8a84a", fontSize: "1.4rem", fontWeight: 700, lineHeight: 1 }}
+                    style={{ fontFamily: "'Playfair Display', serif", color: "#B5891A", fontSize: "1.4rem", fontWeight: 700, lineHeight: 1 }}
                   >
                     {s.letter}
                   </span>
@@ -95,7 +95,7 @@ export function HowItWorks() {
                 </div>
 
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-bold text-[#c8a84a]/70">{step.letter}</span>
+                  <span className="text-xs font-bold text-[#B5891A]/80">{step.letter}</span>
                   <span className="text-xs text-white/20">{`0${i + 1}`}</span>
                 </div>
 

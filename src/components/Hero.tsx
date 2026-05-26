@@ -35,7 +35,7 @@ export function Hero() {
           >
             Clareza financeira<br />
             para decisões<br />
-            <span className="gradient-text">mais inteligentes.</span>
+            mais inteligentes.
           </h1>
 
           <p className="text-base lg:text-xl text-white/45 leading-relaxed mb-8 max-w-2xl animate-fade-in">

@@ -1,0 +1,5 @@
+{
+  "name": "dt-finance",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
+}

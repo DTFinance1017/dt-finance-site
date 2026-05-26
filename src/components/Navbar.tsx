@@ -67,7 +67,7 @@ export function Navbar() {
                     onClick={() => navTo(link.path)}
                     className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
                       active
-                        ? "text-[#c8a84a] bg-white/4"
+                        ? "text-[#B5891A] bg-white/4"
                         : "text-white/45 hover:text-white/75 hover:bg-white/4"
                     }`}
                   >
@@ -105,7 +105,7 @@ export function Navbar() {
               {links.map((link) => {
                 const active = location === link.path;
                 return (
-                  <button key={link.label} onClick={() => navTo(link.path)} className={`block w-full text-left py-2.5 px-3 text-sm font-medium transition-colors rounded-lg hover:bg-white/4 ${active ? "text-[#c8a84a]" : "text-white/50 hover:text-white/75"}`}>
+                  <button key={link.label} onClick={() => navTo(link.path)} className={`block w-full text-left py-2.5 px-3 text-sm font-medium transition-colors rounded-lg hover:bg-white/4 ${active ? "text-[#B5891A]" : "text-white/50 hover:text-white/75"}`}>
                     {link.label}
                   </button>
                 );

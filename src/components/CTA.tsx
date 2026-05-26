@@ -102,7 +102,7 @@ export function CTA() {
                     >
                       "Unimos direito, tecnologia e finanças para entregar algo que o mercado ainda não tinha: um CFO completo, acessível e orientado a dados."
                     </p>
-                    <span className="text-xs text-[#c8a84a]/50 font-medium">— Fundadores da DT Finance</span>
+                    <span className="text-xs text-[#B5891A]/60 font-medium">— Fundadores da DT Finance</span>
                   </div>
 
                   <div className="flex flex-wrap gap-2 mt-6">
