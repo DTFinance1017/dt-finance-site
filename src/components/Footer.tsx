@@ -115,7 +115,6 @@ export function Footer() {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]/60 animate-pulse-dot" />
                 <span className="text-xs text-white/18">Sistema operacional</span>
               </div>
-              <span className="text-xs text-white/12">CNPJ em processo de abertura</span>
             </div>
           </div>
 
