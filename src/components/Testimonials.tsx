@@ -1,7 +1,7 @@
-﻿import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FadeIn } from "./FadeIn";
 
-// NOTE: Esses depoimentos são modelos estruturais — substituir pelos dados reais dos clientes antes de publicar
+// NOTE: Substituir pelos dados reais dos clientes antes de publicar
 const testimonials = [
   {
     quote:
@@ -32,7 +32,7 @@ const testimonials = [
   },
 ];
 
-// NOTE: Substituir pelos nomes/logos reais das empresas clientes
+// NOTE: Substituir pelos nomes/logos reais
 const clientLogos = ["Construtora A&F", "Clínicas Bem Estar", "TechParts", "Grupo Valore", "LexisCorp", "OrchestraMS"];
 
 export function Testimonials() {
@@ -68,12 +68,9 @@ export function Testimonials() {
   const t = testimonials[active];
 
   return (
-    <section
-      className="py-20 md:py-28 relative overflow-hidden"
-      style={{ background: "#ffffff" }}
-    >
-
+    <section className="py-20 md:py-28 relative overflow-hidden" style={{ background: "#f5f7f9" }}>
       <div className="relative max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+
         <FadeIn className="text-center mb-12">
           <div className="text-xs font-semibold text-[#1B4158]/32 uppercase tracking-widest mb-5">
             RESULTADOS REAIS
@@ -84,7 +81,7 @@ export function Testimonials() {
           >
             O que dizem os nossos clientes
           </h2>
-          <div className="mx-auto h-px w-12 rounded-full bg-white/10" />
+          <div className="mx-auto h-px w-12 rounded-full bg-[#1B4158]/10" />
         </FadeIn>
 
         {/* Card */}
@@ -92,21 +89,21 @@ export function Testimonials() {
           <div
             className="relative rounded-[20px] p-8 sm:p-10"
             style={{
-              background: "rgba(27,65,88,0.06)",
-              border: "1px solid rgba(27,65,88,0.12)",
-              backdropFilter: "blur(12px)",
+              background: "#ffffff",
+              border: "1px solid rgba(27,65,88,0.10)",
+              boxShadow: "0 4px 28px rgba(27,65,88,0.07)",
               transition: "opacity 0.28s ease, transform 0.28s ease",
               opacity: fading ? 0 : 1,
-              transform: fading ? "translateX(14px)" : "translateX(0)",
+              transform: fading ? "translateX(12px)" : "translateX(0)",
             }}
           >
-            {/* Decorative quote mark */}
+            {/* Marca d'água decorativa */}
             <div
-              className="absolute top-3 left-7 pointer-events-none select-none leading-none"
+              className="absolute top-3 left-7 pointer-events-none select-none"
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontSize: 96,
-                color: "rgba(240,192,64,0.18)",
+                color: "rgba(181,137,26,0.18)",
                 lineHeight: 1,
               }}
             >
@@ -115,30 +112,26 @@ export function Testimonials() {
 
             <p
               className="relative text-lg sm:text-xl leading-relaxed mb-8 z-10"
-              style={{
-                color: "rgba(255,255,255,0.88)",
-                fontStyle: "italic",
-                fontWeight: 300,
-              }}
+              style={{ color: "rgba(27,65,88,0.82)", fontStyle: "italic", fontWeight: 400 }}
             >
               {t.quote}
             </p>
 
             <div className="flex items-center gap-4">
               <div
-                className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-[#1B4158] font-bold text-sm tracking-wide"
+                className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-sm tracking-wide"
                 style={{
-                  background: "#1e1e28",
+                  background: "rgba(181,137,26,0.12)",
+                  border: "1px solid rgba(181,137,26,0.22)",
+                  color: "#B5891A",
                 }}
               >
                 {t.initials}
               </div>
               <div>
                 <div className="text-[#1B4158] font-semibold text-sm">{t.name}</div>
-                <div className="text-[#f0c040] text-xs font-medium">{t.role}</div>
-                <div className="text-[#1B4158]/50 text-xs">
-                  {t.company} · {t.extra}
-                </div>
+                <div className="text-[#B5891A] text-xs font-medium">{t.role}</div>
+                <div className="text-[#1B4158]/45 text-xs">{t.company} · {t.extra}</div>
               </div>
             </div>
           </div>
@@ -153,29 +146,26 @@ export function Testimonials() {
               className="h-2 rounded-full cursor-pointer transition-all duration-300"
               style={{
                 width: i === active ? 28 : 8,
-                background:
-                  i === active ? "#f0c040" : "rgba(27,65,88,0.25)",
+                background: i === active ? "#B5891A" : "rgba(27,65,88,0.20)",
               }}
             />
           ))}
         </div>
 
-        {/* Client logos */}
+        {/* Logos */}
         <FadeIn delay={100} className="text-center">
-          <p className="text-xs uppercase tracking-widest text-white/28 mb-5 font-medium">
+          <p className="text-xs uppercase tracking-widest text-[#1B4158]/35 mb-5 font-medium">
             Empresas que confiam na DT Finance
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
             {clientLogos.map((logo, i) => (
-              <span
-                key={i}
-                className="text-sm font-semibold text-white/28 tracking-wide"
-              >
+              <span key={i} className="text-sm font-semibold text-[#1B4158]/38 tracking-wide">
                 {logo}
               </span>
             ))}
           </div>
         </FadeIn>
+
       </div>
     </section>
   );

@@ -88,7 +88,7 @@ export function HowItWorks() {
           {steps.map((step, i) => (
             <FadeIn key={i} delay={i * 100}>
               <div
-                className="relative flex flex-col p-6 rounded-xl h-full border border-[#1B4158]/8 bg-[#f5f7f9]"
+                className="card-lift relative flex flex-col p-6 rounded-xl h-full border border-[#1B4158]/8 bg-[#f5f7f9]"
               >
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-5 bg-[#1B4158]/4 text-[#1B4158]/45 flex-shrink-0">
                   {step.icon}
@@ -101,7 +101,7 @@ export function HowItWorks() {
 
                 <h3
                   style={{ fontFamily: "'Playfair Display', serif" }}
-                  className="text-lg font-bold text-white/85 mb-1"
+                  className="text-lg font-bold text-[#1B4158] mb-1"
                 >
                   {step.title}
                 </h3>

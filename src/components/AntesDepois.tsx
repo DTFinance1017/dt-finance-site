@@ -40,7 +40,7 @@ export function AntesDepois() {
           {/* Antes */}
           <FadeIn>
             <div
-              className="rounded-2xl border p-7 h-full"
+              className="card-lift rounded-2xl border p-7 h-full"
               style={{ borderColor: "rgba(27,65,88,0.09)", background: "#f5f7f9" }}
             >
               <div className="flex items-center gap-3 mb-6">
@@ -67,14 +67,14 @@ export function AntesDepois() {
           {/* Depois */}
           <FadeIn delay={120}>
             <div
-              className="rounded-2xl border p-7 h-full"
+              className="card-lift rounded-2xl border p-7 h-full"
               style={{ borderColor: "rgba(27,65,88,0.13)", background: "#f5f7f9" }}
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "rgba(27,65,88,0.10)" }}>
                   <Check size={16} className="text-[#1B4158]/72" />
                 </div>
-                <span style={{ fontFamily: "'Playfair Display', serif" }} className="text-lg font-bold text-white/85">
+                <span style={{ fontFamily: "'Playfair Display', serif" }} className="text-lg font-bold text-[#1B4158]">
                   DEPOIS — Com DT Finance
                 </span>
               </div>

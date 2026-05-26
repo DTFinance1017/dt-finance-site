@@ -71,8 +71,8 @@ export function DorSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {dores.map((d, i) => (
             <FadeIn key={i} delay={i * 60}>
-              <div className="p-5 lg:p-6 rounded-xl border border-[#1B4158]/8 bg-[#f5f7f9] h-full">
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-4 bg-[#1B4158]/4 text-[#1B4158]/38">
+              <div className="card-lift p-5 lg:p-6 rounded-xl border border-[#1B4158]/8 bg-[#f5f7f9] h-full">
+                <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-4 bg-[#1B4158]/5 text-[#1B4158]/50">
                   {d.icon}
                 </div>
                 <h3 className="text-sm font-semibold text-[#1B4158] mb-2 leading-snug">{d.title}</h3>

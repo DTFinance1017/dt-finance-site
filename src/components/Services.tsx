@@ -62,14 +62,14 @@ export function Services() {
           {services.map((service, i) => (
             <FadeIn key={i} delay={i * 80}>
               <div
-                className="group h-full p-6 rounded-xl border border-[#1B4158]/8 bg-[#f5f7f9] flex flex-col transition-colors duration-200 hover:border-[#1B4158]/15"
+                className="card-lift group h-full p-6 rounded-xl border border-[#1B4158]/8 bg-[#f5f7f9] flex flex-col"
               >
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center text-lg mb-5 bg-[#1B4158]/4 text-[#1B4158]/50">
                   {service.icon}
                 </div>
                 <h3
                   style={{ fontFamily: "'Playfair Display', serif" }}
-                  className="text-lg font-semibold text-white/85 mb-3"
+                  className="text-lg font-semibold text-[#1B4158] mb-3"
                 >
                   {service.title}
                 </h3>

@@ -130,7 +130,7 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
           background: "#f5f7f9",
           borderRadius: 20,
           border: "1px solid rgba(27,65,88,0.12)",
-          boxShadow: "0 32px 80px rgba(0,0,0,0.5)",
+          boxShadow: "0 24px 64px rgba(27,65,88,0.22)",
           animation: "modal-in 350ms cubic-bezier(0.16,1,0.3,1) both",
           maxHeight: "92vh",
           overflow: "hidden",
@@ -318,7 +318,7 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
                 className="flex items-center gap-1.5 text-sm mb-5 transition-colors"
                 style={{ color: "rgba(27,65,88,0.50)" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(27,65,88,0.80)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.4)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(27,65,88,0.50)")}
               >
                 <ArrowLeft size={14} /> Voltar
               </button>

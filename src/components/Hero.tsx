@@ -21,7 +21,10 @@ export function Hero() {
 
   return (
     <>
-      <section className="relative min-h-screen flex flex-col overflow-hidden bg-white">
+      <section
+        className="relative min-h-screen flex flex-col overflow-hidden"
+        style={{ background: "radial-gradient(ellipse 85% 45% at 50% 0%, rgba(181,137,26,0.06) 0%, transparent 60%), #ffffff" }}
+      >
 
         <div className="relative flex-1 flex flex-col items-center justify-center text-center max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 w-full pt-24 pb-8">
 

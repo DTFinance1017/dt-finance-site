@@ -14,6 +14,24 @@ export default defineConfig({
   build: {
     outDir: "dist",
     emptyOutDir: true,
+    sourcemap: false,
+    chunkSizeWarningLimit: 700,
+    rollupOptions: {
+      output: {
+        // Separa recharts/d3 (dashboard) do bundle do landing page
+        manualChunks: (id) => {
+          if (id.includes("node_modules/recharts") || id.includes("node_modules/d3-")) {
+            return "charts";
+          }
+          if (id.includes("node_modules/react") || id.includes("node_modules/react-dom")) {
+            return "react-vendor";
+          }
+          if (id.includes("node_modules/")) {
+            return "vendor";
+          }
+        },
+      },
+    },
   },
   server: {
     port: 5173,

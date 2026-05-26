@@ -27,7 +27,7 @@ export function CasoIlustrativo() {
           {/* Situação inicial */}
           <FadeIn>
             <div
-              className="rounded-2xl border p-6 h-full"
+              className="card-lift rounded-2xl border p-6 h-full"
               style={{ borderColor: "rgba(27,65,88,0.09)", background: "#f5f7f9" }}
             >
               <div className="flex items-center gap-2 mb-5">
@@ -63,7 +63,7 @@ export function CasoIlustrativo() {
           {/* O que foi feito */}
           <FadeIn delay={100}>
             <div
-              className="rounded-2xl border p-6 h-full"
+              className="card-lift rounded-2xl border p-6 h-full"
               style={{ borderColor: "rgba(27,65,88,0.11)", background: "#f5f7f9" }}
             >
               <div className="flex items-center gap-2 mb-5">
@@ -100,7 +100,7 @@ export function CasoIlustrativo() {
           {/* Resultados */}
           <FadeIn delay={200}>
             <div
-              className="rounded-2xl border p-6 h-full"
+              className="card-lift rounded-2xl border p-6 h-full"
               style={{ borderColor: "rgba(27,65,88,0.13)", background: "#f5f7f9" }}
             >
               <div className="flex items-center gap-2 mb-5">
@@ -153,7 +153,7 @@ export function CasoIlustrativo() {
                     <div className="text-[10px] text-[#1B4158]/45 uppercase tracking-wide mb-1">{item.label}</div>
                     <div
                       style={{ fontFamily: "'Playfair Display', serif" }}
-                      className="text-base font-bold text-white/85"
+                      className="text-base font-bold text-[#1B4158]"
                     >
                       {item.value}
                     </div>
