@@ -67,7 +67,7 @@ export function QuemSomos() {
               {/* Overlay text */}
               <div className="absolute bottom-0 left-0 p-7">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1B4158]/12 mb-3">
-                  <span className="text-xs font-medium text-[#1B4158]/45 uppercase tracking-widest">Nossa Equipe</span>
+                  <span className="text-xs font-medium text-[#1B4158]/68 uppercase tracking-widest">Nossa Equipe</span>
                 </div>
                 <p
                   style={{ fontFamily: "'Playfair Display', serif" }}
@@ -89,7 +89,7 @@ export function QuemSomos() {
               Quem está por trás da{" "}
               <span className="gradient-text">DT Finance</span>
             </h2>
-            <p className="text-[#1B4158]/65 text-base lg:text-lg leading-relaxed mb-8 max-w-lg">
+            <p className="text-[#1B4158]/82 text-base lg:text-lg leading-relaxed mb-8 max-w-lg">
               Uma sociedade construída sobre mais de 15 anos de experiência real no mercado financeiro e jurídico — unindo dados, estratégia e segurança para o seu negócio.
             </p>
 
@@ -103,7 +103,7 @@ export function QuemSomos() {
               ].map((label, i) => (
                 <span
                   key={i}
-                  className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-[#1B4158]/10 bg-[#1B4158]/4 text-[#1B4158]/50"
+                  className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-[#1B4158]/10 bg-[#1B4158]/4 text-[#1B4158]/72"
                 >
                   {label}
                 </span>
@@ -146,7 +146,7 @@ export function QuemSomos() {
                       {socio.titulo}
                     </h3>
                     <span
-                      className="text-xs font-medium px-2.5 py-1 rounded-full border border-[#1B4158]/10 bg-[#1B4158]/4 text-[#1B4158]/50"
+                      className="text-xs font-medium px-2.5 py-1 rounded-full border border-[#1B4158]/10 bg-[#1B4158]/4 text-[#1B4158]/72"
                     >
                       {socio.certificacao}
                     </span>
@@ -156,13 +156,13 @@ export function QuemSomos() {
                   </div>
                 </div>
 
-                <p className="text-[#1B4158]/60 text-sm leading-relaxed">{socio.descricao}</p>
+                <p className="text-[#1B4158]/78 text-sm leading-relaxed">{socio.descricao}</p>
 
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {socio.tags.map((tag, j) => (
                     <span
                       key={j}
-                      className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-[#1B4158]/10 bg-[#1B4158]/4 text-[#1B4158]/50"
+                      className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg border border-[#1B4158]/10 bg-[#1B4158]/4 text-[#1B4158]/72"
                     >
                       <span className="text-[#1B4158]/38">{tag.icon}</span>
                       {tag.label}

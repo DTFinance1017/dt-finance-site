@@ -59,7 +59,7 @@ export function HowItWorks() {
             <br />
             Nós temos o método.
           </h2>
-          <p className="text-[#1B4158]/45 max-w-lg mx-auto text-sm leading-relaxed">
+          <p className="text-[#1B4158]/68 max-w-lg mx-auto text-sm leading-relaxed">
             O Método DOIA transforma a realidade financeira de empresas que crescem sem estrutura — com etapas claras, entregáveis definidos e acompanhamento contínuo.
           </p>
         </FadeIn>
@@ -90,7 +90,7 @@ export function HowItWorks() {
               <div
                 className="card-lift relative flex flex-col p-6 rounded-xl h-full border border-[#1B4158]/8 bg-[#f5f7f9]"
               >
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-5 bg-[#1B4158]/4 text-[#1B4158]/45 flex-shrink-0">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-5 bg-[#1B4158]/4 text-[#1B4158]/68 flex-shrink-0">
                   {step.icon}
                 </div>
 
@@ -105,17 +105,17 @@ export function HowItWorks() {
                 >
                   {step.title}
                 </h3>
-                <p className="text-xs font-medium text-[#1B4158]/45 mb-3">{step.subtitle}</p>
-                <p className="text-sm text-[#1B4158]/45 leading-relaxed flex-1">{step.description}</p>
+                <p className="text-xs font-medium text-[#1B4158]/68 mb-3">{step.subtitle}</p>
+                <p className="text-sm text-[#1B4158]/68 leading-relaxed flex-1">{step.description}</p>
 
                 <div className="mt-5 pt-4 border-t border-white/5 space-y-1.5">
                   <div className="flex items-center gap-2">
                     <span className="text-[10px] font-semibold text-[#1B4158]/27 uppercase tracking-widest">Prazo</span>
-                    <span className="text-xs font-medium text-[#1B4158]/60">{step.tempo}</span>
+                    <span className="text-xs font-medium text-[#1B4158]/78">{step.tempo}</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="text-[10px] font-semibold text-[#1B4158]/27 uppercase tracking-widest mt-0.5">Entregável</span>
-                    <span className="text-xs text-[#1B4158]/45 leading-tight">{step.entregavel}</span>
+                    <span className="text-xs text-[#1B4158]/68 leading-tight">{step.entregavel}</span>
                   </div>
                 </div>
               </div>

@@ -47,7 +47,7 @@ export function AntesDepois() {
                 <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "rgba(27,65,88,0.08)" }}>
                   <X size={16} className="text-[#1B4158]/38" />
                 </div>
-                <span style={{ fontFamily: "'Playfair Display', serif" }} className="text-lg font-bold text-[#1B4158]/60">
+                <span style={{ fontFamily: "'Playfair Display', serif" }} className="text-lg font-bold text-[#1B4158]/78">
                   ANTES — Sem estrutura
                 </span>
               </div>
@@ -57,7 +57,7 @@ export function AntesDepois() {
                     <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(27,65,88,0.06)" }}>
                       <X size={11} className="text-[#1B4158]/32" />
                     </div>
-                    <p className="text-sm text-[#1B4158]/55 leading-relaxed">{item}</p>
+                    <p className="text-sm text-[#1B4158]/75 leading-relaxed">{item}</p>
                   </div>
                 ))}
               </div>
@@ -82,7 +82,7 @@ export function AntesDepois() {
                 {depois.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(27,65,88,0.09)" }}>
-                      <Check size={11} className="text-[#1B4158]/55" />
+                      <Check size={11} className="text-[#1B4158]/75" />
                     </div>
                     <p className="text-sm text-[#1B4158]/90 leading-relaxed">{item}</p>
                   </div>
@@ -99,11 +99,11 @@ export function AntesDepois() {
               className="inline-flex items-center gap-4 px-8 py-4 rounded-2xl border"
               style={{ borderColor: "rgba(27,65,88,0.10)", background: "rgba(27,65,88,0.04)" }}
             >
-              <span className="text-sm text-[#1B4158]/60">Da desorganização</span>
+              <span className="text-sm text-[#1B4158]/78">Da desorganização</span>
               <span className="text-[#1B4158]/38 text-lg">→</span>
               <span className="text-sm font-semibold text-[#1B4158]">à visão estratégica</span>
               <span className="text-[#1B4158]/38 text-lg">→</span>
-              <span className="text-sm text-[#1B4158]/60">em semanas</span>
+              <span className="text-sm text-[#1B4158]/78">em semanas</span>
             </div>
           </div>
         </FadeIn>

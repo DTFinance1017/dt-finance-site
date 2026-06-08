@@ -45,7 +45,7 @@ export function ForWhom() {
             <br />
             <span className="gradient-text">controle não acompanha</span>
           </h2>
-          <p className="mt-4 text-[#1B4158]/60 max-w-xl mx-auto text-sm sm:text-base">
+          <p className="mt-4 text-[#1B4158]/78 max-w-xl mx-auto text-sm sm:text-base">
             Estágios diferentes, problema em comum: falta de clareza financeira para decidir com segurança e escalar com consistência.
           </p>
         </FadeIn>
@@ -64,12 +64,12 @@ export function ForWhom() {
                     {p.tag}
                   </div>
                 )}
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#1B4158]/4 text-[#1B4158]/50">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-[#1B4158]/4 text-[#1B4158]/72">
                   {p.icon}
                 </div>
                 <div>
                   <h3 style={{ fontFamily: "'Playfair Display', serif" }} className="text-base font-semibold text-[#1B4158] mb-2">{p.title}</h3>
-                  <p className="text-sm text-[#1B4158]/60 leading-relaxed">{p.description}</p>
+                  <p className="text-sm text-[#1B4158]/78 leading-relaxed">{p.description}</p>
                 </div>
               </div>
             </FadeIn>

@@ -53,7 +53,7 @@ export function Services() {
             <br />
             <span className="gradient-text">e como impacta seu negócio</span>
           </h2>
-          <p className="mt-4 text-[#1B4158]/45 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
+          <p className="mt-4 text-[#1B4158]/68 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
             Cada solução tem entregáveis claros, prazo definido e impacto direto na gestão e rentabilidade da sua empresa.
           </p>
         </FadeIn>
@@ -64,7 +64,7 @@ export function Services() {
               <div
                 className="card-lift group h-full p-6 rounded-xl border border-[#1B4158]/8 bg-[#f5f7f9] flex flex-col"
               >
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center text-lg mb-5 bg-[#1B4158]/4 text-[#1B4158]/50">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center text-lg mb-5 bg-[#1B4158]/4 text-[#1B4158]/72">
                   {service.icon}
                 </div>
                 <h3
@@ -73,7 +73,7 @@ export function Services() {
                 >
                   {service.title}
                 </h3>
-                <p className="text-sm text-[#1B4158]/50 leading-relaxed mb-5 flex-1">{service.description}</p>
+                <p className="text-sm text-[#1B4158]/72 leading-relaxed mb-5 flex-1">{service.description}</p>
 
                 <div className="border-t border-white/5 pt-4">
                   <div className="text-[10px] font-semibold text-[#1B4158]/27 uppercase tracking-widest mb-2.5">O que você recebe</div>
@@ -81,7 +81,7 @@ export function Services() {
                     {service.entregaveis.map((e, j) => (
                       <div key={j} className="flex items-center gap-2">
                         <div className="w-1 h-1 rounded-full flex-shrink-0 bg-[#B5891A]/60" />
-                        <span className="text-xs text-[#1B4158]/45">{e}</span>
+                        <span className="text-xs text-[#1B4158]/68">{e}</span>
                       </div>
                     ))}
                   </div>

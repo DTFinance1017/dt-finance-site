@@ -131,7 +131,7 @@ export function Testimonials() {
               <div>
                 <div className="text-[#1B4158] font-semibold text-sm">{t.name}</div>
                 <div className="text-[#B5891A] text-xs font-medium">{t.role}</div>
-                <div className="text-[#1B4158]/45 text-xs">{t.company} · {t.extra}</div>
+                <div className="text-[#1B4158]/68 text-xs">{t.company} · {t.extra}</div>
               </div>
             </div>
           </div>
@@ -154,7 +154,7 @@ export function Testimonials() {
 
         {/* Logos */}
         <FadeIn delay={100} className="text-center">
-          <p className="text-xs uppercase tracking-widest text-[#1B4158]/35 mb-5 font-medium">
+          <p className="text-xs uppercase tracking-widest text-[#1B4158]/58 mb-5 font-medium">
             Empresas que confiam na DT Finance
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">

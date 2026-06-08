@@ -54,7 +54,7 @@ export function Foco() {
             <span className="gradient-text">Para crescer com controle,</span><br />
             não por acaso.
           </h2>
-          <p className="text-[#1B4158]/65 text-base leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[#1B4158]/82 text-base leading-relaxed max-w-2xl mx-auto">
             A maioria das PMEs cresce sem estrutura financeira proporcional — processos manuais, planilhas dispersas, sem previsibilidade. Ajudamos empresas a mudar isso de forma sistemática: com método, automação e presença executiva contínua.
           </p>
         </FadeIn>
@@ -81,7 +81,7 @@ export function Foco() {
                 >
                   Uma PME organizada financeiramente cresce com intenção — não por sorte.
                 </p>
-                <p className="text-[#1B4158]/55 text-sm">
+                <p className="text-[#1B4158]/75 text-sm">
                   A DT Finance entrega processos definidos, relatórios executivos e presença estratégica contínua — para que cada decisão de negócio tenha base sólida.
                 </p>
               </div>
@@ -100,7 +100,7 @@ export function Foco() {
                 }}
               >
                 <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-5 bg-[#1B4158]/4 text-[#1B4158]/50"
+                  className="w-11 h-11 rounded-xl flex items-center justify-center mb-5 bg-[#1B4158]/4 text-[#1B4158]/72"
                 >
                   {pilar.icon}
                 </div>
@@ -110,7 +110,7 @@ export function Foco() {
                 >
                   {pilar.title}
                 </h3>
-                <p className="text-sm text-[#1B4158]/60 leading-relaxed">{pilar.description}</p>
+                <p className="text-sm text-[#1B4158]/78 leading-relaxed">{pilar.description}</p>
               </div>
             </FadeIn>
           ))}

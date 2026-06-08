@@ -44,7 +44,7 @@ export function CTA() {
                     <span className="gradient-text">da sua empresa.</span>
                   </h2>
 
-                  <p className="text-[#1B4158]/50 text-base lg:text-lg mb-8 max-w-md leading-relaxed">
+                  <p className="text-[#1B4158]/72 text-base lg:text-lg mb-8 max-w-md leading-relaxed">
                     Uma conversa direta com um especialista: analisamos sua realidade atual e mostramos com clareza o que é possível melhorar — e como.
                   </p>
 
@@ -64,10 +64,10 @@ export function CTA() {
                   <div className="mt-12 flex flex-col sm:flex-row gap-5 flex-wrap">
                     {steps.map((step, i) => (
                       <div key={i} className="flex items-center gap-3">
-                        <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold border border-[#1B4158]/12 text-[#1B4158]/50">
+                        <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold border border-[#1B4158]/12 text-[#1B4158]/72">
                           {step.num}
                         </div>
-                        <span className="text-xs text-[#1B4158]/45">{step.label}</span>
+                        <span className="text-xs text-[#1B4158]/68">{step.label}</span>
                         {i < steps.length - 1 && (
                           <ArrowRight size={12} className="text-white/15 hidden sm:block flex-shrink-0" />
                         )}
@@ -85,7 +85,7 @@ export function CTA() {
                     </div>
                     <div className="space-y-3">
                       {checks.map((tag) => (
-                        <div key={tag} className="flex items-center gap-3 text-sm text-[#1B4158]/55">
+                        <div key={tag} className="flex items-center gap-3 text-sm text-[#1B4158]/75">
                           <CheckCircle2 size={14} className="text-[#1B4158]/32 flex-shrink-0" />
                           {tag}
                         </div>
@@ -98,7 +98,7 @@ export function CTA() {
                   <div>
                     <p
                       style={{ fontFamily: "'Playfair Display', serif" }}
-                      className="text-[#1B4158]/60 text-sm leading-relaxed italic mb-3"
+                      className="text-[#1B4158]/78 text-sm leading-relaxed italic mb-3"
                     >
                       "Unimos direito, tecnologia e finanças para entregar algo que o mercado ainda não tinha: um CFO completo, acessível e orientado a dados."
                     </p>

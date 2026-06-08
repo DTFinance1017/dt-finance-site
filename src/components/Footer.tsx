@@ -74,7 +74,6 @@ export function Footer() {
                   { label: "Nosso Foco", path: "/nosso-foco" },
                   { label: "Metodologia DOIA", path: "/metodologia" },
                   { label: "Quem Somos", path: "/quem-somos" },
-                  { label: "Área do Cliente", path: "/login" },
                 ].map((item) => (
                   <li key={item.label}>
                     <button

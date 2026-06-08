@@ -24,7 +24,7 @@ const inputClass =
   "w-full bg-[#1B4158]/5 border border-[#1B4158]/15 rounded-[10px] px-4 py-3 text-sm text-[#1B4158] placeholder-[#1B4158]/30 focus:outline-none focus:border-[#B5891A]/40 focus:bg-[#1B4158]/8 transition-colors";
 
 const labelClass =
-  "block text-[11px] text-[#1B4158]/55 mb-1.5 font-medium uppercase tracking-[0.1em]";
+  "block text-[11px] text-[#1B4158]/75 mb-1.5 font-medium uppercase tracking-[0.1em]";
 
 function formatPhone(value: string) {
   const digits = value.replace(/\D/g, "").slice(0, 11);

@@ -110,7 +110,7 @@ export function ChecklistDownload() {
                   <span className="gradient-text">de você</span>
                 </h2>
 
-                <p className="text-[#1B4158]/55 text-sm leading-relaxed">
+                <p className="text-[#1B4158]/75 text-sm leading-relaxed">
                   Lista completa dos documentos para montarmos o DRE e o Fluxo de Caixa da sua empresa. Receba direto no seu e-mail — totalmente gratuito.
                 </p>
               </div>

@@ -28,7 +28,7 @@ export function Hero() {
 
         <div className="relative flex-1 flex flex-col items-center justify-center text-center max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 w-full pt-24 pb-8">
 
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1B4158]/12 text-[#1B4158]/45 text-xs font-medium mb-8 animate-fade-in tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#1B4158]/12 text-[#1B4158]/68 text-xs font-medium mb-8 animate-fade-in tracking-widest uppercase">
             CFO as a Service · Inteligência Financeira para PMEs
           </div>
 
@@ -41,13 +41,13 @@ export function Hero() {
             mais inteligentes.
           </h1>
 
-          <p className="text-base lg:text-xl text-[#1B4158]/55 leading-relaxed mb-8 max-w-2xl animate-fade-in">
+          <p className="text-base lg:text-xl text-[#1B4158]/75 leading-relaxed mb-8 max-w-2xl animate-fade-in">
             Estruturamos a gestão financeira da sua empresa com DRE gerencial, fluxo de caixa projetado e acompanhamento executivo contínuo — para você decidir com dados, não com intuição.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-3 mb-10 animate-fade-in">
             {bullets.map((b, i) => (
-              <div key={i} className="flex items-center gap-2.5 text-sm text-[#1B4158]/55 justify-center sm:justify-start">
+              <div key={i} className="flex items-center gap-2.5 text-sm text-[#1B4158]/75 justify-center sm:justify-start">
                 <span className="text-[#1B4158]/38 flex-shrink-0">{b.icon}</span>
                 {b.text}
               </div>
@@ -63,7 +63,7 @@ export function Hero() {
             </button>
             <button
               onClick={() => { navigate("/metodologia"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-              className="text-sm text-[#1B4158]/45 hover:text-[#1B4158]/72 transition-colors px-4 py-3.5"
+              className="text-sm text-[#1B4158]/68 hover:text-[#1B4158]/72 transition-colors px-4 py-3.5"
             >
               Ver nossa metodologia
             </button>

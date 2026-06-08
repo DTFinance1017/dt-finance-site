@@ -29,7 +29,7 @@ export function ContextualCTA({ title, subtitle }: Props) {
           {title}
         </h2>
 
-        <p className="text-[#1B4158]/55 text-base sm:text-lg font-light max-w-md mx-auto mb-10 leading-relaxed">
+        <p className="text-[#1B4158]/75 text-base sm:text-lg font-light max-w-md mx-auto mb-10 leading-relaxed">
           {subtitle}
         </p>
 

@@ -55,7 +55,7 @@ export function GanhosPraticos() {
             <br />
             <span className="gradient-text">não promessa vaga</span>
           </h2>
-          <p className="mt-4 text-[#1B4158]/60 text-base lg:text-lg max-w-lg">
+          <p className="mt-4 text-[#1B4158]/78 text-base lg:text-lg max-w-lg">
             Tudo o que entregamos tem nome, data e impacto mensurável na operação da sua empresa.
           </p>
         </FadeIn>
@@ -73,7 +73,7 @@ export function GanhosPraticos() {
               }}
             >
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 flex-shrink-0 bg-[#1B4158]/4 text-[#1B4158]/50"
+                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 flex-shrink-0 bg-[#1B4158]/4 text-[#1B4158]/72"
               >
                 {featured.icon}
               </div>
@@ -85,7 +85,7 @@ export function GanhosPraticos() {
                 {featured.title}
               </h3>
 
-              <p className="text-[#1B4158]/65 leading-relaxed mb-8 flex-1">
+              <p className="text-[#1B4158]/82 leading-relaxed mb-8 flex-1">
                 {featured.description}
               </p>
 
@@ -104,7 +104,7 @@ export function GanhosPraticos() {
                   }}
                 >
                   <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-5 bg-[#1B4158]/4 text-[#1B4158]/50"
+                    className="w-11 h-11 rounded-xl flex items-center justify-center mb-5 bg-[#1B4158]/4 text-[#1B4158]/72"
                   >
                     {g.icon}
                   </div>
@@ -114,7 +114,7 @@ export function GanhosPraticos() {
                   >
                     {g.title}
                   </h3>
-                  <p className="text-sm text-[#1B4158]/60 leading-relaxed">{g.description}</p>
+                  <p className="text-sm text-[#1B4158]/78 leading-relaxed">{g.description}</p>
                 </div>
               </FadeIn>
             ))}

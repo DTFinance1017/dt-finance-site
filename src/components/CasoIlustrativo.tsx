@@ -17,7 +17,7 @@ export function CasoIlustrativo() {
             <br />
             Não sobrava nada."
           </h2>
-          <p className="mt-4 text-[#1B4158]/60 max-w-xl mx-auto text-sm leading-relaxed">
+          <p className="mt-4 text-[#1B4158]/78 max-w-xl mx-auto text-sm leading-relaxed">
             Prestadora de serviços do setor de construção civil. 8 anos de mercado, equipe de 17 pessoas — e margem real desconhecida.
           </p>
         </FadeIn>
@@ -31,8 +31,8 @@ export function CasoIlustrativo() {
               style={{ borderColor: "rgba(27,65,88,0.09)", background: "#f5f7f9" }}
             >
               <div className="flex items-center gap-2 mb-5">
-                <AlertTriangle size={15} className="text-[#1B4158]/45" />
-                <span className="text-xs font-semibold text-[#1B4158]/50 uppercase tracking-wider">O Problema</span>
+                <AlertTriangle size={15} className="text-[#1B4158]/68" />
+                <span className="text-xs font-semibold text-[#1B4158]/72 uppercase tracking-wider">O Problema</span>
               </div>
 
               <p
@@ -53,7 +53,7 @@ export function CasoIlustrativo() {
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2.5">
                     <div className="w-1.5 h-1.5 rounded-full bg-white/20 mt-2 flex-shrink-0" />
-                    <p className="text-xs text-[#1B4158]/60 leading-relaxed">{item}</p>
+                    <p className="text-xs text-[#1B4158]/78 leading-relaxed">{item}</p>
                   </div>
                 ))}
               </div>
@@ -67,8 +67,8 @@ export function CasoIlustrativo() {
               style={{ borderColor: "rgba(27,65,88,0.11)", background: "#f5f7f9" }}
             >
               <div className="flex items-center gap-2 mb-5">
-                <ArrowRight size={15} className="text-[#1B4158]/55" />
-                <span className="text-xs font-semibold text-[#1B4158]/60 uppercase tracking-wider">O Que Estruturamos</span>
+                <ArrowRight size={15} className="text-[#1B4158]/75" />
+                <span className="text-xs font-semibold text-[#1B4158]/78 uppercase tracking-wider">O Que Estruturamos</span>
               </div>
 
               <p
@@ -104,7 +104,7 @@ export function CasoIlustrativo() {
               style={{ borderColor: "rgba(27,65,88,0.13)", background: "#f5f7f9" }}
             >
               <div className="flex items-center gap-2 mb-5">
-                <TrendingUp size={15} className="text-[#1B4158]/65" />
+                <TrendingUp size={15} className="text-[#1B4158]/82" />
                 <span className="text-xs font-semibold text-[#1B4158]/72 uppercase tracking-wider">Resultado em 120 dias</span>
               </div>
 
@@ -150,14 +150,14 @@ export function CasoIlustrativo() {
                       border: `1px solid rgba(255,255,255,${item.highlight ? "0.10" : "0.06"})`,
                     }}
                   >
-                    <div className="text-[10px] text-[#1B4158]/45 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="text-[10px] text-[#1B4158]/68 uppercase tracking-wide mb-1">{item.label}</div>
                     <div
                       style={{ fontFamily: "'Playfair Display', serif" }}
                       className="text-base font-bold text-[#1B4158]"
                     >
                       {item.value}
                     </div>
-                    <div className="text-[10px] text-[#1B4158]/45 mt-0.5">{item.detail}</div>
+                    <div className="text-[10px] text-[#1B4158]/68 mt-0.5">{item.detail}</div>
                   </div>
                 ))}
               </div>
