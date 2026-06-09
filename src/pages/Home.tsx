@@ -3,7 +3,6 @@ import { Hero }              from "@/components/Hero";
 import { DorSection }        from "@/components/DorSection";
 import { QuemSomosSection }  from "@/components/QuemSomosSection";
 import { Pilares }           from "@/components/Pilares";
-import { MetodologiaSection } from "@/components/MetodologiaSection";
 import { SolucoesSection }   from "@/components/SolucoesSection";
 import { Segmentos }         from "@/components/Segmentos";
 import { DiferencialSection } from "@/components/DiferencialSection";
@@ -19,7 +18,6 @@ export default function Home() {
       <DorSection />
       <QuemSomosSection />
       <Pilares />
-      <MetodologiaSection />
       <SolucoesSection />
       <Segmentos />
       <DiferencialSection />

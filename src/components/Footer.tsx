@@ -78,7 +78,7 @@ export function Footer() {
                 <Linkedin size={15} />
               </a>
               <a
-                href="https://www.instagram.com/dtfinance"
+                href="https://www.instagram.com/dtfinancebr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg flex items-center justify-center border transition-all duration-200"
@@ -95,7 +95,7 @@ export function Footer() {
                 <Instagram size={15} />
               </a>
               <a
-                href="https://wa.me/5511999999999"
+                href="https://wa.me/5511969771585"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg flex items-center justify-center border transition-all duration-200 text-xs font-bold"
@@ -187,17 +187,6 @@ export function Footer() {
           <p className="text-xs" style={{ color: "rgba(199,210,226,0.25)" }}>
             © 2026 DT Finance. Todos os direitos reservados.
           </p>
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => navigate("/login")}
-              className="text-xs transition-colors duration-200"
-              style={{ color: "rgba(199,210,226,0.25)" }}
-              onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = "rgba(199,210,226,0.5)"; }}
-              onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = "rgba(199,210,226,0.25)"; }}
-            >
-              Área do Cliente
-            </button>
-          </div>
         </div>
       </div>
     </footer>

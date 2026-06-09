@@ -9,9 +9,9 @@ const PETROL = "#1B4158";
 
 const links = [
   { label: "Home",        path: "/" },
-  { label: "Metodologia", path: "/metodologia" },
   { label: "Soluções",    path: "/solucoes" },
   { label: "Sobre Nós",   path: "/quem-somos" },
+  { label: "Metodologia", path: "/metodologia" },
 ];
 
 export function Navbar() {
@@ -41,9 +41,6 @@ export function Navbar() {
   const cSub     = dark ? "rgba(199,210,226,0.5)"  : "rgba(27,65,88,0.5)";
   const cLink    = dark ? "rgba(199,210,226,0.65)" : "rgba(27,65,88,0.7)";
   const cLinkH   = dark ? "#FFFFFF"                : PETROL;
-  const cFaint   = dark ? "rgba(199,210,226,0.4)"  : "rgba(27,65,88,0.5)";
-  const cFaintH  = dark ? "rgba(199,210,226,0.7)"  : "rgba(27,65,88,0.78)";
-  const cDivider = dark ? "rgba(255,255,255,0.1)"  : "rgba(27,65,88,0.14)";
 
   const navBg = dark ? `${NAVY}f5` : "transparent";
 
@@ -118,16 +115,6 @@ export function Navbar() {
 
             {/* Desktop CTAs */}
             <div className="hidden md:flex items-center gap-3">
-              <div className="w-px h-4" style={{ backgroundColor: cDivider }} />
-              <button
-                onClick={() => navigate("/login")}
-                className="px-4 py-2 text-xs font-medium transition-colors duration-200"
-                style={{ color: cFaint }}
-                onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = cFaintH; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = cFaint; }}
-              >
-                Área do Cliente
-              </button>
               <button
                 onClick={() => openModal()}
                 className="btn-primary px-5 py-2.5 rounded-lg text-sm"
@@ -179,13 +166,6 @@ export function Navbar() {
                 Contato
               </button>
               <div className="pt-3 border-t mt-2 space-y-2" style={{ borderColor: "rgba(255,255,255,0.07)" }}>
-                <button
-                  onClick={() => { setMobileOpen(false); navigate("/login"); }}
-                  className="flex w-full text-left py-2.5 px-3 text-sm font-medium rounded-lg"
-                  style={{ color: "rgba(199,210,226,0.4)" }}
-                >
-                  Área do Cliente
-                </button>
                 <button
                   onClick={() => { setMobileOpen(false); openModal(); }}
                   className="btn-primary w-full py-3 px-5 rounded-lg text-sm"
