@@ -10,7 +10,7 @@ const PETROL = "#1B4158";
 const links = [
   { label: "Home",        path: "/" },
   { label: "Soluções",    path: "/solucoes" },
-  { label: "Sobre Nós",   path: "/quem-somos" },
+  { label: "Sobre Nós",   path: "/sobre" },
   { label: "Metodologia", path: "/metodologia" },
 ];
 

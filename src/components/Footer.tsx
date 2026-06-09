@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Home",        path: "/" },
   { label: "Metodologia", path: "/metodologia" },
   { label: "Soluções",    path: "/solucoes" },
-  { label: "Sobre Nós",   path: "/quem-somos" },
+  { label: "Sobre Nós",   path: "/sobre" },
 ];
 
 export function Footer() {

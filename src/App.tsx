@@ -8,7 +8,7 @@ import NotFound from "@/pages/not-found";
 import NossoFoco from "@/pages/NossoFoco";
 import Solucoes from "@/pages/Solucoes";
 import Metodologia from "@/pages/Metodologia";
-import QuemSomosPage from "@/pages/QuemSomos";
+import Sobre from "@/pages/Sobre";
 import { isAuthenticated, isInterno } from "./utils/auth";
 import { ModalProvider } from "@/context/ModalContext";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
@@ -32,9 +32,11 @@ function Router() {
       <Route path="/nosso-foco" component={NossoFoco} />
       <Route path="/solucoes" component={Solucoes} />
       <Route path="/metodologia" component={Metodologia} />
-      <Route path="/quem-somos" component={QuemSomosPage} />
+      <Route path="/sobre" component={Sobre} />
+      <Route path="/quem-somos">{() => <Redirect to="/sobre" />}</Route>
       <Route path="/plataforma" component={Platform} />
       <Route path="/login" component={Login} />
+      <Route path="/cliente" component={Login} />
       <Route path="/dashboard">
         {() => <ProtectedClientRoute component={Dashboard} />}
       </Route>
