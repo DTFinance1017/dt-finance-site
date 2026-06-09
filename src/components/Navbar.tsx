@@ -35,6 +35,12 @@ export function Navbar() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // "Contato" rola até o fim da página (rodapé, onde está o e-mail)
+  const scrollToContato = () => {
+    setMobileOpen(false);
+    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" });
+  };
+
   // dark = barra sobre fundo escuro (navy) → texto claro; senão (hero claro) → texto petróleo
   const dark = scrolled || !isHome || mobileOpen;
   const cMain    = dark ? "#FFFFFF"                : PETROL;
@@ -101,9 +107,9 @@ export function Navbar() {
                 );
               })}
 
-              {/* Contato — abre modal */}
+              {/* Contato — rola até o rodapé (e-mail) */}
               <button
-                onClick={() => openModal()}
+                onClick={scrollToContato}
                 className="px-4 py-2.5 text-sm font-medium rounded-lg transition-colors duration-200"
                 style={{ color: cLink }}
                 onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = cLinkH; }}
@@ -159,7 +165,7 @@ export function Navbar() {
                 );
               })}
               <button
-                onClick={() => { setMobileOpen(false); openModal(); }}
+                onClick={scrollToContato}
                 className="flex w-full text-left py-3 px-3 text-sm font-medium rounded-lg transition-colors"
                 style={{ color: "rgba(199,210,226,0.6)" }}
               >
