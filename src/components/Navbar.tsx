@@ -1,24 +1,25 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useLocation } from "wouter";
 import { useModal } from "@/context/ModalContext";
 
 const NAVY = "#0D1F3C";
 const GOLD = "#C9A84C";
+const PETROL = "#1B4158";
 
 const links = [
-  { label: "Home",       path: "/" },
+  { label: "Home",        path: "/" },
   { label: "Metodologia", path: "/metodologia" },
-  { label: "Soluções",   path: "/solucoes" },
-  { label: "Sobre Nós",  path: "/quem-somos" },
+  { label: "Soluções",    path: "/solucoes" },
+  { label: "Sobre Nós",   path: "/quem-somos" },
 ];
 
 export function Navbar() {
-  const [scrolled, setScrolled]   = useState(false);
+  const [scrolled, setScrolled]     = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { openModal }              = useModal();
-  const [, navigate]               = useLocation();
-  const [location]                 = useLocation();
+  const { openModal }               = useModal();
+  const [, navigate]                = useLocation();
+  const [location]                  = useLocation();
 
   const isHome = location === "/";
 
@@ -34,9 +35,17 @@ export function Navbar() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const navBg = scrolled || !isHome
-    ? `${NAVY}f5`
-    : "transparent";
+  // dark = barra sobre fundo escuro (navy) → texto claro; senão (hero claro) → texto petróleo
+  const dark = scrolled || !isHome || mobileOpen;
+  const cMain    = dark ? "#FFFFFF"                : PETROL;
+  const cSub     = dark ? "rgba(199,210,226,0.5)"  : "rgba(27,65,88,0.5)";
+  const cLink    = dark ? "rgba(199,210,226,0.65)" : "rgba(27,65,88,0.7)";
+  const cLinkH   = dark ? "#FFFFFF"                : PETROL;
+  const cFaint   = dark ? "rgba(199,210,226,0.4)"  : "rgba(27,65,88,0.5)";
+  const cFaintH  = dark ? "rgba(199,210,226,0.7)"  : "rgba(27,65,88,0.78)";
+  const cDivider = dark ? "rgba(255,255,255,0.1)"  : "rgba(27,65,88,0.14)";
+
+  const navBg = dark ? `${NAVY}f5` : "transparent";
 
   return (
     <>
@@ -44,8 +53,8 @@ export function Navbar() {
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
         style={{
           backgroundColor: navBg,
-          backdropFilter: scrolled || !isHome ? "blur(12px)" : "none",
-          borderBottom: scrolled || !isHome ? "1px solid rgba(255,255,255,0.07)" : "none",
+          backdropFilter: dark ? "blur(12px)" : "none",
+          borderBottom: dark ? "1px solid rgba(255,255,255,0.07)" : "none",
         }}
       >
         <div className="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16">
@@ -63,12 +72,12 @@ export function Navbar() {
               />
               <div className="hidden sm:block">
                 <span
-                  style={{ fontFamily: "'Playfair Display', serif", color: "#FFFFFF" }}
+                  style={{ fontFamily: "'Playfair Display', serif", color: cMain }}
                   className="font-semibold text-base tracking-tight"
                 >
                   DT Finance
                 </span>
-                <div className="text-[10px] tracking-widest uppercase" style={{ color: "rgba(199,210,226,0.5)" }}>
+                <div className="text-[10px] tracking-widest uppercase" style={{ color: cSub }}>
                   Estruturação & Inteligência
                 </div>
               </div>
@@ -84,15 +93,11 @@ export function Navbar() {
                     onClick={() => navTo(link.path)}
                     className="px-4 py-2.5 text-sm font-medium rounded-lg transition-colors duration-200"
                     style={{
-                      color: active ? GOLD : "rgba(199,210,226,0.65)",
+                      color: active ? GOLD : cLink,
                       backgroundColor: active ? "rgba(201,168,76,0.06)" : "transparent",
                     }}
-                    onMouseEnter={e => {
-                      if (!active) (e.currentTarget as HTMLButtonElement).style.color = "#ffffff";
-                    }}
-                    onMouseLeave={e => {
-                      if (!active) (e.currentTarget as HTMLButtonElement).style.color = "rgba(199,210,226,0.65)";
-                    }}
+                    onMouseEnter={e => { if (!active) (e.currentTarget as HTMLButtonElement).style.color = cLinkH; }}
+                    onMouseLeave={e => { if (!active) (e.currentTarget as HTMLButtonElement).style.color = cLink; }}
                   >
                     {link.label}
                   </button>
@@ -103,9 +108,9 @@ export function Navbar() {
               <button
                 onClick={() => openModal()}
                 className="px-4 py-2.5 text-sm font-medium rounded-lg transition-colors duration-200"
-                style={{ color: "rgba(199,210,226,0.65)" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = "#ffffff"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = "rgba(199,210,226,0.65)"; }}
+                style={{ color: cLink }}
+                onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = cLinkH; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = cLink; }}
               >
                 Contato
               </button>
@@ -113,13 +118,13 @@ export function Navbar() {
 
             {/* Desktop CTAs */}
             <div className="hidden md:flex items-center gap-3">
-              <div className="w-px h-4 bg-white/10" />
+              <div className="w-px h-4" style={{ backgroundColor: cDivider }} />
               <button
                 onClick={() => navigate("/login")}
                 className="px-4 py-2 text-xs font-medium transition-colors duration-200"
-                style={{ color: "rgba(199,210,226,0.4)" }}
-                onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = "rgba(199,210,226,0.7)"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = "rgba(199,210,226,0.4)"; }}
+                style={{ color: cFaint }}
+                onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = cFaintH; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = cFaint; }}
               >
                 Área do Cliente
               </button>
@@ -134,7 +139,7 @@ export function Navbar() {
             {/* Mobile hamburger */}
             <button
               className="md:hidden p-2 rounded-lg transition-colors"
-              style={{ color: "rgba(199,210,226,0.6)" }}
+              style={{ color: cLink }}
               onClick={() => setMobileOpen(!mobileOpen)}
             >
               {mobileOpen ? <X size={20} /> : <Menu size={20} />}

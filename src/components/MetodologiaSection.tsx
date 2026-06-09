@@ -33,7 +33,7 @@ const steps = [
   },
 ];
 
-export function MetodologiaSection() {
+export function MetodologiaSection({ showCta = true }: { showCta?: boolean }) {
   const [, navigate] = useLocation();
 
   return (
@@ -110,6 +110,7 @@ export function MetodologiaSection() {
         </div>
 
         {/* CTA da seção */}
+        {showCta && (
         <div className="mt-14 flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <button
             onClick={() => { navigate("/metodologia"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
@@ -121,6 +122,7 @@ export function MetodologiaSection() {
             Aplicada em empresas de R$ 2M a R$ 50M de faturamento
           </span>
         </div>
+        )}
 
       </div>
     </section>
