@@ -1,4 +1,4 @@
-import { useState, FormEvent } from "react";
+﻿import { useState, FormEvent } from "react";
 import { useLocation } from "wouter";
 import { LogIn, Eye, EyeOff, AlertCircle } from "lucide-react";
 import { login } from "../utils/auth";
@@ -45,21 +45,21 @@ export default function Login() {
             onClick={() => navigate("/")}
             className="h-12 w-auto mx-auto mb-4 object-contain cursor-pointer hover:opacity-80 transition-opacity"
           />
-          <h1 style={{ fontFamily: "'Playfair Display', serif" }} className="text-2xl font-bold text-white">
+          <h1 style={{ fontFamily: "'Playfair Display', serif" }} className="text-2xl font-bold text-[#1B4158]">
             Acesso à Plataforma
           </h1>
-          <p className="text-sm text-white/40 mt-1">
+          <p className="text-sm text-[#1B4158]/50 mt-1">
             Entre com seu login e senha
           </p>
         </div>
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-2xl border border-white/8 p-7 space-y-5"
+          className="rounded-2xl border border-[#1B4158]/10 p-7 space-y-5"
           style={{ background: "#313136" }}
         >
           <div>
-            <label className="block text-xs text-white/50 mb-1.5 font-medium uppercase tracking-wide">
+            <label className="block text-xs text-[#1B4158]/60 mb-1.5 font-medium uppercase tracking-wide">
               Usuário
             </label>
             <input
@@ -68,12 +68,12 @@ export default function Login() {
               onChange={(e) => setUser(e.target.value)}
               placeholder="Seu login"
               required
-              className="w-full px-4 py-3 rounded-xl bg-[#2a2a2e] border border-white/10 text-white placeholder-white/25 text-sm outline-none focus:border-[#3b82f6]/60 focus:ring-1 focus:ring-[#3b82f6]/30 transition-all"
+              className="w-full px-4 py-3 rounded-xl bg-[#2a2a2e] border border-[#1B4158]/12 text-[#1B4158] placeholder-white/25 text-sm outline-none focus:border-[#3b82f6]/60 focus:ring-1 focus:ring-[#3b82f6]/30 transition-all"
             />
           </div>
 
           <div>
-            <label className="block text-xs text-white/50 mb-1.5 font-medium uppercase tracking-wide">
+            <label className="block text-xs text-[#1B4158]/60 mb-1.5 font-medium uppercase tracking-wide">
               Senha
             </label>
             <div className="relative">
@@ -83,12 +83,12 @@ export default function Login() {
                 onChange={(e) => setPass(e.target.value)}
                 placeholder="••••••••"
                 required
-                className="w-full px-4 py-3 pr-11 rounded-xl bg-[#2a2a2e] border border-white/10 text-white placeholder-white/25 text-sm outline-none focus:border-[#3b82f6]/60 focus:ring-1 focus:ring-[#3b82f6]/30 transition-all"
+                className="w-full px-4 py-3 pr-11 rounded-xl bg-[#2a2a2e] border border-[#1B4158]/12 text-[#1B4158] placeholder-white/25 text-sm outline-none focus:border-[#3b82f6]/60 focus:ring-1 focus:ring-[#3b82f6]/30 transition-all"
               />
               <button
                 type="button"
                 onClick={() => setShowPass(!showPass)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 transition-colors"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#1B4158]/38 hover:text-[#1B4158]/72 transition-colors"
               >
                 {showPass ? <EyeOff size={16} /> : <Eye size={16} />}
               </button>
@@ -123,13 +123,13 @@ export default function Login() {
         <div className="text-center mt-5">
           <button
             onClick={() => navigate("/")}
-            className="text-sm text-white/40 hover:text-white/70 transition-colors underline underline-offset-2"
+            className="text-sm text-[#1B4158]/50 hover:text-white/70 transition-colors underline underline-offset-2"
           >
             ← Voltar para a Página Inicial
           </button>
         </div>
 
-        <p className="text-center text-xs text-white/20 mt-5">
+        <p className="text-center text-xs text-[#1B4158]/27 mt-5">
           DT Finance — Acesso restrito
         </p>
       </div>

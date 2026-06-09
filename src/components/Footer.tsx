@@ -1,4 +1,4 @@
-import { useModal } from "@/context/ModalContext";
+﻿import { useModal } from "@/context/ModalContext";
 import { useLocation } from "wouter";
 import { Linkedin, Instagram } from "lucide-react";
 

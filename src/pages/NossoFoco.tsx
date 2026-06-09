@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/Navbar";
+﻿import { Navbar } from "@/components/Navbar";
 import { Foco } from "@/components/Foco";
 import { GanhosPraticos } from "@/components/GanhosPraticos";
 import { CasoIlustrativo } from "@/components/CasoIlustrativo";
@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 
 export default function NossoFoco() {
   return (
-    <div className="min-h-screen bg-[#0d0d12]">
+    <div className="min-h-screen bg-white">
       <Navbar />
       <div className="pt-16 lg:pt-[72px]">
         <Foco />

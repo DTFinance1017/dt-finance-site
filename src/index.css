@@ -42,24 +42,24 @@
 }
 
 :root {
-  --background: 240 6% 8%;
-  --foreground: 210 12% 92%;
-  --border: 240 5% 18%;
-  --input: 240 5% 18%;
-  --ring: 38 60% 52%;
-  --card: 240 5% 11%;
-  --card-foreground: 210 12% 92%;
-  --card-border: 240 5% 20%;
-  --popover: 240 5% 11%;
-  --popover-foreground: 210 12% 92%;
-  --primary: 38 60% 52%;
-  --primary-foreground: 240 6% 8%;
-  --secondary: 240 5% 15%;
-  --secondary-foreground: 210 12% 75%;
-  --muted: 240 5% 13%;
-  --muted-foreground: 240 4% 50%;
-  --accent: 240 5% 18%;
-  --accent-foreground: 210 12% 92%;
+  --background: 0 0% 100%;
+  --foreground: 204 53% 23%;
+  --border: 204 20% 87%;
+  --input: 204 20% 87%;
+  --ring: 43 75% 41%;
+  --card: 204 15% 97%;
+  --card-foreground: 204 53% 23%;
+  --card-border: 204 20% 89%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 204 53% 23%;
+  --primary: 43 75% 41%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 204 15% 93%;
+  --secondary-foreground: 204 40% 30%;
+  --muted: 204 15% 95%;
+  --muted-foreground: 204 25% 48%;
+  --accent: 204 15% 92%;
+  --accent-foreground: 204 53% 23%;
   --destructive: 0 60% 48%;
   --app-font-sans: 'DM Sans', sans-serif;
   --app-font-serif: 'Playfair Display', serif;
@@ -86,93 +86,55 @@
   }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 4px;
-}
-::-webkit-scrollbar-track {
-  background: hsl(var(--background));
-}
-::-webkit-scrollbar-thumb {
-  background: hsl(224 6% 30%);
-  border-radius: 2px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(38 85% 58%);
-}
+/* ── Scrollbar ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar              { width: 4px; }
+::-webkit-scrollbar-track        { background: hsl(var(--background)); }
+::-webkit-scrollbar-thumb        { background: hsl(204 20% 78%); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover  { background: hsl(43 75% 48%); }
 
-/* Animations */
+/* ── Keyframes ─────────────────────────────────────────────────────── */
 @keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fade-in {
   from { opacity: 0; }
-  to { opacity: 1; }
+  to   { opacity: 1; }
 }
 
 @keyframes pulse-dot {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
-
-@keyframes grid-move {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(40px); }
+  50%       { opacity: 0.35; }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
 }
 
-@keyframes bar-grow {
-  from { height: 0; }
-  to { height: var(--bar-height); }
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.6s ease-out forwards;
-}
-
-.animate-fade-in {
-  animation: fade-in 0.5s ease-out forwards;
-}
-
-.animate-pulse-dot {
-  animation: pulse-dot 1.5s ease-in-out infinite;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
+/* ── Animation utilities ───────────────────────────────────────────── */
+.animate-fade-in-up { animation: fade-in-up 0.55s ease-out forwards; }
+.animate-fade-in    { animation: fade-in 0.45s ease-out forwards; }
+.animate-pulse-dot  { animation: pulse-dot 1.8s ease-in-out infinite; }
+.animate-float      { animation: float 3s ease-in-out infinite; }
 
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
 .delay-400 { animation-delay: 400ms; }
 .delay-500 { animation-delay: 500ms; }
-.delay-600 { animation-delay: 600ms; }
-.delay-700 { animation-delay: 700ms; }
-.delay-800 { animation-delay: 800ms; }
 
-/* FadeIn hidden state */
+/* ── FadeIn component ──────────────────────────────────────────────── */
 .fade-hidden {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(18px);
 }
 
 .fade-visible {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
 }
 
 /* ============================================================
@@ -240,15 +202,17 @@
 }
 
 .btn-outline-blue {
+  cursor: pointer;
   background: transparent;
-  color: rgba(255,255,255,0.55);
-  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(27, 65, 88, 0.65);
+  border: 1px solid rgba(27, 65, 88, 0.20);
   font-weight: 500;
-  transition: border-color 0.18s ease, color 0.18s ease;
+  transition: border-color 0.18s ease, color 0.18s ease, background-color 0.18s ease;
 }
 .btn-outline-blue:hover {
-  border-color: rgba(255,255,255,0.28);
-  color: rgba(255,255,255,0.8);
+  border-color: rgba(27, 65, 88, 0.35);
+  color: rgba(27, 65, 88, 0.90);
+  background-color: rgba(27, 65, 88, 0.04);
 }
 
 /* ---- Cards ---- */

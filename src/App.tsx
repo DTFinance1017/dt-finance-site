@@ -1,5 +1,4 @@
 import { Switch, Route, Router as WouterRouter, Redirect } from "wouter";
-import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import Home from "@/pages/Home";
 import Platform from "@/pages/Platform";
 import Dashboard from "@/pages/Dashboard";
@@ -12,6 +11,7 @@ import Metodologia from "@/pages/Metodologia";
 import QuemSomosPage from "@/pages/QuemSomos";
 import { isAuthenticated, isInterno } from "./utils/auth";
 import { ModalProvider } from "@/context/ModalContext";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
 function ProtectedClientRoute({ component: Component }: { component: () => JSX.Element }) {
   if (!isAuthenticated()) return <Redirect to="/login" />;

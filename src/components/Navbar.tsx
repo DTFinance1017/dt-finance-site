@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useLocation } from "wouter";
 import { useModal } from "@/context/ModalContext";

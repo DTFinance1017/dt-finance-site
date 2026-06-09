@@ -1,4 +1,4 @@
-import { FadeIn } from "./FadeIn";
+﻿import { FadeIn } from "./FadeIn";
 import { Search, FolderOpen, Rocket, LineChart } from "lucide-react";
 
 const steps = [
@@ -46,20 +46,20 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="como-funciona" className="py-16 md:py-24 lg:py-32 bg-[#0d0d12] relative">
+    <section id="como-funciona" className="py-16 md:py-24 lg:py-32 bg-white relative">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative">
         <FadeIn className="text-center mb-16">
-          <p className="text-xs font-semibold text-white/25 uppercase tracking-widest mb-5">Nossa Metodologia</p>
+          <p className="text-xs font-semibold text-[#1B4158]/32 uppercase tracking-widest mb-5">Nossa Metodologia</p>
           <h2
             style={{ fontFamily: "'Playfair Display', serif" }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1B4158] mb-4"
           >
             O empresário tem uma{" "}
             <span className="gradient-text">dor.</span>
             <br />
             Nós temos o método.
           </h2>
-          <p className="text-white/35 max-w-lg mx-auto text-sm leading-relaxed">
+          <p className="text-[#1B4158]/68 max-w-lg mx-auto text-sm leading-relaxed">
             O Método DOIA transforma a realidade financeira de empresas que crescem sem estrutura — com etapas claras, entregáveis definidos e acompanhamento contínuo.
           </p>
         </FadeIn>
@@ -69,15 +69,15 @@ export function HowItWorks() {
           <div className="flex items-center justify-center gap-2 mb-14">
             {steps.map((s, i) => (
               <div key={i} className="flex items-center gap-2">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 border border-white/8 bg-white/3">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 border border-[#1B4158]/10 bg-[#1B4158]/3">
                   <span
-                    style={{ fontFamily: "'Playfair Display', serif", color: "#c8a84a", fontSize: "1.4rem", fontWeight: 700, lineHeight: 1 }}
+                    style={{ fontFamily: "'Playfair Display', serif", color: "#B5891A", fontSize: "1.4rem", fontWeight: 700, lineHeight: 1 }}
                   >
                     {s.letter}
                   </span>
                 </div>
                 {i < steps.length - 1 && (
-                  <div className="w-8 h-px bg-white/8" />
+                  <div className="w-8 h-px bg-[#1B4158]/8" />
                 )}
               </div>
             ))}
@@ -88,34 +88,34 @@ export function HowItWorks() {
           {steps.map((step, i) => (
             <FadeIn key={i} delay={i * 100}>
               <div
-                className="relative flex flex-col p-6 rounded-xl h-full border border-white/6 bg-[#131318]"
+                className="card-lift relative flex flex-col p-6 rounded-xl h-full border border-[#1B4158]/8 bg-[#f5f7f9]"
               >
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-5 bg-white/4 text-white/35 flex-shrink-0">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-5 bg-[#1B4158]/4 text-[#1B4158]/68 flex-shrink-0">
                   {step.icon}
                 </div>
 
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-bold text-[#c8a84a]/70">{step.letter}</span>
-                  <span className="text-xs text-white/20">{`0${i + 1}`}</span>
+                  <span className="text-xs font-bold text-[#B5891A]/80">{step.letter}</span>
+                  <span className="text-xs text-[#1B4158]/27">{`0${i + 1}`}</span>
                 </div>
 
                 <h3
                   style={{ fontFamily: "'Playfair Display', serif" }}
-                  className="text-lg font-bold text-white/85 mb-1"
+                  className="text-lg font-bold text-[#1B4158] mb-1"
                 >
                   {step.title}
                 </h3>
-                <p className="text-xs font-medium text-white/35 mb-3">{step.subtitle}</p>
-                <p className="text-sm text-white/35 leading-relaxed flex-1">{step.description}</p>
+                <p className="text-xs font-medium text-[#1B4158]/68 mb-3">{step.subtitle}</p>
+                <p className="text-sm text-[#1B4158]/68 leading-relaxed flex-1">{step.description}</p>
 
                 <div className="mt-5 pt-4 border-t border-white/5 space-y-1.5">
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-semibold text-white/20 uppercase tracking-widest">Prazo</span>
-                    <span className="text-xs font-medium text-white/50">{step.tempo}</span>
+                    <span className="text-[10px] font-semibold text-[#1B4158]/27 uppercase tracking-widest">Prazo</span>
+                    <span className="text-xs font-medium text-[#1B4158]/78">{step.tempo}</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-[10px] font-semibold text-white/20 uppercase tracking-widest mt-0.5">Entregável</span>
-                    <span className="text-xs text-white/35 leading-tight">{step.entregavel}</span>
+                    <span className="text-[10px] font-semibold text-[#1B4158]/27 uppercase tracking-widest mt-0.5">Entregável</span>
+                    <span className="text-xs text-[#1B4158]/68 leading-tight">{step.entregavel}</span>
                   </div>
                 </div>
               </div>
@@ -125,7 +125,7 @@ export function HowItWorks() {
 
         <FadeIn delay={500}>
           <div className="mt-12 text-center">
-            <span className="text-xs text-white/25 px-5 py-2.5">
+            <span className="text-xs text-[#1B4158]/32 px-5 py-2.5">
               Do diagnóstico ao acompanhamento — sem deixar você no escuro em nenhuma etapa.
             </span>
           </div>

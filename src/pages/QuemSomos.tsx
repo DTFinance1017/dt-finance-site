@@ -1,11 +1,11 @@
-import { Navbar } from "@/components/Navbar";
+﻿import { Navbar } from "@/components/Navbar";
 import { QuemSomos as QuemSomosSection } from "@/components/QuemSomos";
 import { ContextualCTA } from "@/components/ContextualCTA";
 import { Footer } from "@/components/Footer";
 
 export default function QuemSomosPage() {
   return (
-    <div className="min-h-screen bg-[#0d0d12]">
+    <div className="min-h-screen bg-white">
       <Navbar />
       <div className="pt-16 lg:pt-[72px]">
         <QuemSomosSection />

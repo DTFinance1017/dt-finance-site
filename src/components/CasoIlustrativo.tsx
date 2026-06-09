@@ -1,23 +1,23 @@
-import { FadeIn } from "./FadeIn";
+﻿import { FadeIn } from "./FadeIn";
 import { AlertTriangle, ArrowRight, TrendingUp, Eye } from "lucide-react";
 
 export function CasoIlustrativo() {
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-[#0d0d12] relative overflow-hidden">
+    <section className="py-16 md:py-24 lg:py-32 bg-white relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative">
         <FadeIn className="text-center mb-14">
-          <div className="text-xs font-semibold text-white/25 uppercase tracking-widest mb-4">
+          <div className="text-xs font-semibold text-[#1B4158]/32 uppercase tracking-widest mb-4">
             ESTUDO DE CASO REAL
           </div>
           <h2
             style={{ fontFamily: "'Playfair Display', serif" }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1B4158]"
           >
             "Faturávamos R$ 6M por ano.
             <br />
-            <span className="gradient-text">Não sobrava nada."</span>
+            Não sobrava nada."
           </h2>
-          <p className="mt-4 text-white/50 max-w-xl mx-auto text-sm leading-relaxed">
+          <p className="mt-4 text-[#1B4158]/78 max-w-xl mx-auto text-sm leading-relaxed">
             Prestadora de serviços do setor de construção civil. 8 anos de mercado, equipe de 17 pessoas — e margem real desconhecida.
           </p>
         </FadeIn>
@@ -27,17 +27,17 @@ export function CasoIlustrativo() {
           {/* Situação inicial */}
           <FadeIn>
             <div
-              className="rounded-2xl border p-6 h-full"
-              style={{ borderColor: "rgba(239,68,68,0.15)", background: "#131318" }}
+              className="card-lift rounded-2xl border p-6 h-full"
+              style={{ borderColor: "rgba(27,65,88,0.09)", background: "#f5f7f9" }}
             >
               <div className="flex items-center gap-2 mb-5">
-                <AlertTriangle size={15} className="text-red-400" />
-                <span className="text-xs font-semibold text-red-400 uppercase tracking-wider">O Problema</span>
+                <AlertTriangle size={15} className="text-[#1B4158]/68" />
+                <span className="text-xs font-semibold text-[#1B4158]/72 uppercase tracking-wider">O Problema</span>
               </div>
 
               <p
                 style={{ fontFamily: "'Playfair Display', serif" }}
-                className="text-sm font-semibold text-white mb-4 leading-snug"
+                className="text-sm font-semibold text-[#1B4158] mb-4 leading-snug"
               >
                 Crescimento no faturamento. Queda no caixa. Ninguém sabia por quê.
               </p>
@@ -52,8 +52,8 @@ export function CasoIlustrativo() {
                   "Sócio cogitava empréstimo para cobrir o caixa",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2.5">
-                    <div className="w-1.5 h-1.5 rounded-full bg-red-400/80 mt-2 flex-shrink-0" />
-                    <p className="text-xs text-white/55 leading-relaxed">{item}</p>
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/20 mt-2 flex-shrink-0" />
+                    <p className="text-xs text-[#1B4158]/78 leading-relaxed">{item}</p>
                   </div>
                 ))}
               </div>
@@ -63,17 +63,17 @@ export function CasoIlustrativo() {
           {/* O que foi feito */}
           <FadeIn delay={100}>
             <div
-              className="rounded-2xl border p-6 h-full"
-              style={{ borderColor: "rgba(59,130,246,0.12)", background: "#131318" }}
+              className="card-lift rounded-2xl border p-6 h-full"
+              style={{ borderColor: "rgba(27,65,88,0.11)", background: "#f5f7f9" }}
             >
               <div className="flex items-center gap-2 mb-5">
-                <ArrowRight size={15} className="text-blue-400" />
-                <span className="text-xs font-semibold text-blue-400 uppercase tracking-wider">O Que Estruturamos</span>
+                <ArrowRight size={15} className="text-[#1B4158]/75" />
+                <span className="text-xs font-semibold text-[#1B4158]/78 uppercase tracking-wider">O Que Estruturamos</span>
               </div>
 
               <p
                 style={{ fontFamily: "'Playfair Display', serif" }}
-                className="text-sm font-semibold text-white mb-4 leading-snug"
+                className="text-sm font-semibold text-[#1B4158] mb-4 leading-snug"
               >
                 Diagnóstico + implantação em 60 dias.
               </p>
@@ -89,8 +89,8 @@ export function CasoIlustrativo() {
                   "Dashboard executivo mensal com KPIs de margem e giro",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2.5">
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue-400/80 mt-2 flex-shrink-0" />
-                    <p className="text-xs text-white/65 leading-relaxed">{item}</p>
+                    <div className="w-1.5 h-1.5 rounded-full bg-white/25 mt-2 flex-shrink-0" />
+                    <p className="text-xs text-[#1B4158]/72 leading-relaxed">{item}</p>
                   </div>
                 ))}
               </div>
@@ -100,17 +100,17 @@ export function CasoIlustrativo() {
           {/* Resultados */}
           <FadeIn delay={200}>
             <div
-              className="rounded-2xl border p-6 h-full"
-              style={{ borderColor: "rgba(16,185,129,0.12)", background: "#131318" }}
+              className="card-lift rounded-2xl border p-6 h-full"
+              style={{ borderColor: "rgba(27,65,88,0.13)", background: "#f5f7f9" }}
             >
               <div className="flex items-center gap-2 mb-5">
-                <TrendingUp size={15} className="text-emerald-400" />
-                <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Resultado em 120 dias</span>
+                <TrendingUp size={15} className="text-[#1B4158]/82" />
+                <span className="text-xs font-semibold text-[#1B4158]/72 uppercase tracking-wider">Resultado em 120 dias</span>
               </div>
 
               <p
                 style={{ fontFamily: "'Playfair Display', serif" }}
-                className="text-sm font-semibold text-white mb-4 leading-snug"
+                className="text-sm font-semibold text-[#1B4158] mb-4 leading-snug"
               >
                 Sem demitir ninguém. Sem contrair dívida.
               </p>
@@ -146,23 +146,23 @@ export function CasoIlustrativo() {
                     key={i}
                     className="p-3 rounded-xl"
                     style={{
-                      background: item.highlight ? "rgba(16,185,129,0.12)" : "rgba(16,185,129,0.06)",
-                      border: `1px solid rgba(16,185,129,${item.highlight ? "0.22" : "0.10"})`,
+                      background: item.highlight ? "rgba(27,65,88,0.10)" : "rgba(27,65,88,0.05)",
+                      border: `1px solid rgba(255,255,255,${item.highlight ? "0.10" : "0.06"})`,
                     }}
                   >
-                    <div className="text-[10px] text-emerald-400/60 uppercase tracking-wide mb-1">{item.label}</div>
+                    <div className="text-[10px] text-[#1B4158]/68 uppercase tracking-wide mb-1">{item.label}</div>
                     <div
                       style={{ fontFamily: "'Playfair Display', serif" }}
-                      className={`text-base font-bold ${item.highlight ? "text-emerald-300" : "text-emerald-400"}`}
+                      className="text-base font-bold text-[#1B4158]"
                     >
                       {item.value}
                     </div>
-                    <div className="text-[10px] text-white/40 mt-0.5">{item.detail}</div>
+                    <div className="text-[10px] text-[#1B4158]/68 mt-0.5">{item.detail}</div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-4 flex items-center gap-1.5 text-[10px] text-white/30">
+              <div className="mt-4 flex items-center gap-1.5 text-[10px] text-[#1B4158]/32">
                 <Eye size={10} />
                 <span>Dados reais. Nome da empresa preservado por confidencialidade.</span>
               </div>
@@ -174,15 +174,15 @@ export function CasoIlustrativo() {
         <FadeIn delay={100}>
           <div
             className="mt-8 rounded-2xl border p-6 sm:p-8 text-center"
-            style={{ borderColor: "rgba(240,192,64,0.15)", background: "rgba(240,192,64,0.04)" }}
+            style={{ borderColor: "rgba(27,65,88,0.09)", background: "rgba(255,255,255,0.02)" }}
           >
             <p
               style={{ fontFamily: "'Playfair Display', serif" }}
-              className="text-lg sm:text-xl text-white/80 italic max-w-3xl mx-auto leading-relaxed"
+              className="text-lg sm:text-xl text-[#1B4158]/90 italic max-w-3xl mx-auto leading-relaxed"
             >
               "Achávamos que precisávamos vender mais para resolver o caixa. Quando a DT Finance nos mostrou a margem real de cada serviço, descobrimos que o dinheiro já estava lá — só estava indo para o lugar errado."
             </p>
-            <p className="mt-4 text-xs text-white/35">— Sócio da empresa. Setor de construção civil. SP.</p>
+            <p className="mt-4 text-xs text-[#1B4158]/38">— Sócio da empresa. Setor de construção civil. SP.</p>
           </div>
         </FadeIn>
       </div>

@@ -14,6 +14,18 @@ export default defineConfig({
   build: {
     outDir: "dist",
     emptyOutDir: true,
+    sourcemap: false,
+    chunkSizeWarningLimit: 700,
+    rollupOptions: {
+      output: {
+        // Separa recharts/d3 (só usado no dashboard) do bundle principal
+        manualChunks: (id) => {
+          if (id.includes("node_modules/recharts") || id.includes("node_modules/d3-")) {
+            return "charts";
+          }
+        },
+      },
+    },
   },
   server: {
     port: 5173,
