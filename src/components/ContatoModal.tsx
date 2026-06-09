@@ -9,15 +9,15 @@ interface Props {
 }
 
 const faturamentoOptions = [
-  { label: "Até R$ 1M/ano", value: "Até R$ 1M/ano" },
-  { label: "R$ 1M – R$ 5M/ano", value: "R$ 1M – R$ 5M/ano" },
-  { label: "Acima de R$ 5M/ano", value: "Acima de R$ 5M/ano" },
+  { label: "Até R$ 5MM/ano", value: "Até R$ 5MM/ano" },
+  { label: "R$ 5MM a R$ 50MM/ano", value: "R$ 5MM a R$ 50MM/ano" },
+  { label: "Acima de R$ 50MM/ano", value: "Acima de R$ 50MM/ano" },
 ];
 
 const dorOptions = [
-  { label: "💸 Não sei pra onde vai o dinheiro", value: "Não sei pra onde vai o dinheiro" },
+  { label: "🔍 Não sei pra onde vai o dinheiro", value: "Não sei pra onde vai o dinheiro" },
   { label: "📊 Preciso de dados pra decidir", value: "Preciso de dados pra decidir" },
-  { label: "🚀 Quero crescer com controle", value: "Quero crescer com controle" },
+  { label: "📈 Quero crescer com controle", value: "Quero crescer com controle" },
 ];
 
 const inputClass =

@@ -95,7 +95,7 @@ export function Footer() {
                 <Instagram size={15} />
               </a>
               <a
-                href="https://wa.me/5511969771585"
+                href="https://wa.me/5511969771585?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20DT%20Finance%20e%20gostaria%20de%20falar%20com%20um%20especialista."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg flex items-center justify-center border transition-all duration-200 text-xs font-bold"
