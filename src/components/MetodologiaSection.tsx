@@ -57,7 +57,7 @@ export function MetodologiaSection({ showCta = true }: { showCta?: boolean }) {
             style={{ fontFamily: "'Playfair Display', serif", color: NAVY }}
             className="text-3xl sm:text-4xl md:text-[46px] font-bold leading-[1.12] mb-5"
           >
-            Método DT <span style={{ color: GOLD }}>5D</span>
+            Método DT <span style={{ color: GOLD }}>5D's</span>
             <span style={{ color: GOLD, fontSize: "0.5em", verticalAlign: "super" }}>™</span>
           </h2>
           <p className="text-base sm:text-lg leading-relaxed" style={{ color: MUTED }}>

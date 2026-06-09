@@ -4,7 +4,7 @@ import { useLocation } from "wouter";
 const stats = [
   { value: "+15 anos",       label: "de experiência no mercado" },
   { value: "R$ 2M – 50M",    label: "faturamento dos clientes" },
-  { value: "Método DT 5D™",  label: "metodologia proprietária" },
+  { value: "Método DT 5D's™",  label: "metodologia proprietária" },
 ];
 
 export function Hero() {
