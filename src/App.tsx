@@ -11,6 +11,7 @@ import Metodologia from "@/pages/Metodologia";
 import QuemSomosPage from "@/pages/QuemSomos";
 import { isAuthenticated, isInterno } from "./utils/auth";
 import { ModalProvider } from "@/context/ModalContext";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
 function ProtectedClientRoute({ component: Component }: { component: () => JSX.Element }) {
   if (!isAuthenticated()) return <Redirect to="/login" />;
@@ -56,6 +57,7 @@ function App() {
     <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
       <ModalProvider>
         <Router />
+        <WhatsAppFloat />
       </ModalProvider>
     </WouterRouter>
   );
