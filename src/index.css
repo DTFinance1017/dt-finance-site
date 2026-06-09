@@ -175,26 +175,68 @@
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Gold text */
-.gradient-text {
-  color: #c8a84a;
+/* ============================================================
+   DT FINANCE — Identidade Visual
+   ============================================================ */
+
+/* Variáveis DT Finance */
+:root {
+  --dt-navy:    #0D1F3C;
+  --dt-navy-2:  #13294F;
+  --dt-gold:    #C9A84C;
+  --dt-gold-dk: #A8893A;
+  --dt-green:   #1F7A4D;
+  --dt-cream:   #F7F4EE;
+  --dt-ink:     #1A2230;
+  --dt-muted:   #5B6470;
+  --dt-ondark:  #C7D2E2;
 }
 
-/* Glow effects — removidos */
-.glow-gold {}
-.glow-blue {}
+/* Texto dourado */
+.gradient-text {
+  color: var(--dt-gold);
+}
 
-/* Button styles */
-.btn-gold {
-  background: #c8a84a;
-  color: #080810;
+/* ---- Botões ---- */
+
+/* Botão primário: fundo dourado, texto navy */
+.btn-primary {
+  background-color: var(--dt-gold);
+  color: var(--dt-navy);
   font-weight: 600;
   border: none;
-  transition: opacity 0.18s ease;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: var(--dt-gold-dk);
 }
 
+/* Botão secundário sobre fundo escuro: contorno branco → hover dourado */
+.btn-secondary-dark {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  font-weight: 500;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+.btn-secondary-dark:hover {
+  border-color: var(--dt-gold);
+  color: var(--dt-gold);
+}
+
+/* Legado — mantido para compatibilidade com outros componentes */
+.btn-gold {
+  background: var(--dt-gold);
+  color: var(--dt-navy);
+  font-weight: 600;
+  border: none;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
 .btn-gold:hover {
-  opacity: 0.85;
+  background-color: var(--dt-gold-dk);
 }
 
 .btn-outline-blue {
@@ -204,27 +246,58 @@
   font-weight: 500;
   transition: border-color 0.18s ease, color 0.18s ease;
 }
-
 .btn-outline-blue:hover {
   border-color: rgba(255,255,255,0.28);
   color: rgba(255,255,255,0.8);
 }
 
-/* Card hover effects */
+/* ---- Cards ---- */
 .service-card {
-  transition: border-color 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
   position: relative;
   overflow: hidden;
+}
+.service-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(13,31,60,0.12);
+}
+
+/* ---- Linha dourada decorativa ---- */
+.gold-line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--dt-gold);
+}
+
+/* ---- Eyebrow de seção ---- */
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--dt-gold);
+}
+
+/* ---- Numeração de steps ---- */
+.step-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(201, 168, 76, 0.15);
+  user-select: none;
+}
+
+/* ---- Links de nav ---- */
+.nav-link {
+  color: rgba(199, 210, 226, 0.65);
+  transition: color 0.2s ease;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: #ffffff;
 }
 
 /* Hero grid background — removido */
 .hero-grid {}
-
-/* Step number */
-.step-number {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1;
-  color: rgba(200, 168, 74, 0.25);
-}

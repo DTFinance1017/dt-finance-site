@@ -1,87 +1,71 @@
-import { FadeIn } from "./FadeIn";
-import { AlertTriangle, HelpCircle, Shuffle, FileSpreadsheet, Gauge, TrendingDown } from "lucide-react";
-
-const dores = [
-  {
-    icon: <HelpCircle size={18} />,
-    title: "Faturamento cresce. Lucro, não.",
-    description: "O caixa não reflete o que entra. Você sabe quanto fatura, mas não entende para onde vai o dinheiro — e isso é um risco que cresce todo mês.",
-  },
-  {
-    icon: <Gauge size={18} />,
-    title: "Sem previsibilidade de caixa",
-    description: "Cada mês é uma incógnita. Planejar contratações, investimentos ou expansão fica inviável sem saber o que o próximo trimestre vai exigir.",
-  },
-  {
-    icon: <Shuffle size={18} />,
-    title: "Pessoa física misturada com jurídica",
-    description: "Gastos pessoais e empresariais no mesmo extrato. Isso distorce a margem real e impede qualquer análise confiável do negócio.",
-  },
-  {
-    icon: <FileSpreadsheet size={18} />,
-    title: "Planilhas que ninguém entende",
-    description: "Dados em arquivos dispersos, atualização manual e sem padrão. Quanto mais a empresa cresce, mais o controle fica para trás.",
-  },
-  {
-    icon: <TrendingDown size={18} />,
-    title: "Decisões baseadas em sensação",
-    description: "\"Acho que está indo bem.\" Sem dados estruturados, as decisões são baseadas em intuição — e o risco cresce junto com a empresa.",
-  },
-  {
-    icon: <AlertTriangle size={18} />,
-    title: "Crescimento sem estrutura financeira",
-    description: "A empresa cresce, a complexidade aumenta e o controle não acompanha. Escalar sem estrutura pode custar mais caro do que parece.",
-  },
+const problems = [
+  "Falta de indicadores confiáveis",
+  "Processos desorganizados e não documentados",
+  "Dependência excessiva dos sócios nas decisões",
+  "Falta de previsibilidade financeira",
+  "Retrabalho entre áreas e times",
+  "Dificuldade para escalar com controle",
 ];
 
 export function DorSection() {
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-[#0d0d12] relative">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 relative">
+    <section
+      className="py-24 lg:py-32"
+      style={{ backgroundColor: "#FFFFFF" }}
+    >
+      <div className="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
-        <div className="flex flex-col md:flex-row md:items-end md:gap-16 mb-12 md:mb-14">
-          <FadeIn className="md:w-1/2 mb-8 md:mb-0">
-            <p className="text-xs font-semibold text-white/25 uppercase tracking-widest mb-5">Você se identifica?</p>
+          {/* Coluna esquerda — Título */}
+          <div>
+            <span className="eyebrow block mb-5">O Problema</span>
             <h2
-              style={{ fontFamily: "'Playfair Display', serif" }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight"
+              style={{ fontFamily: "'Playfair Display', serif", color: "#0D1F3C" }}
+              className="text-3xl sm:text-4xl md:text-[42px] font-bold leading-[1.2] mb-6"
             >
-              A maioria das PMEs opera
-              <br />
-              <span className="gradient-text">no escuro financeiro</span>
+              Sua empresa está crescendo, mas a gestão acompanha esse crescimento?
             </h2>
-          </FadeIn>
-
-          <FadeIn delay={80} className="md:w-1/2">
-            <p className="text-white/40 text-base lg:text-lg leading-relaxed mb-4">
-              Não por falta de esforço — por falta de estrutura. E isso tem consequências reais no crescimento e na rentabilidade do negócio.
+            <p className="text-base leading-relaxed" style={{ color: "#5B6470" }}>
+              O crescimento sem estrutura gera complexidade. E complexidade sem gestão gera caos.
             </p>
-            <div className="p-5 rounded-xl border border-white/6 bg-[#131318]">
-              <p style={{ fontFamily: "'Playfair Display', serif" }} className="text-base text-white/75 font-semibold mb-1">
-                O resultado?
-              </p>
-              <p className="text-white/40 text-sm leading-relaxed">
-                Margem sendo consumida sem que ninguém perceba. Risco de caixa que aparece de surpresa. Decisões que custam o que poderiam render.{" "}
-                <span className="text-white/65 font-medium">Isso tem solução.</span>
+
+            {/* Frase de impacto */}
+            <div
+              className="mt-10 border-l-4 pl-6 py-1"
+              style={{ borderColor: "#C9A84C" }}
+            >
+              <p
+                style={{ fontFamily: "'Playfair Display', serif", color: "#0D1F3C" }}
+                className="text-lg sm:text-xl font-semibold leading-snug"
+              >
+                O resultado é perda de eficiência, lucro e controle.
               </p>
             </div>
-          </FadeIn>
-        </div>
+          </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {dores.map((d, i) => (
-            <FadeIn key={i} delay={i * 60}>
-              <div className="p-5 lg:p-6 rounded-xl border border-white/6 bg-[#131318] h-full">
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-4 bg-white/4 text-white/30">
-                  {d.icon}
-                </div>
-                <h3 className="text-sm font-semibold text-white/80 mb-2 leading-snug">{d.title}</h3>
-                <p className="text-sm text-white/35 leading-relaxed">{d.description}</p>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
+          {/* Coluna direita — Lista de problemas */}
+          <div>
+            <p className="text-sm font-medium mb-7" style={{ color: "#5B6470" }}>
+              Os principais desafios de empresas em crescimento:
+            </p>
+            <ul className="space-y-4">
+              {problems.map((p, i) => (
+                <li key={i} className="flex items-start gap-4">
+                  <span
+                    className="mt-1.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-[10px] font-bold"
+                    style={{ backgroundColor: "rgba(201,168,76,0.12)", color: "#C9A84C" }}
+                  >
+                    {i + 1}
+                  </span>
+                  <span className="text-base leading-relaxed" style={{ color: "#1A2230" }}>
+                    {p}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
+        </div>
       </div>
     </section>
   );

@@ -1,9 +1,19 @@
 import { useModal } from "@/context/ModalContext";
 import { useLocation } from "wouter";
+import { Linkedin, Instagram } from "lucide-react";
+
+const NAVY = "#0D1F3C";
+
+const navLinks = [
+  { label: "Home",        path: "/" },
+  { label: "Metodologia", path: "/metodologia" },
+  { label: "Soluções",    path: "/solucoes" },
+  { label: "Sobre Nós",   path: "/quem-somos" },
+];
 
 export function Footer() {
   const { openModal } = useModal();
-  const [, navigate] = useLocation();
+  const [, navigate]  = useLocation();
 
   const goTo = (path: string) => {
     navigate(path);
@@ -11,116 +21,185 @@ export function Footer() {
   };
 
   return (
-    <>
-      <footer className="border-t border-white/6 bg-[#0a0a0f] pt-16 pb-8">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16">
+    <footer style={{ backgroundColor: "#0a1428" }}>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-14">
+      {/* Corpo principal */}
+      <div className="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16 pt-16 pb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-12">
 
-            <div className="lg:col-span-5">
-              <div
-                className="flex items-center gap-3 mb-5 cursor-pointer w-fit"
-                onClick={() => goTo("/")}
-              >
-                <img src="/logo-dt-v2.png" alt="DT Finance" className="h-9 w-auto object-contain opacity-80" />
-                <span style={{ fontFamily: "'Playfair Display', serif" }} className="text-white/70 font-semibold text-lg">
+          {/* Brand */}
+          <div className="lg:col-span-5">
+            <div
+              className="flex items-center gap-3 mb-5 cursor-pointer w-fit"
+              onClick={() => goTo("/")}
+            >
+              <img
+                src="/logo-dt-v2.png"
+                alt="DT Finance"
+                className="h-8 w-auto object-contain opacity-80"
+              />
+              <div>
+                <span
+                  style={{ fontFamily: "'Playfair Display', serif", color: "#FFFFFF" }}
+                  className="font-semibold text-base block"
+                >
                   DT Finance
                 </span>
-              </div>
-              <p className="text-sm text-white/30 max-w-xs leading-relaxed mb-6">
-                CFO as a Service para PMEs. Estruturamos a gestão financeira da sua empresa com método, dados e presença executiva contínua.
-              </p>
-
-              <div className="flex flex-wrap items-center gap-4">
-                <img src="/selo-cfp.png" alt="CFP® — Certified Financial Planner" className="h-12 w-auto object-contain opacity-60" />
-                <img src="/selo-oab.png" alt="OAB — Direito Empresarial" className="h-12 w-auto object-contain opacity-60" />
-                <span className="text-xs px-2.5 py-1 rounded-lg border border-white/8 text-white/25">
-                  São Paulo, SP
+                <span
+                  className="text-[10px] tracking-widest uppercase"
+                  style={{ color: "rgba(199,210,226,0.4)" }}
+                >
+                  Estruturação &amp; Inteligência
                 </span>
               </div>
             </div>
 
-            <div className="lg:col-span-2">
-              <div className="text-xs font-semibold text-white/20 uppercase tracking-widest mb-5">
-                Soluções
-              </div>
-              <ul className="space-y-3">
-                {[
-                  "CFO as a Service",
-                  "Relatórios Executivos",
-                  "Fluxo de Caixa Projetado",
-                  "Controladoria Gerencial",
-                  "Inteligência de Dados",
-                  "Apoio Bancário",
-                ].map((item) => (
-                  <li key={item}>
-                    <button
-                      onClick={() => goTo("/solucoes")}
-                      className="text-sm text-white/28 hover:text-white/55 transition-colors duration-200 text-left"
-                    >
-                      {item}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <p className="text-sm leading-relaxed mb-7 max-w-xs" style={{ color: "rgba(199,210,226,0.45)" }}>
+              Transformamos empresas através de governança, processos, performance e inteligência financeira.
+            </p>
 
-            <div className="lg:col-span-3">
-              <div className="text-xs font-semibold text-white/20 uppercase tracking-widest mb-5">
-                Empresa
-              </div>
-              <ul className="space-y-3 mb-8">
-                {[
-                  { label: "Nosso Foco", path: "/nosso-foco" },
-                  { label: "Metodologia DOIA", path: "/metodologia" },
-                  { label: "Quem Somos", path: "/quem-somos" },
-                  { label: "Área do Cliente", path: "/login" },
-                ].map((item) => (
-                  <li key={item.label}>
-                    <button
-                      onClick={() => goTo(item.path)}
-                      className="text-sm text-white/28 hover:text-white/55 transition-colors duration-200 text-left"
-                    >
-                      {item.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="space-y-2 mb-7">
-                <div className="text-xs font-semibold text-white/20 uppercase tracking-widest mb-3">
-                  Contato
-                </div>
-                <a href="mailto:contato@dtfinance.com.br" className="block text-sm text-white/28 hover:text-white/55 transition-colors">
-                  contato@dtfinance.com.br
-                </a>
-              </div>
-
-              <button
-                className="btn-gold px-5 py-2.5 rounded-lg text-sm font-semibold"
-                onClick={() => openModal()}
+            {/* Redes sociais */}
+            <div className="flex items-center gap-3">
+              <a
+                href="https://www.linkedin.com/company/dtfinance"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-lg flex items-center justify-center border transition-all duration-200"
+                style={{ borderColor: "rgba(255,255,255,0.1)", color: "rgba(199,210,226,0.4)" }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(201,168,76,0.4)";
+                  (e.currentTarget as HTMLAnchorElement).style.color = "#C9A84C";
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.1)";
+                  (e.currentTarget as HTMLAnchorElement).style.color = "rgba(199,210,226,0.4)";
+                }}
               >
-                Agendar diagnóstico →
-              </button>
+                <Linkedin size={15} />
+              </a>
+              <a
+                href="https://www.instagram.com/dtfinance"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-lg flex items-center justify-center border transition-all duration-200"
+                style={{ borderColor: "rgba(255,255,255,0.1)", color: "rgba(199,210,226,0.4)" }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(201,168,76,0.4)";
+                  (e.currentTarget as HTMLAnchorElement).style.color = "#C9A84C";
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.1)";
+                  (e.currentTarget as HTMLAnchorElement).style.color = "rgba(199,210,226,0.4)";
+                }}
+              >
+                <Instagram size={15} />
+              </a>
+              <a
+                href="https://wa.me/5511999999999"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-lg flex items-center justify-center border transition-all duration-200 text-xs font-bold"
+                style={{ borderColor: "rgba(255,255,255,0.1)", color: "rgba(199,210,226,0.4)" }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(201,168,76,0.4)";
+                  (e.currentTarget as HTMLAnchorElement).style.color = "#C9A84C";
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.1)";
+                  (e.currentTarget as HTMLAnchorElement).style.color = "rgba(199,210,226,0.4)";
+                }}
+              >
+                W
+              </a>
             </div>
-
           </div>
 
-          <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-white/18">
-              © 2026 DT Finance. Todos os direitos reservados.
-            </p>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]/60 animate-pulse-dot" />
-                <span className="text-xs text-white/18">Sistema operacional</span>
-              </div>
-              <span className="text-xs text-white/12">CNPJ em processo de abertura</span>
+          {/* Links */}
+          <div className="lg:col-span-3">
+            <div
+              className="text-[10px] font-semibold uppercase tracking-widest mb-5"
+              style={{ color: "rgba(199,210,226,0.3)" }}
+            >
+              Navegação
             </div>
+            <ul className="space-y-3">
+              {navLinks.map((link) => (
+                <li key={link.label}>
+                  <button
+                    onClick={() => goTo(link.path)}
+                    className="text-sm text-left transition-colors duration-200"
+                    style={{ color: "rgba(199,210,226,0.45)" }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = "#ffffff"; }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = "rgba(199,210,226,0.45)"; }}
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
+              <li>
+                <button
+                  onClick={() => openModal()}
+                  className="text-sm text-left transition-colors duration-200"
+                  style={{ color: "rgba(199,210,226,0.45)" }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = "#ffffff"; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = "rgba(199,210,226,0.45)"; }}
+                >
+                  Contato
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contato + CTA */}
+          <div className="lg:col-span-4">
+            <div
+              className="text-[10px] font-semibold uppercase tracking-widest mb-5"
+              style={{ color: "rgba(199,210,226,0.3)" }}
+            >
+              Contato
+            </div>
+            <a
+              href="mailto:contato@dtfinance.com.br"
+              className="block text-sm mb-2 transition-colors duration-200"
+              style={{ color: "rgba(199,210,226,0.45)" }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = "#ffffff"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(199,210,226,0.45)"; }}
+            >
+              contato@dtfinance.com.br
+            </a>
+            <p className="text-sm mb-8" style={{ color: "rgba(199,210,226,0.3)" }}>São Paulo, SP — Brasil</p>
+
+            <button
+              onClick={() => openModal()}
+              className="btn-primary px-6 py-3 rounded-lg text-sm font-semibold"
+            >
+              Agendar Diagnóstico
+            </button>
           </div>
 
         </div>
-      </footer>
-    </>
+
+        {/* Rodapé inferior */}
+        <div
+          className="pt-6 border-t flex flex-col sm:flex-row justify-between items-center gap-4"
+          style={{ borderColor: "rgba(255,255,255,0.06)" }}
+        >
+          <p className="text-xs" style={{ color: "rgba(199,210,226,0.25)" }}>
+            © 2026 DT Finance. Todos os direitos reservados.
+          </p>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => navigate("/login")}
+              className="text-xs transition-colors duration-200"
+              style={{ color: "rgba(199,210,226,0.25)" }}
+              onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.color = "rgba(199,210,226,0.5)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.color = "rgba(199,210,226,0.25)"; }}
+            >
+              Área do Cliente
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 }
