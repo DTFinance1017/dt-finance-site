@@ -1,0 +1,14 @@
+{
+  "name": "DT Finance",
+  "short_name": "DT Finance",
+  "description": "CFO as a Service para empresas — inteligência financeira para decisões mais inteligentes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#040c1c",
+  "theme_color": "#040c1c",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
