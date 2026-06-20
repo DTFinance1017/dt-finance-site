@@ -2,12 +2,6 @@ import { useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
-// ============================================================
-// Home — conteúdo novo (resumo aprovado) com a identidade visual
-// ANTERIOR: Playfair Display + DM Sans, paleta navy + dourado,
-// navbar e rodapé originais (logo real mantida).
-// ============================================================
-
 const NAVY = "#0D1F3C";
 const GOLD = "#C9A84C";
 const GOLD_DK = "#A8893A";
@@ -52,7 +46,7 @@ export default function Home() {
     <div className="min-h-screen" style={{ backgroundColor: "#FFFFFF" }}>
       <Navbar />
 
-      {/* ─── 1 · HERO ─────────────────────────────────────── */}
+      {/* Hero */}
       <section className="relative overflow-hidden" style={{ backgroundColor: "#FFFFFF" }}>
         <div
           className="absolute inset-0 pointer-events-none"
@@ -86,7 +80,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── 2 · A VIRADA ─────────────────────────────────── */}
+      {/* A Virada */}
       <section className="py-16 sm:py-24 lg:py-32" style={{ backgroundColor: CREAM }}>
         <div className="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16">
           <span className="eyebrow block mb-5">A Virada</span>
@@ -118,7 +112,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── 3 · O PROBLEMA ───────────────────────────────── */}
+      {/* O Problema */}
       <section className="py-16 sm:py-24 lg:py-32" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16">
           <div className="max-w-2xl mb-14">
@@ -145,7 +139,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── 4 · MANIFESTO ────────────────────────────────── */}
+      {/* Posicionamento */}
       <section className="py-16 sm:py-24 lg:py-32" style={{ backgroundColor: CREAM }}>
         <div className="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16">
           <div className="max-w-3xl border-l-4 pl-7" style={{ borderColor: GOLD }}>
@@ -160,7 +154,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── 5 · TRÊS LINHAS ──────────────────────────────── */}
+      {/* Linhas de atuação */}
       <section id="tres-linhas" className="py-16 sm:py-24 lg:py-32" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16">
           <div className="max-w-xl mb-14">
@@ -187,7 +181,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── 6 · ESCADA DE VALOR ──────────────────────────── */}
+      {/* Escada de valor */}
       <section className="py-16 sm:py-24 lg:py-32" style={{ backgroundColor: CREAM }}>
         <div className="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16">
           <div className="max-w-xl mb-14">
@@ -217,7 +211,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── 7 · BANKING & CRÉDITO ────────────────────────── */}
+      {/* Banking & Crédito */}
       <section className="py-16 sm:py-24 lg:py-32" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 rounded-xl overflow-hidden border" style={{ borderColor: "rgba(13,31,60,0.08)" }}>
@@ -252,7 +246,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── 8 · CTA FINAL ────────────────────────────────── */}
+      {/* CTA final */}
       <section className="py-16 sm:py-24 lg:py-32 relative overflow-hidden" style={{ backgroundColor: NAVY }}>
         <div
           className="absolute inset-0 pointer-events-none"
