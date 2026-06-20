@@ -14,7 +14,6 @@ const GOLD_DK = "#A8893A";
 const GREEN = "#1F7A4D";
 const CREAM = "#F7F4EE";
 const MUTED = "#5B6470";
-const INK = "#1A2230";
 
 const WA =
   "https://wa.me/5511969771585?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20DT%20Finance%20e%20gostaria%20de%20agendar%20um%20diagn%C3%B3stico.";
@@ -59,7 +58,7 @@ export default function Home() {
           className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(ellipse 75% 55% at 50% 0%, rgba(201,168,76,0.10) 0%, transparent 58%)" }}
         />
-        <div className="relative max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16 pt-32 pb-20 lg:pt-40 lg:pb-28">
+        <div className="relative max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16 pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-28">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-6">
               <span className="gold-line" />
@@ -73,10 +72,10 @@ export default function Home() {
               inteligência financeira. Estrutura para crescer com controle — não apenas relatórios.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <a href={WA} target="_blank" rel="noopener noreferrer" className="btn-primary px-7 py-4 rounded-lg text-sm font-semibold text-center">
+              <a href={WA} target="_blank" rel="noopener noreferrer" className="btn-primary px-7 py-4 rounded-lg text-sm font-semibold text-center w-full sm:w-auto">
                 Agendar diagnóstico
               </a>
-              <button onClick={() => scrollTo("tres-linhas")} className="btn-outline-blue px-7 py-4 rounded-lg text-sm">
+              <button onClick={() => scrollTo("tres-linhas")} className="btn-outline-blue px-7 py-4 rounded-lg text-sm w-full sm:w-auto">
                 Conheça nossa atuação
               </button>
             </div>
@@ -88,7 +87,7 @@ export default function Home() {
       </section>
 
       {/* ─── 2 · A VIRADA ─────────────────────────────────── */}
-      <section className="py-24 lg:py-32" style={{ backgroundColor: CREAM }}>
+      <section className="py-16 sm:py-24 lg:py-32" style={{ backgroundColor: CREAM }}>
         <div className="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16">
           <span className="eyebrow block mb-5">A Virada</span>
           <h2 style={{ ...serif, color: NAVY }} className="text-3xl sm:text-4xl md:text-[42px] font-bold leading-[1.2] mb-5 max-w-xl">
@@ -120,7 +119,7 @@ export default function Home() {
       </section>
 
       {/* ─── 3 · O PROBLEMA ───────────────────────────────── */}
-      <section className="py-24 lg:py-32" style={{ backgroundColor: "#FFFFFF" }}>
+      <section className="py-16 sm:py-24 lg:py-32" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16">
           <div className="max-w-2xl mb-14">
             <span className="eyebrow block mb-5">O Problema</span>
@@ -147,7 +146,7 @@ export default function Home() {
       </section>
 
       {/* ─── 4 · MANIFESTO ────────────────────────────────── */}
-      <section className="py-24 lg:py-32" style={{ backgroundColor: CREAM }}>
+      <section className="py-16 sm:py-24 lg:py-32" style={{ backgroundColor: CREAM }}>
         <div className="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16">
           <div className="max-w-3xl border-l-4 pl-7" style={{ borderColor: GOLD }}>
             <span className="eyebrow block mb-5">Nosso posicionamento</span>
@@ -162,7 +161,7 @@ export default function Home() {
       </section>
 
       {/* ─── 5 · TRÊS LINHAS ──────────────────────────────── */}
-      <section id="tres-linhas" className="py-24 lg:py-32" style={{ backgroundColor: "#FFFFFF" }}>
+      <section id="tres-linhas" className="py-16 sm:py-24 lg:py-32" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16">
           <div className="max-w-xl mb-14">
             <span className="eyebrow block mb-5">Atuação</span>
@@ -189,7 +188,7 @@ export default function Home() {
       </section>
 
       {/* ─── 6 · ESCADA DE VALOR ──────────────────────────── */}
-      <section className="py-24 lg:py-32" style={{ backgroundColor: CREAM }}>
+      <section className="py-16 sm:py-24 lg:py-32" style={{ backgroundColor: CREAM }}>
         <div className="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16">
           <div className="max-w-xl mb-14">
             <span className="eyebrow block mb-5">Jornada do cliente</span>
@@ -219,10 +218,10 @@ export default function Home() {
       </section>
 
       {/* ─── 7 · BANKING & CRÉDITO ────────────────────────── */}
-      <section className="py-24 lg:py-32" style={{ backgroundColor: "#FFFFFF" }}>
+      <section className="py-16 sm:py-24 lg:py-32" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 rounded-xl overflow-hidden border" style={{ borderColor: "rgba(13,31,60,0.08)" }}>
-            <div className="p-10 lg:p-14" style={{ backgroundColor: "#FFFFFF" }}>
+            <div className="p-7 sm:p-10 lg:p-14" style={{ backgroundColor: "#FFFFFF" }}>
               <span className="eyebrow block mb-5">Diferencial</span>
               <h2 style={{ ...serif, color: NAVY }} className="text-2xl sm:text-3xl md:text-[34px] font-bold leading-[1.2] mb-5">
                 Banking & Crédito —<br />
@@ -236,7 +235,7 @@ export default function Home() {
                 Falar sobre crédito
               </a>
             </div>
-            <div className="p-10 lg:p-14 relative flex flex-col justify-center" style={{ backgroundColor: NAVY }}>
+            <div className="p-7 sm:p-10 lg:p-14 relative flex flex-col justify-center" style={{ backgroundColor: NAVY }}>
               <div className="absolute top-0 left-0 right-0 h-0.5" style={{ backgroundColor: GOLD }} />
               <blockquote style={{ ...serif }} className="text-xl sm:text-2xl font-bold leading-snug italic" >
                 <span style={{ color: "#FFFFFF" }}>"O dinheiro não fica mais barato porque você pede. Fica mais barato porque você </span>
@@ -254,7 +253,7 @@ export default function Home() {
       </section>
 
       {/* ─── 8 · CTA FINAL ────────────────────────────────── */}
-      <section className="py-24 lg:py-32 relative overflow-hidden" style={{ backgroundColor: NAVY }}>
+      <section className="py-16 sm:py-24 lg:py-32 relative overflow-hidden" style={{ backgroundColor: NAVY }}>
         <div
           className="absolute inset-0 pointer-events-none"
           style={{ background: "radial-gradient(ellipse 50% 60% at 50% 100%, rgba(201,168,76,0.07) 0%, transparent 70%)" }}
