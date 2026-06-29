@@ -73,14 +73,14 @@ export function Navbar() {
                 alt="DT Finance"
                 className="h-9 w-auto object-contain"
               />
-              <div className="hidden sm:block">
+              <div className="block">
                 <span
                   style={{ fontFamily: "'Playfair Display', serif", color: cMain }}
-                  className="font-semibold text-base tracking-tight"
+                  className="font-semibold text-sm sm:text-base tracking-tight whitespace-nowrap"
                 >
                   DT Finance
                 </span>
-                <div className="text-[10px] tracking-widest uppercase" style={{ color: cSub }}>
+                <div className="text-[9px] sm:text-[10px] tracking-widest uppercase whitespace-nowrap" style={{ color: cSub }}>
                   Estruturação & Inteligência
                 </div>
               </div>
