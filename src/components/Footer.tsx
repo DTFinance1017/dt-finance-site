@@ -61,7 +61,7 @@ export function Footer() {
             {/* Redes sociais */}
             <div className="flex items-center gap-3">
               <a
-                href="https://www.linkedin.com/company/dtfinance"
+                href="https://www.linkedin.com/company/dt-finance-gestao/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg flex items-center justify-center border transition-all duration-200"
