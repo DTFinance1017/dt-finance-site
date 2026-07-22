@@ -59,6 +59,7 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
   const [enviado, setEnviado] = useState(false);
   const [enviando, setEnviando] = useState(false);
   const [erro, setErro] = useState(false);
+  const [erroMsg, setErroMsg] = useState("");
 
   const isChecklist = source === "checklist";
 
@@ -69,6 +70,7 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
     e.preventDefault();
     if (enviando) return;
     setErro(false);
+    setErroMsg("");
     setEnviando(true);
     try {
       const res = await fetch("/api/contato", {
@@ -82,10 +84,17 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
           setTimeout(() => handleClose(), 3000);
         }
       } else {
+        const data = await res.json().catch(() => null);
         setErro(true);
+        setErroMsg(
+          (data && data.error) ? `${data.error} (HTTP ${res.status})` : `Erro do servidor (HTTP ${res.status}).`
+        );
       }
-    } catch {
+    } catch (e) {
       setErro(true);
+      setErroMsg(
+        `Falha de conexão com o servidor${e instanceof Error && e.message ? `: ${e.message}` : "."}`
+      );
     } finally {
       setEnviando(false);
     }
@@ -100,6 +109,7 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
       setForm({ nome: "", whatsapp: "", email: "", empresa: "" });
       setEnviado(false);
       setErro(false);
+      setErroMsg("");
     }, 300);
   };
 
@@ -111,6 +121,7 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
     setForm({ nome: "", whatsapp: "", email: "", empresa: "" });
     setEnviado(false);
     setErro(false);
+    setErroMsg("");
   }, [open]);
 
   if (!open) return null;
@@ -216,7 +227,11 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
                 <label className={labelClass}>Nome da empresa *</label>
                 <input required className={inputClass} placeholder="Razão social ou nome fantasia" value={form.empresa} onChange={(e) => set("empresa", e.target.value)} />
               </div>
-              {erro && <p className="text-red-400 text-xs text-center">Erro ao enviar. Tente novamente.</p>}
+              {erro && (
+                <p className="text-red-500 text-xs text-center leading-relaxed">
+                  {erroMsg || "Erro ao enviar. Tente novamente."}
+                </p>
+              )}
             </div>
             <div className="px-8 pb-8 pt-4 flex-shrink-0" style={{ borderTop: "1px solid rgba(27,65,88,0.10)" }}>
               <button type="submit" disabled={enviando} className="w-full btn-gold py-[14px] rounded-xl text-sm font-bold tracking-wide flex items-center justify-center gap-2 disabled:opacity-50">
@@ -350,7 +365,11 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
                 <label className={labelClass}>Nome da empresa *</label>
                 <input required className={inputClass} placeholder="Razão social ou nome fantasia" value={form.empresa} onChange={(e) => set("empresa", e.target.value)} />
               </div>
-              {erro && <p className="text-red-400 text-xs text-center">Erro ao enviar. Tente novamente.</p>}
+              {erro && (
+                <p className="text-red-500 text-xs text-center leading-relaxed">
+                  {erroMsg || "Erro ao enviar. Tente novamente."}
+                </p>
+              )}
             </div>
 
             <div className="px-8 pb-8 pt-4 flex-shrink-0">
