@@ -133,9 +133,12 @@ body:has(.dtf) {
 .dtf .nav-cta:hover { border-color: var(--dtf-gold); color: var(--dtf-gold-bright); }
 
 /* toggle mobile — não existe no preview, pedido no briefing */
+/* 44×44 é o mínimo para o dedo acertar (o botão não tem fundo nem borda, então
+   crescer a caixa não muda nada na tela). O `margin-right: -10px` compensa os
+   4px extras: o ícone continua exatamente onde estava. */
 .dtf .nav-toggle {
   display: none; align-items: center; justify-content: center;
-  width: 40px; height: 40px; margin-right: -8px;
+  width: 44px; height: 44px; margin-right: -10px;
   background: none; border: none; color: #fff; cursor: pointer;
 }
 .dtf .nav-mobile {
