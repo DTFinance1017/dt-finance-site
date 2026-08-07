@@ -1,0 +1,391 @@
+/* ─────────────────────────────────────────────────────────────
+   Home DT Finance — Gestão, Inteligência e Tecnologia
+   Porte fiel de dtfinance-preview.html.
+
+   Tudo vive sob `.dtf` (o wrapper da home) por dois motivos:
+   1. o resto do site usa outra identidade (Arial + creme #FAF8F2) e não pode
+      ser afetado — Metodologia, Soluções, Quem Somos, Dashboard e Interno
+      continuam como estavam;
+   2. os nomes de classe do preview (.card, .btn-gold, .dark, .stat) colidem
+      com o design system em src/index.css e com as variantes do Tailwind.
+   As custom properties levam prefixo --dtf- pelo mesmo motivo: --muted e
+   --line já existem em :root como triplas HSL do Tailwind.
+   ───────────────────────────────────────────────────────────── */
+
+.dtf {
+  --dtf-navy: #0a1220;
+  --dtf-navy-3: #111b2e;
+  --dtf-paper: #f5f2ec;
+  --dtf-ink: #15181f;
+  --dtf-muted: #5b6472;
+  --dtf-muted-d: rgba(255, 255, 255, 0.6);
+  --dtf-gold: #c2a15c;
+  --dtf-gold-2: #a9873f;
+  --dtf-gold-bright: #dcbd82;
+  --dtf-line: rgba(20, 24, 33, 0.13);
+  --dtf-line-d: rgba(255, 255, 255, 0.12);
+  --dtf-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --dtf-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  font-family: var(--dtf-sans);
+  background: var(--dtf-paper);
+  color: var(--dtf-ink);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* o overscroll no topo/rodapé mostraria o creme do resto do site */
+body:has(.dtf) {
+  background: #0a1220;
+}
+
+.dtf a { text-decoration: none; color: inherit; }
+.dtf ul { list-style: none; }
+.dtf img { display: block; max-width: 100%; }
+
+.dtf .wrap { max-width: 1160px; margin: 0 auto; padding: 0 26px; }
+.dtf .serif { font-family: var(--dtf-serif); }
+.dtf .kicker {
+  font-size: 11px; font-weight: 600; letter-spacing: .24em;
+  text-transform: uppercase; color: var(--dtf-gold-2);
+}
+.dtf .kicker.on-dark { color: var(--dtf-gold-bright); }
+
+/* o site define h1..h6 em Arial/navy/700 no @layer base — aqui não vale.
+   `line-height: inherit` não é enfeite: sem ele o 1.2 do @layer base passa, e
+   todo título sem line-height próprio encolhe (o original herda o 1.55 do body). */
+.dtf h1, .dtf h2, .dtf h3 {
+  font-family: var(--dtf-serif); font-weight: 500;
+  letter-spacing: -.01em; color: var(--dtf-ink); line-height: inherit;
+}
+.dtf h4, .dtf h5, .dtf h6 {
+  font-family: var(--dtf-sans); font-weight: 600; color: inherit; line-height: inherit;
+}
+.dtf h2.title { font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.08; }
+.dtf .lead { font-size: 17px; line-height: 1.7; color: var(--dtf-muted); }
+.dtf .lead.on-dark { color: var(--dtf-muted-d); }
+.dtf .sec { padding: 110px 0; }
+.dtf .sec-dark { background: var(--dtf-navy); color: #fff; }
+.dtf .sec-dark h2.title, .dtf .sec-dark h3 { color: #fff; }
+
+.dtf .btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--dtf-sans); font-size: 13.5px; font-weight: 600;
+  letter-spacing: .01em; padding: 14px 26px; border-radius: 2px;
+  cursor: pointer; transition: .18s; border: none;
+}
+.dtf .btn-gold { background: var(--dtf-gold); color: #1a1305; }
+.dtf .btn-gold:hover { background: var(--dtf-gold-bright); }
+.dtf .btn-line { border: 1px solid rgba(255, 255, 255, .28); color: #fff; background: transparent; }
+.dtf .btn-line:hover { background: rgba(255, 255, 255, .07); }
+.dtf .arrow { font-size: 15px; line-height: 1; }
+
+.dtf a:focus-visible, .dtf button:focus-visible {
+  outline: 2px solid var(--dtf-gold-bright);
+  outline-offset: 3px;
+}
+
+.dtf .reveal {
+  opacity: 0; transform: translateY(18px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+.dtf .reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dtf .reveal { opacity: 1; transform: none; transition: none; }
+  .dtf .btn, .dtf .nav { transition: none; }
+}
+
+/* ── NAV ────────────────────────────────────────────────────── */
+.dtf .nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+  transition: .3s; border-bottom: 1px solid transparent;
+}
+.dtf .nav.scrolled {
+  background: rgba(10, 18, 32, .82);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--dtf-line-d);
+}
+.dtf .nav-in {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 26px; max-width: 1160px; margin: 0 auto;
+}
+.dtf .brand { display: flex; flex-direction: column; line-height: 1; }
+.dtf .brand .n {
+  font-family: var(--dtf-serif); font-size: 20px; font-weight: 600;
+  color: #fff; letter-spacing: .02em;
+}
+.dtf .brand .s {
+  font-size: 9px; font-weight: 600; letter-spacing: .26em; text-transform: uppercase;
+  color: rgba(255, 255, 255, .45); margin-top: 4px;
+}
+.dtf .nav-links { display: flex; gap: 32px; }
+.dtf .nav-links a {
+  font-size: 12.5px; font-weight: 500; letter-spacing: .02em;
+  color: rgba(255, 255, 255, .72);
+}
+.dtf .nav-links a:hover { color: var(--dtf-gold-bright); }
+.dtf .nav-cta {
+  display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px;
+  font-weight: 600; color: #fff; border: 1px solid rgba(255, 255, 255, .3);
+  padding: 9px 18px; border-radius: 2px;
+}
+.dtf .nav-cta:hover { border-color: var(--dtf-gold); color: var(--dtf-gold-bright); }
+
+/* toggle mobile — não existe no preview, pedido no briefing */
+/* 44×44 é o mínimo para o dedo acertar (o botão não tem fundo nem borda, então
+   crescer a caixa não muda nada na tela). O `margin-right: -10px` compensa os
+   4px extras: o ícone continua exatamente onde estava. */
+.dtf .nav-toggle {
+  display: none; align-items: center; justify-content: center;
+  width: 44px; height: 44px; margin-right: -10px;
+  background: none; border: none; color: #fff; cursor: pointer;
+}
+.dtf .nav-mobile {
+  background: rgba(10, 18, 32, .96);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--dtf-line-d);
+}
+.dtf .nav-mobile-in { padding: 14px 26px 22px; max-width: 1160px; margin: 0 auto; }
+.dtf .nav-mobile a {
+  display: block; padding: 13px 0; font-size: 14px; font-weight: 500;
+  color: rgba(255, 255, 255, .78); border-bottom: 1px solid var(--dtf-line-d);
+}
+.dtf .nav-mobile a:hover { color: var(--dtf-gold-bright); }
+.dtf .nav-mobile .btn { width: 100%; justify-content: center; margin-top: 20px; }
+
+/* ── HERO ───────────────────────────────────────────────────── */
+.dtf .hero {
+  position: relative; min-height: 100vh; display: flex; align-items: flex-end;
+  overflow: hidden; background: var(--dtf-navy);
+}
+.dtf .hero-img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+}
+.dtf .hero-ov {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(6, 11, 20, .72) 0%, rgba(6, 11, 20, .35) 38%, rgba(6, 11, 20, .82) 88%, rgba(10, 18, 32, .96) 100%);
+}
+.dtf .hero-in { position: relative; z-index: 2; width: 100%; padding-bottom: 8vh; padding-top: 120px; }
+.dtf .hero .kicker { margin-bottom: 22px; display: block; }
+.dtf .hero h1 {
+  font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1.02; color: #fff;
+  max-width: 16ch; font-weight: 500;
+}
+.dtf .hero h1 em { font-style: italic; color: var(--dtf-gold-bright); }
+.dtf .hero p.lead { margin-top: 26px; max-width: 56ch; color: rgba(255, 255, 255, .78); font-size: 18px; }
+.dtf .hero-cta { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 14px; }
+.dtf .hero-cred {
+  margin-top: 56px; display: flex; gap: 0; flex-wrap: wrap;
+  border-top: 1px solid var(--dtf-line-d); padding-top: 24px; max-width: 820px;
+}
+.dtf .cred { padding-right: 40px; margin-right: 40px; border-right: 1px solid var(--dtf-line-d); }
+.dtf .cred:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+.dtf .cred .v { font-family: var(--dtf-serif); font-size: 20px; color: var(--dtf-gold-bright); }
+.dtf .cred .l { font-size: 12px; color: rgba(255, 255, 255, .55); margin-top: 2px; }
+
+/* ── MANIFESTO ──────────────────────────────────────────────── */
+.dtf .manifesto { max-width: 940px; }
+.dtf .manifesto .kicker { display: block; margin-bottom: 24px; }
+.dtf .manifesto p {
+  font-family: var(--dtf-serif); font-size: clamp(1.5rem, 2.6vw, 2.15rem);
+  line-height: 1.4; font-weight: 400; color: var(--dtf-ink);
+}
+.dtf .manifesto p .g { color: var(--dtf-gold-2); font-style: italic; }
+.dtf .virada {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  margin-top: 64px; border-top: 1px solid var(--dtf-line);
+}
+.dtf .vcol { padding: 34px 40px 34px 0; }
+.dtf .vcol + .vcol { padding-left: 40px; border-left: 1px solid var(--dtf-line); }
+.dtf .vcol .tag {
+  font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--dtf-muted); margin-bottom: 14px;
+}
+.dtf .vcol.now .tag { color: var(--dtf-gold-2); }
+.dtf .vcol h3 { font-size: 24px; margin-bottom: 10px; }
+.dtf .vcol p { font-size: 15px; color: var(--dtf-muted); line-height: 1.65; max-width: 38ch; }
+
+/* ── SECTION HEAD ───────────────────────────────────────────── */
+.dtf .shead { max-width: 720px; }
+.dtf .shead .kicker { margin-bottom: 18px; display: block; }
+.dtf .shead h2 { margin-bottom: 0; }
+.dtf .shead p { margin-top: 20px; }
+
+/* ── ECOSSISTEMA ────────────────────────────────────────────── */
+.dtf .forces {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  margin-top: 64px; border-top: 1px solid var(--dtf-line-d);
+}
+.dtf .force { padding: 38px 34px 38px 0; }
+.dtf .force + .force { padding-left: 34px; border-left: 1px solid var(--dtf-line-d); }
+.dtf .force .no { font-family: var(--dtf-serif); font-size: 15px; color: var(--dtf-gold-bright); }
+.dtf .force h3 { font-size: 26px; color: #fff; margin: 16px 0 12px; }
+.dtf .force p { font-size: 14.5px; color: rgba(255, 255, 255, .62); line-height: 1.65; margin-bottom: 18px; }
+.dtf .force .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.dtf .force .tags span {
+  font-size: 11px; font-weight: 500; letter-spacing: .02em; color: rgba(255, 255, 255, .7);
+  border: 1px solid var(--dtf-line-d); padding: 4px 11px; border-radius: 2px;
+}
+
+/* ── PROBLEMA ───────────────────────────────────────────────── */
+.dtf .prob { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; margin-top: 56px; }
+.dtf .prow { display: flex; gap: 22px; padding: 24px 0; border-top: 1px solid var(--dtf-line); }
+.dtf .prow .no { font-family: var(--dtf-serif); font-size: 22px; color: var(--dtf-gold-2); min-width: 34px; }
+.dtf .prow h3 { font-size: 19px; margin-bottom: 4px; }
+.dtf .prow p { font-size: 14px; color: var(--dtf-muted); line-height: 1.55; }
+
+/* ── LINHAS ─────────────────────────────────────────────────── */
+.dtf .lines { margin-top: 56px; border-top: 1px solid var(--dtf-line-d); }
+.dtf .lrow {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 36px; align-items: baseline;
+  padding: 34px 0; border-bottom: 1px solid var(--dtf-line-d);
+}
+.dtf .lrow .lname { font-family: var(--dtf-serif); font-size: clamp(1.5rem, 2.4vw, 2rem); color: #fff; }
+.dtf .lrow .lrole {
+  font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--dtf-gold-bright); margin-top: 8px;
+}
+.dtf .lrow .ldesc { font-size: 15px; color: rgba(255, 255, 255, .62); line-height: 1.6; max-width: 52ch; }
+.dtf .lrow .lkick {
+  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  color: rgba(255, 255, 255, .4); white-space: nowrap;
+}
+
+/* ── ESCADA ─────────────────────────────────────────────────── */
+.dtf .ladder {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  margin-top: 60px; border-top: 1px solid var(--dtf-line);
+}
+.dtf .rung { padding: 30px 26px 30px 0; position: relative; }
+.dtf .rung + .rung { padding-left: 26px; border-left: 1px solid var(--dtf-line); }
+.dtf .rung .no { font-family: var(--dtf-serif); font-size: 34px; color: var(--dtf-gold-2); line-height: 1; }
+.dtf .rung .lkick {
+  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--dtf-muted); margin: 14px 0 8px;
+}
+.dtf .rung h3 { font-size: 19px; margin-bottom: 8px; }
+.dtf .rung p { font-size: 13.5px; color: var(--dtf-muted); line-height: 1.55; }
+
+/* ── PLATAFORMAS ────────────────────────────────────────────── */
+.dtf .frame {
+  background: var(--dtf-navy-3); border: 1px solid var(--dtf-line-d);
+  border-radius: 8px; padding: 9px; box-shadow: 0 40px 80px rgba(0, 0, 0, .5);
+}
+.dtf .frame-bar { display: flex; gap: 6px; padding: 6px 6px 10px; }
+.dtf .frame-bar span { width: 9px; height: 9px; border-radius: 50%; background: rgba(255, 255, 255, .18); }
+.dtf .frame img { border-radius: 5px; width: 100%; height: auto; }
+
+.dtf .showcase { margin-top: 64px; display: flex; flex-direction: column; gap: 66px; }
+.dtf .show { display: grid; grid-template-columns: .82fr 1.18fr; gap: 52px; align-items: center; }
+.dtf .show.rev .show-media { order: -1; }
+.dtf .plabel {
+  display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase; color: rgba(255, 255, 255, .72); margin-bottom: 16px;
+}
+.dtf .pdot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+.dtf .show-txt h3 { font-size: clamp(1.5rem, 2.5vw, 2.05rem); color: #fff; margin-bottom: 14px; line-height: 1.14; }
+.dtf .show-txt p { font-size: 15px; color: rgba(255, 255, 255, .6); line-height: 1.65; max-width: 44ch; }
+.dtf .pcfo { margin-top: 16px; font-size: 12.5px; font-weight: 600; color: var(--dtf-gold-bright); letter-spacing: .02em; }
+
+.dtf .bespoke {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 52px; margin-top: 88px;
+  padding-top: 52px; border-top: 1px solid var(--dtf-line-d); align-items: start;
+}
+.dtf .bespoke h3 { font-size: clamp(1.5rem, 2.6vw, 2rem); color: #fff; line-height: 1.2; }
+.dtf .bespoke .kicker { display: block; margin-bottom: 16px; }
+.dtf .bespoke p { color: rgba(255, 255, 255, .62); font-size: 15.5px; line-height: 1.7; margin-bottom: 26px; }
+
+/* ── BANKING ────────────────────────────────────────────────── */
+.dtf .bank { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px; }
+.dtf .bank-img { position: relative; overflow: hidden; }
+.dtf .bank-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.dtf .bank-txt { background: var(--dtf-navy); color: #fff; display: flex; align-items: center; padding: 90px 7vw; }
+.dtf .bank-txt .kicker { margin-bottom: 20px; display: block; }
+.dtf .bank-txt h2 { color: #fff; margin-bottom: 20px; }
+.dtf .bank-txt p { font-size: 15.5px; color: rgba(255, 255, 255, .62); line-height: 1.7; margin-bottom: 26px; }
+.dtf .bquote {
+  font-family: var(--dtf-serif); font-style: italic; font-size: 22px; line-height: 1.45;
+  color: var(--dtf-gold-bright); border-top: 1px solid var(--dtf-line-d); padding-top: 26px;
+}
+.dtf .bquote .cap {
+  display: block; font-family: var(--dtf-sans); font-style: normal; font-size: 12px;
+  letter-spacing: .1em; text-transform: uppercase; color: rgba(255, 255, 255, .4); margin-top: 16px;
+}
+
+/* ── RESULTADOS ─────────────────────────────────────────────── */
+.dtf .stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  margin-top: 56px; border-top: 1px solid var(--dtf-line-d);
+}
+.dtf .stat { padding: 40px 24px 0; }
+.dtf .stat + .stat { border-left: 1px solid var(--dtf-line-d); }
+.dtf .stat .v { font-family: var(--dtf-serif); font-size: clamp(2.4rem, 4vw, 3.4rem); color: var(--dtf-gold-bright); line-height: 1; }
+.dtf .stat .l { font-size: 13px; color: rgba(255, 255, 255, .55); margin-top: 12px; line-height: 1.4; }
+
+/* ── SOBRE ──────────────────────────────────────────────────── */
+.dtf .about { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; }
+.dtf .about-img { border-radius: 8px; overflow: hidden; aspect-ratio: 4 / 3; }
+.dtf .about-img img { width: 100%; height: 100%; object-fit: cover; }
+.dtf .about h2 { margin-bottom: 22px; }
+.dtf .about p { font-size: 15.5px; color: var(--dtf-muted); line-height: 1.7; }
+.dtf .about-points { margin-top: 26px; border-top: 1px solid var(--dtf-line); }
+.dtf .about-points li {
+  padding: 18px 0; border-bottom: 1px solid var(--dtf-line);
+  font-size: 15px; color: var(--dtf-ink); display: flex; gap: 14px;
+}
+.dtf .about-points li .b { color: var(--dtf-gold-2); font-family: var(--dtf-serif); }
+
+/* ── CTA ────────────────────────────────────────────────────── */
+.dtf .cta { position: relative; overflow: hidden; text-align: center; padding: 130px 0; background: var(--dtf-navy); }
+.dtf .cta-glow {
+  position: absolute; top: -140px; left: 50%; transform: translateX(-50%);
+  width: 620px; height: 360px; background: rgba(194, 161, 92, .14);
+  filter: blur(130px); border-radius: 50%;
+}
+.dtf .cta h2 {
+  position: relative; color: #fff; font-size: clamp(2.1rem, 4vw, 3.2rem);
+  max-width: 20ch; margin: 0 auto; line-height: 1.1;
+}
+.dtf .cta p {
+  position: relative; margin: 22px auto 0; max-width: 56ch;
+  color: rgba(255, 255, 255, .6); font-size: 15.5px; line-height: 1.7; padding: 0 26px;
+}
+.dtf .cta .btn { position: relative; margin-top: 34px; }
+
+/* ── FOOTER ─────────────────────────────────────────────────── */
+.dtf footer { background: #060b14; color: #fff; padding: 64px 0 34px; }
+.dtf .foot-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px;
+  border-bottom: 1px solid var(--dtf-line-d); padding-bottom: 34px;
+}
+.dtf .foot-brand .n { font-family: var(--dtf-serif); font-size: 22px; color: #fff; }
+.dtf .foot-brand p { margin-top: 16px; max-width: 340px; font-size: 13px; line-height: 1.65; color: rgba(255, 255, 255, .42); }
+.dtf .foot-col h5 {
+  font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+  color: rgba(255, 255, 255, .4); margin-bottom: 14px;
+}
+.dtf .foot-col li { margin-bottom: 9px; }
+.dtf .foot-col a, .dtf .foot-col span { font-size: 13px; color: rgba(255, 255, 255, .58); }
+.dtf .foot-col a:hover { color: var(--dtf-gold-bright); }
+.dtf .foot-copy { padding-top: 24px; font-size: 12px; color: rgba(255, 255, 255, .3); }
+
+/* ── RESPONSIVO ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .dtf .show { grid-template-columns: 1fr; gap: 26px; }
+  .dtf .bespoke { grid-template-columns: 1fr; gap: 24px; }
+  .dtf .nav-links, .dtf .nav-cta { display: none; }
+  .dtf .nav-toggle { display: inline-flex; }
+  .dtf .virada, .dtf .forces, .dtf .prob, .dtf .ladder,
+  .dtf .bank, .dtf .stats, .dtf .about { grid-template-columns: 1fr; }
+  .dtf .vcol + .vcol, .dtf .force + .force,
+  .dtf .rung + .rung, .dtf .stat + .stat { border-left: none; padding-left: 0; }
+  .dtf .forces > .force { border-top: 1px solid var(--dtf-line-d); }
+  .dtf .stat { border-top: 1px solid var(--dtf-line-d); padding-left: 0; }
+  .dtf .lrow { grid-template-columns: 1fr; gap: 10px; }
+  .dtf .lrow .lkick { order: -1; }
+  .dtf .bank-img { min-height: 340px; }
+  .dtf .about-img { order: -1; }
+  .dtf .foot-grid { grid-template-columns: 1fr; gap: 28px; }
+}
