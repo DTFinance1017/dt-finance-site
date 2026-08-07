@@ -1,5 +1,5 @@
-﻿import { useState, useEffect } from "react";
-import { X, Mail, CheckCircle2, FileText, ArrowLeft, MessageCircle } from "lucide-react";
+import { useState, useEffect } from "react";
+import { X, FileText, ArrowLeft, MessageCircle } from "lucide-react";
 import type { ModalSource } from "@/context/ModalContext";
 
 interface Props {
@@ -23,11 +23,16 @@ const dorOptions = [
 const WA_NUMBER = "5511969771585";
 
 // Monta a mensagem do WhatsApp com os dados do formulário já preenchidos.
-function buildWhatsAppUrl(data: {
-  nome: string; whatsapp: string; email: string; empresa: string; faturamento: string; dor: string;
-}) {
+function buildWhatsAppUrl(
+  data: { nome: string; whatsapp: string; email: string; empresa: string; faturamento: string; dor: string },
+  source: ModalSource,
+) {
+  const intro =
+    source === "checklist"
+      ? "Olá! Quero receber a lista de documentos (checklist de DRE e Fluxo de Caixa) da DT Finance."
+      : "Olá! Quero agendar um diagnóstico com a DT Finance.";
   const linhas = [
-    "Olá! Quero agendar um diagnóstico com a DT Finance.",
+    intro,
     "",
     `*Nome:* ${data.nome || "—"}`,
     `*WhatsApp:* ${data.whatsapp || "—"}`,
@@ -70,15 +75,14 @@ function ProgressDots({ step }: { step: 1 | 2 }) {
   );
 }
 
+const waButtonStyle = { background: "linear-gradient(135deg,#25D366,#128C7E)", color: "#ffffff" } as const;
+
 export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
   const [step, setStep] = useState<1 | 2>(1);
   const [faturamento, setFaturamento] = useState("");
   const [dor, setDor] = useState("");
   const [form, setForm] = useState({ nome: "", whatsapp: "", email: "", empresa: "" });
   const [enviado, setEnviado] = useState(false);
-  const [enviando, setEnviando] = useState(false);
-  const [erro, setErro] = useState(false);
-  const [erroMsg, setErroMsg] = useState("");
   const [waUrl, setWaUrl] = useState("");
 
   const isChecklist = source === "checklist";
@@ -86,8 +90,17 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
   const set = (field: string, value: string) =>
     setForm((prev) => ({ ...prev, [field]: value }));
 
-  // Registra o lead no servidor (Supabase/e-mail) em segundo plano, sem
-  // bloquear o fluxo nem exibir erro se o backend ainda não estiver configurado.
+  const reset = () => {
+    setStep(1);
+    setFaturamento("");
+    setDor("");
+    setForm({ nome: "", whatsapp: "", email: "", empresa: "" });
+    setEnviado(false);
+    setWaUrl("");
+  };
+
+  // Registra o lead no servidor (Supabase, se configurado) em segundo plano,
+  // sem bloquear o fluxo nem exibir erro — o WhatsApp é o canal principal.
   const registrarLead = () => {
     try {
       fetch("/api/contato", {
@@ -97,78 +110,29 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
         keepalive: true,
       }).catch(() => {});
     } catch {
-      /* silencioso — o WhatsApp é o canal principal */
+      /* silencioso */
     }
   };
 
-  // Diagnóstico → abre o WhatsApp com os dados preenchidos na mensagem.
+  // Abre o WhatsApp com os dados preenchidos na mensagem.
   const handleWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
-    const url = buildWhatsAppUrl({ ...form, faturamento, dor });
-    // Abre numa nova aba dentro do gesto do usuário (evita bloqueio de pop-up).
+    const url = buildWhatsAppUrl({ ...form, faturamento, dor }, source);
+    // Aberto dentro do gesto do usuário para evitar bloqueio de pop-up.
     window.open(url, "_blank", "noopener,noreferrer");
     registrarLead();
     setWaUrl(url);
     setEnviado(true);
   };
 
-  // Checklist → envio por e-mail (lista de documentos).
-  const handleEnviar = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (enviando) return;
-    setErro(false);
-    setErroMsg("");
-    setWaUrl("");
-    setEnviando(true);
-    try {
-      const res = await fetch("/api/contato", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, faturamento, dor, source }),
-      });
-      if (res.ok) {
-        setEnviado(true);
-      } else {
-        const data = await res.json().catch(() => null);
-        setErro(true);
-        setErroMsg(
-          (data && data.error) ? `${data.error} (HTTP ${res.status})` : `Erro do servidor (HTTP ${res.status}).`
-        );
-      }
-    } catch (e) {
-      setErro(true);
-      setErroMsg(
-        `Falha de conexão com o servidor${e instanceof Error && e.message ? `: ${e.message}` : "."}`
-      );
-    } finally {
-      setEnviando(false);
-    }
-  };
-
   const handleClose = () => {
     onClose();
-    setTimeout(() => {
-      setStep(1);
-      setFaturamento("");
-      setDor("");
-      setForm({ nome: "", whatsapp: "", email: "", empresa: "" });
-      setEnviado(false);
-      setErro(false);
-      setErroMsg("");
-      setWaUrl("");
-    }, 300);
+    setTimeout(reset, 300);
   };
 
   useEffect(() => {
-    if (!open) return;
-    setStep(1);
-    setFaturamento("");
-    setDor("");
-    setForm({ nome: "", whatsapp: "", email: "", empresa: "" });
-    setEnviado(false);
-    setErro(false);
-    setErroMsg("");
-    setWaUrl("");
+    if (open) reset();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
   if (!open) return null;
@@ -217,34 +181,25 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
           <div className="flex flex-col items-center justify-center py-16 px-10 text-center">
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
-              style={
-                isChecklist
-                  ? { background: "rgba(181,137,26,0.12)", border: "1px solid rgba(181,137,26,0.3)" }
-                  : { background: "rgba(37,211,102,0.12)", border: "1px solid rgba(37,211,102,0.35)" }
-              }
+              style={{ background: "rgba(37,211,102,0.12)", border: "1px solid rgba(37,211,102,0.35)" }}
             >
-              {isChecklist
-                ? <CheckCircle2 size={28} style={{ color: "#B5891A" }} />
-                : <MessageCircle size={28} style={{ color: "#128C7E" }} />}
+              <MessageCircle size={28} style={{ color: "#128C7E" }} />
             </div>
-            <h3
-              style={{ fontFamily: "'Playfair Display', serif" }}
-              className="text-2xl font-bold text-[#1B4158] mb-3"
-            >
-              {isChecklist ? "Lista enviada!" : "Abrindo o WhatsApp…"}
+            <h3 style={{ fontFamily: "'Playfair Display', serif" }} className="text-2xl font-bold text-[#1B4158] mb-3">
+              Abrindo o WhatsApp…
             </h3>
             <p className="text-sm leading-relaxed max-w-xs mb-8" style={{ color: "rgba(27,65,88,0.65)" }}>
               {isChecklist
-                ? `Verifique sua caixa de entrada — a lista de documentos foi enviada para ${form.email}.`
+                ? "Abrimos o WhatsApp com seus dados. É só enviar a mensagem que nossa equipe te manda a lista de documentos. Se não abriu, use o botão abaixo."
                 : "Abrimos o WhatsApp com seus dados já preenchidos. É só tocar em enviar. Se não abriu, use o botão abaixo."}
             </p>
-            {!isChecklist && waUrl && (
+            {waUrl && (
               <a
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3 rounded-xl text-sm font-bold text-white mb-3 flex items-center justify-center gap-2"
-                style={{ background: "linear-gradient(135deg,#25D366,#128C7E)" }}
+                className="px-8 py-3 rounded-xl text-sm font-bold mb-3 flex items-center justify-center gap-2"
+                style={waButtonStyle}
               >
                 <MessageCircle size={16} /> Abrir WhatsApp
               </a>
@@ -257,16 +212,16 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
 
         {/* ── CHECKLIST (single step) ── */}
         {!enviado && isChecklist && (
-          <form onSubmit={handleEnviar} className="flex flex-col overflow-hidden">
+          <form onSubmit={handleWhatsApp} className="flex flex-col overflow-hidden">
             <div className="px-8 pt-8 pb-5 flex-shrink-0" style={{ borderBottom: "1px solid rgba(27,65,88,0.10)" }}>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-medium mb-4" style={{ borderColor: "rgba(181,137,26,0.25)", background: "rgba(181,137,26,0.08)", color: "#B5891A" }}>
-                <FileText size={11} /> RECEBER LISTA DE DOCUMENTOS
+                <FileText size={11} /> LISTA DE DOCUMENTOS
               </div>
               <h2 style={{ fontFamily: "'Playfair Display', serif" }} className="text-2xl font-bold text-[#1B4158] mb-1">
-                Receba a lista no seu e-mail.
+                Receba a lista pelo WhatsApp.
               </h2>
               <p className="text-sm" style={{ color: "rgba(27,65,88,0.50)" }}>
-                Preencha abaixo e enviaremos a lista direto para você.
+                Preencha abaixo e enviaremos a lista de documentos direto para você.
               </p>
             </div>
             <div className="overflow-y-auto px-8 py-6 space-y-4 flex-1">
@@ -286,16 +241,10 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
                 <label className={labelClass}>Nome da empresa *</label>
                 <input required className={inputClass} placeholder="Razão social ou nome fantasia" value={form.empresa} onChange={(e) => set("empresa", e.target.value)} />
               </div>
-              {erro && (
-                <p className="text-red-500 text-xs text-center leading-relaxed">
-                  {erroMsg || "Erro ao enviar. Tente novamente."}
-                </p>
-              )}
             </div>
             <div className="px-8 pb-8 pt-4 flex-shrink-0" style={{ borderTop: "1px solid rgba(27,65,88,0.10)" }}>
-              <button type="submit" disabled={enviando} className="w-full btn-gold py-[14px] rounded-xl text-sm font-bold tracking-wide flex items-center justify-center gap-2 disabled:opacity-50">
-                <Mail size={15} />
-                {enviando ? "ENVIANDO..." : "ENVIAR LISTA PARA MEU E-MAIL"}
+              <button type="submit" className="w-full py-[14px] rounded-xl text-sm font-bold tracking-wide flex items-center justify-center gap-2 transition-opacity hover:opacity-95" style={waButtonStyle}>
+                <MessageCircle size={16} /> RECEBER PELO WHATSAPP
               </button>
               <p className="mt-3 text-center text-xs" style={{ color: "rgba(27,65,88,0.25)" }}>Sem compromisso</p>
             </div>
@@ -403,7 +352,7 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
                 Fale com um especialista.
               </h2>
               <p className="text-sm" style={{ color: "rgba(27,65,88,0.50)" }}>
-                Preencha os dados abaixo para agendar seu diagnóstico.
+                Preencha os dados abaixo para falar com nossa equipe no WhatsApp.
               </p>
             </div>
 
@@ -424,21 +373,15 @@ export function ContatoModal({ open, onClose, source = "diagnostico" }: Props) {
                 <label className={labelClass}>Nome da empresa *</label>
                 <input required className={inputClass} placeholder="Razão social ou nome fantasia" value={form.empresa} onChange={(e) => set("empresa", e.target.value)} />
               </div>
-              {erro && (
-                <p className="text-red-500 text-xs text-center leading-relaxed">
-                  {erroMsg || "Erro ao enviar. Tente novamente."}
-                </p>
-              )}
             </div>
 
             <div className="px-8 pb-8 pt-4 flex-shrink-0">
               <button
                 type="submit"
                 className="w-full py-[14px] rounded-xl text-sm font-bold tracking-wide flex items-center justify-center gap-2 transition-opacity hover:opacity-95"
-                style={{ background: "linear-gradient(135deg,#25D366,#128C7E)", color: "#ffffff", height: 52 }}
+                style={{ ...waButtonStyle, height: 52 }}
               >
-                <MessageCircle size={16} />
-                ENVIAR PELO WHATSAPP
+                <MessageCircle size={16} /> ENVIAR PELO WHATSAPP
               </button>
               <p className="mt-3 text-center text-xs" style={{ color: "rgba(27,65,88,0.30)" }}>Sem compromisso · resposta rápida</p>
             </div>
