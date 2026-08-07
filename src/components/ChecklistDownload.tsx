@@ -1,4 +1,4 @@
-﻿import { Mail, ArrowRight } from "lucide-react";
+﻿import { MessageCircle, ArrowRight } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 import { useModal } from "@/context/ModalContext";
 
@@ -111,7 +111,7 @@ export function ChecklistDownload() {
                 </h2>
 
                 <p className="text-[#1B4158]/75 text-sm leading-relaxed">
-                  Lista completa dos documentos para montarmos o DRE e o Fluxo de Caixa da sua empresa. Receba direto no seu e-mail — totalmente gratuito.
+                  Lista completa dos documentos para montarmos o DRE e o Fluxo de Caixa da sua empresa. Receba pelo WhatsApp — totalmente gratuito.
                 </p>
               </div>
 
@@ -121,11 +121,11 @@ export function ChecklistDownload() {
                   onClick={() => openModal("checklist")}
                   className="btn-gold px-8 py-4 rounded-xl text-sm font-semibold inline-flex items-center gap-2.5 cursor-pointer whitespace-nowrap"
                 >
-                  <Mail size={15} />
-                  Receber a lista no meu e-mail
+                  <MessageCircle size={15} />
+                  Receber a lista pelo WhatsApp
                   <ArrowRight size={14} />
                 </button>
-                <p className="text-xs text-[#1B4158]/27">Enviamos o PDF gratuitamente para você</p>
+                <p className="text-xs text-[#1B4158]/27">Enviamos a lista gratuitamente para você</p>
               </div>
 
             </div>
